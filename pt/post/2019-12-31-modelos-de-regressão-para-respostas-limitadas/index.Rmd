@@ -1,0 +1,109 @@
+---
+title: Modelos de Regressão para Respostas Limitadas
+summary: Uma discussão sobre modelos de regressão quando a variável resposta é restrita ao intervalo $(0, 1)$
+author: André Felipe Berdusco Menezes
+date: '2019-12-31'
+draft: false
+categories:
+  - regressão
+  - verossimilhança
+  - distribuição Beta
+  - distribuição Simplex
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introdução
+
+Os modelos de regressão são uma ferramenta fundamental para todo analista de dados.
+Diversos fenômenos naturais ou antropogênicos podem ser descritos por algum modelo de regressão.
+Isso ocorre em geral, porque o interesse reside em investigar a relação entre uma variável
+resposta e demais variáveis (covariáveis) e então obter predições a partir da relação estabelecida.
+
+Quando a variável resposta é limitada no intervalo $(0, 1)$ o clássico modelo de regressão sob suposição de erros normais é inapropriado. Uma solução bastante utilizada
+consiste em realizar alguma transformação na variável resposta de forma que ela
+assuma valores no conjunto dos $\mathbb{R}$.
+Todavia, esta transformação compromete a interpretação dos parâmetros do modelo em termos da resposta original
+e os valores preditos pelo modelo podem extrapolar os limites do intervalo unitário.
+
+## Principais Modelos
+
+Tendo em vista essa limitação alguns autores introduziram e ainda propõe alternativas de modo que as suposições
+empregadas
+condizem com a realidade do fenômeno. Em geral, os modelos de regressão **paramétrico** para respostas limitadas assumem
+que a variável resposta condicionada nas covariáveis segue alguma distribuição com suporte no $(0, 1)$.
+
+A construção desses modelos é similar a classe dos Modelos Lineares Generalizados (MLG), entretanto a componente
+estocástica não pertence a família exponencial canônica, fato este que ocorre nos MLGs e proporcionou maior facilidade computacional para a estimação dos parâmetros do modelo, o que era crucial nas décadas de 70 e 80.
+
+Seguramente a distribuição de probabilidade mais conhecida com suporte no $(0, 1)$ é a distribuição [Beta](https://en.wikipedia.org/wiki/Beta_distribution).
+Na década de 2000, tanto [Cepeda-Cuervo (2001)](/pdf/cepeda-cuervo.pdf) em sua tese de doutorado, quanto
+[Ferrari e Cribari-Neto (2004)](https://www.tandfonline.com/doi/abs/10.1080/0266476042000214501) em artigo científico, propuseram uma parametrização da distribuição Beta de tal forma que um dos parâmetros denota a média da variável. Neste caso, a função densidade de probabilidade é definida por
+
+\begin{equation}\label{eq:pdf-beta}
+f(y \mid \mu,\phi) = \dfrac{\Gamma(\phi)}{\Gamma(\mu\,\phi)\Gamma((1-\mu)\,\phi)}y^{\mu\phi-1}(1-y)^{(1-\mu)\phi-1} I_{(0, 1)}(y)
+\end{equation}
+em que $\mu \in (0,1)$ denota a esperança, $\phi>0$ o parâmetro de precisão e $\Gamma(\cdot)$ a função [gama](https://en.wikipedia.org/wiki/Gamma_function).
+
+Considerando a parametrização apresentada o modelo de
+regressão Beta assume que $Y_i \sim \text{Beta}(\mu_i, \phi_i) , i = 1, \ldots, n,$ de tal forma que
+os parâmetros de média e precisão são definidos, respectivamente, por
+\begin{equation}\label{eq:link}
+g(\mu_i)	 = \mathbf{x}_i^\top\,\mathbf{\beta} \quad \mathrm{e} \quad
+h(\phi_i)	 = \mathbf{z}_i^\top\,\mathbf{\gamma}
+\end{equation}
+em que $\mathbf{\beta} = (\beta_0, \ldots, \beta_{p-1})^\top$ e $\mathbf{\gamma} = (\gamma_0, \ldots, \gamma_{k-1})^\top$
+são, os vetores de parâmetros associados a média e precisão, respectivamente;
+$\mathbf{x}_i$ e $\mathbf{z}_i$ são os vetores de covariáveis associados a média e precisão do modelo na $i$-ésima
+observação, respectivamente; e $g(\cdot)$ e $h(\cdot)$ são funções de ligação apropriadas.
+
+As funções de ligação devem ser duplamente diferenciáveis em relação aos parâmetros.
+A função de ligação $g(\cdot)$ deve satisfazer $(0, 1) \rightarrow \mathbb{R}$, assim escolhas usuais são
+
+  i) $\mathrm{logit}$: $g(\mu_i) = \log\left(\mu_i / (1-\mu_i)\right)$;
+ ii) $\mathrm{probit}$: $g(\mu_i) = \Phi^{-1}(\mu_i)$, em que $\Phi^{-1}(\cdot)$ é o quantil da distribuição Normal padrão;
+iii) $\mathrm{c}\log$-$\log$: $g(\mu_i) = \log\left[-\log(1-\mu_i)\right]$.
+
+Enquanto que a função $h(\cdot)$ deve satisfazer $\mathbb{R}^{+} \rightarrow \mathbb{R}$, nesse caso é comum utilizar as funções logarítmica ou raiz quadrada.  
+
+Na década de 1990 o estatístico norueguês [Bent Jorgensen](https://en.wikipedia.org/wiki/Bent_J%C3%B8rgensen_(statistician)) estendeu a classe dos MLGs com os modelos de dispersão.
+Esta classe de modelos inclui a distribuição Simplex proposta em [Barndorff-Nielsen e Jorgensen (1991)](https://www.sciencedirect.com/science/article/pii/0047259X9190008P), sendo uma interessante alternativa a distribuição Beta. Sua função densidade de probabilidade é dada por
+
+$$
+f(y\mid \mu, \phi) = \left[2\pi\phi^2\{y (1-y)\}^3\right]^{-1/2} \exp\left\{-\dfrac{1}{2 \phi^2} \left[\dfrac{(y - \mu)^2}{y (1 - y) \mu^2(1-\mu)^2}\right]\right\}I_{(0, 1)}(y)
+$$
+em que $\mu \in (0, 1)$ denota a esperança e $\phi >0$ o parâmetro de precisão.
+
+O modelo de regressão Simplex segue a estrutura similar ao modelo Beta, onde os parâmetros $\mu$ e $\phi$
+se relacionam com os preditores por meio de apropriadas funções de ligação $g(\cdot)$ e $h(\cdot)$.
+
+
+## Algumas Considerações
+
+Sob o ponto de vista paramétrico diversos modelos de regressão para respostas limitadas vem sendo propostos
+na literatura. Tais modelos podem apresentar estrutura de regressão apenas para média, outros também modelam parâmetros
+de precisão ou forma. Além disso, há modelos que buscam compreender uma visão mais completa da variável resposta
+condicionada nas covariáveis por meio dos quantis, isto é, o parâmetro de interesse que esta relacionado as covariáveis
+é algum quantil $\tau$.
+
+Nos últimos dois anos juntamente com meu orientador professor [Josmar Mazucheli](http://lattes.cnpq.br/8899185212821611), publiquei alguns artigos que introduziram
+distribuições de probabilidade alternativas para modelagem de fenômenos limitados no intervalo $(0, 1)$.
+Entre os principais trabalhos estão:
+
+
+- Distribuição unit-Weibull [1](/pdf/2018-unit-weibull.pdf) [2](/pdf/2018-unit-weibull-regression.pdf);
+- Distribuição [unit-Lindley](/pdf/2018-unit-lindley);
+- Distribuição [unit-Gaussiana](/pdf/2018-unit-inverse-gaussian);
+- Distribuição [unit-Gompertz](/pdf/2019-unit-gompertz);
+- Distribuição [unit-Birnbaum-Saunders](/pdf/2018-unit-bs).
+
+## Referências
+Barndorff-Nielsen, O.; Jorgensen, B. **Some parametric models on the Simplex.** Journal of Multivariate Analysis,
+v. 39, n. 1, p. 106--116, 1991.
+
+Cepeda-Cuervo, E. **Variability modeling in generalized linear models.** Tese (Doutorado) --- Mathematics Institute, Universidade Federal do Rio de Janeiro, 2001.
+
+Ferrari, S.; Cribari-Neto, F. **Beta regression for modelling rates and proportions.** Journal of Applied Statistics, v. 31, n. 7, p. 799--815, 2004.

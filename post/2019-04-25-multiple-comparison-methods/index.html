@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | Multiple comparison methods </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2019-04-25-multiple-comparison-methods/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Multiple comparison methods"/>
+<meta name="twitter:description" content="A note on multiple comparison methods"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Multiple comparison methods</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                25/04/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">3-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/post/2019-04-25-multiple-comparison-methods/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>A realização de estudos experimentais planejados, os chamados delineamentos experimentais,
+é muito comum em áreas como a engenharia, biologia e medicina.
+Em geral, o pesquisador tem interesse em verificar como determinados fatores
+influenciam alguma característica de interesse (variável resposta).</p>
+<p>Para comparação entre os diferentes fatores várias metodologias podem ser utilizadas,
+sendo que a escolha vai depender da maneira com que a característica de interesse foi medida.
+Alguns exemplos das técnicas que podem ser utilizadas são:</p>
+<p>Conducting planned experimental studies, the so-called experimental design, is very
+common in areas such as, engineering, biology and medicine.
+In general, the researcher has the interest in investigate how certain factors influence
+some characteristic of interest, the response variable.</p>
+<p>To compare different factors several methodologies can be used. The choice
+depending on the nature of characteristic of interest was measure.
+Some examples of techniques that can be used are:</p>
+<ul>
+<li><p>Comparisons of means: <a href="https://en.wikipedia.org/wiki/Student%27s_t-test">Student’s t-test</a></p></li>
+<li><p>Comparisons of medians: <a href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test">Wilcoxon–Mann–Whitney test</a></p></li>
+<li><p>Comparisons of contingency tables: <a href="https://en.wikipedia.org/wiki/Chi-squared_test">Chi-squared test</a>;</p></li>
+<li><p>Comparisons of survival curves: <a href="https://en.wikipedia.org/wiki/Logrank_test">Logrank test</a>.</p></li>
+</ul>
+<p>Regardless the nature of characteristic of interest, in the comparison of several factors
+simultaneously under the statistical point of view we are conducting <strong>simultaneously inference</strong>,
+either through simultaneous confidence intervals or simultaneous hypothesis tests.</p>
+<p>Consider the interest in comparing the means of <span class="math inline">\(k\)</span> factor, i.e., testing <span class="math inline">\(m = \dfrac{k\,(k- 1)}{2}\)</span>
+hypotheses of the form
+<span class="math display">\[
+\mathcal{H}_0: \mu_i = \mu_j \quad \text{versus} \quad
+\mathcal{H}_1: \mu_i \neq \mu_j
+\]</span>
+where <span class="math inline">\(i \neq j\)</span>.</p>
+<p>When conduct a simple statistical hypothesis test it can happen the Type I error, i.e.,
+the probability to reject the null hypothesis when it is true.
+In case of multiple comparisons, there are two kinds of Type I error:</p>
+<ul>
+<li><p>Comparison-wise error rate <span class="math inline">\((\alpha)\)</span>: probability of making a Type I error in any comparison.</p></li>
+<li><p>Family-wise error rate <span class="math inline">\((\alpha_f)\)</span>: probability of making one or more Type I error in a set (family) of comparisons.</p></li>
+</ul>
+<p>When the simultaneous tests are independents the relationship between these error rates is expressed by:
+<span class="math display">\[
+\alpha_f = 1 - (1 - \alpha)^m.
+\]</span></p>
+<p>The conventional hypothesis tests, e.g., the Student’s t-test and the Chi-squared test,
+are not proposed to evaluate several hypoteses simultaneously, since such tests control only
+the comparison-wise Type I error <span class="math inline">\((\alpha)\)</span>. Thus, when used in multiple comparisons problems
+they inflate the family-wise Type I error <span class="math inline">\((\alpha_f)\)</span>, leading to misleading interpretations of the study.</p>
+<p>Certainly the <a href="https://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni correction</a>
+is the well known and perhaps the most used by
+statistics users in order to overcome this issue.
+However, several other corrections are available and have better statistical properties than
+the Bonferroni correction.</p>
+<p>In a joint work with <a href="https://twitter.com/vbfelix">Vinicius Félix</a>, we evaluate by
+Monte Carlo simulations the power and family-wise Type I error rate of ten corrections applied
+on Student’s t-test for means comparisons between groups in different scenarios.
+We conclude that the Bonferroni correction was the second worst based on the evaluate
+criteria and scenarios. The <a href="https://en.wikipedia.org/wiki/False_discovery_rate">Benjamini-Hochberg</a>
+correction was provide the best performance among the ten corrections.</p>
+<p>More details of the paper can be found <a href="/pdf/papers/2018__corrections_t-test.pdf">here</a>.
+The codes used for the simulations are available <a href="https://github.com/AndrMenezes/mcp/tree/master/Scripts/paper">here</a></p>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p><a href="https://journal.r-project.org/archive/2016/RJ-2016-017/index.html">Calvo, B. e Santafé, G. (2016) scmamp: Statistical Comparison of Multiple Algorithms in Multiple Problems. The R Journal, 8(1), 248–256.</a></p>
+<p><a href="http://siba-ese.unisalento.it/index.php/ejasa/article/view/17017">Félix, V. B. e Menezes, A. F. B. (2018) Comparisons of ten corrections methods for t-test in multiple comparisons via Monte Carlo study, 11(1), 74–91</a></p>
+<p><a href="/pdf/Implementing%20Multiple%20Comparisons%20on%20Pearson%20Chi-square%20Test.pdf">Jin, M. e Wang, B. (2014) Implementing multiple comparisons on Pearson Chi-square test for RxC contingency table in SAS</a></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/multiple-comparisons/">multiple comparisons</a><a class="category" href="/categories/hypotheses-test/">hypotheses test</a><a class="category" href="/categories/statistical-inference/">statistical inference</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

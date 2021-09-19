@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt" data-theme=""><head>
+    <title> André Menezes | Modelos de Regressão para Respostas Limitadas </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Estatística | Cientista de Dados">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/pt/post/2019-12-31-modelos-de-regress%C3%A3o-para-respostas-limitadas/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Modelos de Regressão para Respostas Limitadas"/>
+<meta name="twitter:description" content="Uma discussão sobre modelos de regressão quando a variável resposta é restrita ao intervalo $(0, 1)$"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Estatística | Cientista de Dados</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/pt/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/pt/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/pt/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/pt/publications/"
+                        
+                   title="">Publicações</a></li>
+        
+            
+            <li><a 
+                   href="/pt/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Modelos de Regressão para Respostas Limitadas</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                31/12/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/pt/post/2019-12-31-modelos-de-regress%C3%A3o-para-respostas-limitadas/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introdução" class="section level2">
+<h2>Introdução</h2>
+<p>Os modelos de regressão são uma ferramenta fundamental para todo analista de dados.
+Diversos fenômenos naturais ou antropogênicos podem ser descritos por algum modelo de regressão.
+Isso ocorre em geral, porque o interesse reside em investigar a relação entre uma variável
+resposta e demais variáveis (covariáveis) e então obter predições a partir da relação estabelecida.</p>
+<p>Quando a variável resposta é limitada no intervalo <span class="math inline">\((0, 1)\)</span> o clássico modelo de regressão sob suposição de erros normais é inapropriado. Uma solução bastante utilizada
+consiste em realizar alguma transformação na variável resposta de forma que ela
+assuma valores no conjunto dos <span class="math inline">\(\mathbb{R}\)</span>.
+Todavia, esta transformação compromete a interpretação dos parâmetros do modelo em termos da resposta original
+e os valores preditos pelo modelo podem extrapolar os limites do intervalo unitário.</p>
+</div>
+<div id="principais-modelos" class="section level2">
+<h2>Principais Modelos</h2>
+<p>Tendo em vista essa limitação alguns autores introduziram e ainda propõe alternativas de modo que as suposições
+empregadas
+condizem com a realidade do fenômeno. Em geral, os modelos de regressão <strong>paramétrico</strong> para respostas limitadas assumem
+que a variável resposta condicionada nas covariáveis segue alguma distribuição com suporte no <span class="math inline">\((0, 1)\)</span>.</p>
+<p>A construção desses modelos é similar a classe dos Modelos Lineares Generalizados (MLG), entretanto a componente
+estocástica não pertence a família exponencial canônica, fato este que ocorre nos MLGs e proporcionou maior facilidade computacional para a estimação dos parâmetros do modelo, o que era crucial nas décadas de 70 e 80.</p>
+<p>Seguramente a distribuição de probabilidade mais conhecida com suporte no <span class="math inline">\((0, 1)\)</span> é a distribuição <a href="https://en.wikipedia.org/wiki/Beta_distribution">Beta</a>.
+Na década de 2000, tanto <a href="/pdf/cepeda-cuervo.pdf">Cepeda-Cuervo (2001)</a> em sua tese de doutorado, quanto
+<a href="https://www.tandfonline.com/doi/abs/10.1080/0266476042000214501">Ferrari e Cribari-Neto (2004)</a> em artigo científico, propuseram uma parametrização da distribuição Beta de tal forma que um dos parâmetros denota a média da variável. Neste caso, a função densidade de probabilidade é definida por</p>
+<p><span class="math display">\[\begin{equation}\label{eq:pdf-beta}
+f(y \mid \mu,\phi) = \dfrac{\Gamma(\phi)}{\Gamma(\mu\,\phi)\Gamma((1-\mu)\,\phi)}y^{\mu\phi-1}(1-y)^{(1-\mu)\phi-1} I_{(0, 1)}(y)
+\end{equation}\]</span>
+em que <span class="math inline">\(\mu \in (0,1)\)</span> denota a esperança, <span class="math inline">\(\phi&gt;0\)</span> o parâmetro de precisão e <span class="math inline">\(\Gamma(\cdot)\)</span> a função <a href="https://en.wikipedia.org/wiki/Gamma_function">gama</a>.</p>
+<p>Considerando a parametrização apresentada o modelo de
+regressão Beta assume que <span class="math inline">\(Y_i \sim \text{Beta}(\mu_i, \phi_i) , i = 1, \ldots, n,\)</span> de tal forma que
+os parâmetros de média e precisão são definidos, respectivamente, por
+<span class="math display">\[\begin{equation}\label{eq:link}
+g(\mu_i)     = \mathbf{x}_i^\top\,\mathbf{\beta} \quad \mathrm{e} \quad
+h(\phi_i)    = \mathbf{z}_i^\top\,\mathbf{\gamma}
+\end{equation}\]</span>
+em que <span class="math inline">\(\mathbf{\beta} = (\beta_0, \ldots, \beta_{p-1})^\top\)</span> e <span class="math inline">\(\mathbf{\gamma} = (\gamma_0, \ldots, \gamma_{k-1})^\top\)</span>
+são, os vetores de parâmetros associados a média e precisão, respectivamente;
+<span class="math inline">\(\mathbf{x}_i\)</span> e <span class="math inline">\(\mathbf{z}_i\)</span> são os vetores de covariáveis associados a média e precisão do modelo na <span class="math inline">\(i\)</span>-ésima
+observação, respectivamente; e <span class="math inline">\(g(\cdot)\)</span> e <span class="math inline">\(h(\cdot)\)</span> são funções de ligação apropriadas.</p>
+<p>As funções de ligação devem ser duplamente diferenciáveis em relação aos parâmetros.
+A função de ligação <span class="math inline">\(g(\cdot)\)</span> deve satisfazer <span class="math inline">\((0, 1) \rightarrow \mathbb{R}\)</span>, assim escolhas usuais são</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(\mathrm{logit}\)</span>: <span class="math inline">\(g(\mu_i) = \log\left(\mu_i / (1-\mu_i)\right)\)</span>;</li>
+<li><span class="math inline">\(\mathrm{probit}\)</span>: <span class="math inline">\(g(\mu_i) = \Phi^{-1}(\mu_i)\)</span>, em que <span class="math inline">\(\Phi^{-1}(\cdot)\)</span> é o quantil da distribuição Normal padrão;</li>
+<li><span class="math inline">\(\mathrm{c}\log\)</span>-<span class="math inline">\(\log\)</span>: <span class="math inline">\(g(\mu_i) = \log\left[-\log(1-\mu_i)\right]\)</span>.</li>
+</ol>
+<p>Enquanto que a função <span class="math inline">\(h(\cdot)\)</span> deve satisfazer <span class="math inline">\(\mathbb{R}^{+} \rightarrow \mathbb{R}\)</span>, nesse caso é comum utilizar as funções logarítmica ou raiz quadrada.</p>
+<p>Na década de 1990 o estatístico norueguês <a href="https://en.wikipedia.org/wiki/Bent_J%C3%B8rgensen_(statistician)">Bent Jorgensen</a> estendeu a classe dos MLGs com os modelos de dispersão.
+Esta classe de modelos inclui a distribuição Simplex proposta em <a href="https://www.sciencedirect.com/science/article/pii/0047259X9190008P">Barndorff-Nielsen e Jorgensen (1991)</a>, sendo uma interessante alternativa a distribuição Beta. Sua função densidade de probabilidade é dada por</p>
+<p><span class="math display">\[
+f(y\mid \mu, \phi) = \left[2\pi\phi^2\{y (1-y)\}^3\right]^{-1/2} \exp\left\{-\dfrac{1}{2 \phi^2} \left[\dfrac{(y - \mu)^2}{y (1 - y) \mu^2(1-\mu)^2}\right]\right\}I_{(0, 1)}(y)
+\]</span>
+em que <span class="math inline">\(\mu \in (0, 1)\)</span> denota a esperança e <span class="math inline">\(\phi &gt;0\)</span> o parâmetro de precisão.</p>
+<p>O modelo de regressão Simplex segue a estrutura similar ao modelo Beta, onde os parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\phi\)</span>
+se relacionam com os preditores por meio de apropriadas funções de ligação <span class="math inline">\(g(\cdot)\)</span> e <span class="math inline">\(h(\cdot)\)</span>.</p>
+</div>
+<div id="algumas-considerações" class="section level2">
+<h2>Algumas Considerações</h2>
+<p>Sob o ponto de vista paramétrico diversos modelos de regressão para respostas limitadas vem sendo propostos
+na literatura. Tais modelos podem apresentar estrutura de regressão apenas para média, outros também modelam parâmetros
+de precisão ou forma. Além disso, há modelos que buscam compreender uma visão mais completa da variável resposta
+condicionada nas covariáveis por meio dos quantis, isto é, o parâmetro de interesse que esta relacionado as covariáveis
+é algum quantil <span class="math inline">\(\tau\)</span>.</p>
+<p>Nos últimos dois anos juntamente com meu orientador professor <a href="http://lattes.cnpq.br/8899185212821611">Josmar Mazucheli</a>, publiquei alguns artigos que introduziram
+distribuições de probabilidade alternativas para modelagem de fenômenos limitados no intervalo <span class="math inline">\((0, 1)\)</span>.
+Entre os principais trabalhos estão:</p>
+<ul>
+<li>Distribuição unit-Weibull <a href="/pdf/2018-unit-weibull.pdf">1</a> <a href="/pdf/2018-unit-weibull-regression.pdf">2</a>;</li>
+<li>Distribuição <a href="/pdf/2018-unit-lindley">unit-Lindley</a>;</li>
+<li>Distribuição <a href="/pdf/2018-unit-inverse-gaussian">unit-Gaussiana</a>;</li>
+<li>Distribuição <a href="/pdf/2019-unit-gompertz">unit-Gompertz</a>;</li>
+<li>Distribuição <a href="/pdf/2018-unit-bs">unit-Birnbaum-Saunders</a>.</li>
+</ul>
+</div>
+<div id="referências" class="section level2">
+<h2>Referências</h2>
+<p>Barndorff-Nielsen, O.; Jorgensen, B. <strong>Some parametric models on the Simplex.</strong> Journal of Multivariate Analysis,
+v. 39, n. 1, p. 106–116, 1991.</p>
+<p>Cepeda-Cuervo, E. <strong>Variability modeling in generalized linear models.</strong> Tese (Doutorado) — Mathematics Institute, Universidade Federal do Rio de Janeiro, 2001.</p>
+<p>Ferrari, S.; Cribari-Neto, F. <strong>Beta regression for modelling rates and proportions.</strong> Journal of Applied Statistics, v. 31, n. 7, p. 799–815, 2004.</p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/pt/categories/regress%C3%A3o/">regressão</a><a class="category" href="/pt/categories/verossimilhan%C3%A7a/">verossimilhança</a><a class="category" href="/pt/categories/distribui%C3%A7%C3%A3o-beta/">distribuição Beta</a><a class="category" href="/pt/categories/distribui%C3%A7%C3%A3o-simplex/">distribuição Simplex</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

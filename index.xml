@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>André Menezes</title>
+    <link>http://AndrMeneze.github.io/</link>
+    <description>Recent content on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autoregressive time series models</title>
+      <link>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</guid>
+      
+        <description>Simulation, estimation and forecast AR(1)</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://AndrMeneze.github.io/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/archives/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Multiple comparison methods</title>
+      <link>http://AndrMeneze.github.io/post/2019-04-25-multiple-comparison-methods/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/post/2019-04-25-multiple-comparison-methods/</guid>
+      
+        <description>A note on multiple comparison methods</description>
+      
+    </item>
+    
+    <item>
+      <title>Linear Algebra and Least Squares Estimators</title>
+      <link>http://AndrMeneze.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</guid>
+      
+        <description>A note on least squares estimators</description>
+      
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://AndrMeneze.github.io/contact/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/contact/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://AndrMeneze.github.io/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/about/</guid>
+      
+        <description>I&amp;rsquo;m statistician with experience in statistical modeling and data analysis. My background academic is:</description>
+      
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>http://AndrMeneze.github.io/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/publications/</guid>
+      
+        <description>2021   Menezes, A. F. B.; Mazucheli, J.. Chakraborty, S.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

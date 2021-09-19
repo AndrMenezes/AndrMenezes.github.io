@@ -1,0 +1,79 @@
+---
+title: Métodos de Comparações Múltiplas
+summary: Uma nota sobre métodos de comparações múltiplas
+author: André Felipe Berdusco Menezes
+date: "2019-04-25"
+draft: false
+categories:
+  - comparações múltiplas
+  - testes de hipóteses
+  - inferência estatística
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+A realização de estudos experimentais planejados, os chamados delineamentos experimentais,
+é muito comum em áreas como a engenharia, biologia e medicina.
+Em geral, o pesquisador tem interesse em verificar como determinados fatores
+influenciam alguma característica de interesse (variável resposta).
+
+Para comparação entre os diferentes fatores várias metodologias podem ser utilizadas,
+sendo que a escolha vai depender da maneira com que a característica de interesse foi medida.
+Alguns exemplos das técnicas que podem ser utilizadas são:
+
+ - Comparações de médias ou medianas: teste t-Student ou teste de Wilcoxon-Mann-Whitney;
+
+ - Comparações de tabelas de contingência: teste qui-quadrado;
+
+ - Comparações de curvas de sobrevivência: teste log-rank.
+
+Independente da forma com que a característica foi mensurada,
+quando se compara diferentes fatores simultaneamente sob o ponto de vista estatístico
+estamos realizando inferência simultânea. Seja por meio de
+intervalos de confiança simultâneos ou testes de hipóteses simultâneas.
+
+Considere o interesse em comparar a média de $k$ fatores, ou seja,
+testar $m = \dfrac{k\,(k- 1)}{2}$ hipóteses da forma
+
+$$
+\mathcal{H}_0: \mu_i = \mu_j \quad \text{versus} \quad
+\mathcal{H}_1: \mu_i \neq \mu_j
+$$
+com $i \neq j$.
+
+Quando hipóteses estatísticas são testadas podemos cometer o erro do Tipo I, isto é,
+a probabilidade de rejeitar a hipótese nula quando a mesma é verdadeira.
+No caso das comparações múltiplas existem dois tipos de Erro do Tipo I:
+
+ - Erro do Tipo I por comparação ($\alpha$): Probabilidade de ocorrer um Erro do Tipo I em qualquer comparação.
+
+ - Erro do Tipo I por experimento ($\alpha_f$): Probabilidade de um ou mais Erro do Tipo I em um conjunto (família) de comparações.
+
+Quando os testes simultâneos são independentes a relação entre essas taxas de erro é expressa por
+$$
+\alpha_f = 1 - (1 - \alpha)^m.
+$$
+
+Os testes de hipóteses convencionais, como por exemplo o teste-t ou o teste qui-quadrado,
+não foram propostos para testar simultaneamente várias hipóteses, uma vez que tais testes controlam
+apenas Erro do Tipo I por comparação ($\alpha$). Portanto, quando utilizados em comparações múltiplas eles inflacionam
+o Erro Tipo I por experimento ($\alpha_f$) levando a conclusões equivocadas sobre o experimento.
+
+Seguramente a correção de Bonferroni é a mais conhecida e talvez a mais utilizada por usuários da estatística
+para contornar este problema.
+No entanto, outras correções existem e possuem soluções mais eficazes do que a correção de Bonferroni.
+
+Em um trabalho realizado conjuntamente com meu parceiro [Vinicius Félix](https://twitter.com/H0Vinicius) avaliamos via simulações Monte Carlo o poder e a taxa Erro Tipo I por experimento de 10 correções aplicadas sob o teste-t para comparação de médias entre grupos. O estudo nos permitiu concluir que a correção de Bonferroni foi a segunda pior considerando os critérios utilizados e os cenários estabelecidos. A correção que apresentou melhor desempenho foi a correção de [Benjamini-Hochberg](https://en.wikipedia.org/wiki/False_discovery_rate).
+
+O trabalho completo pode ser encontrado [aqui](/pdf/2018-corrections-t-test.pdf).
+Os códigos utilizados para a simulação estão disponíveis [aqui](https://github.com/AndrMenezes/mcp/tree/master/Scripts/paper).
+
+## Referências
+[Calvo, B. e Santafé, G. (2016) scmamp: Statistical Comparison of Multiple Algorithms in Multiple Problems. The R Journal, 8(1), 248--256.](https://journal.r-project.org/archive/2016/RJ-2016-017/index.html)
+
+[Félix, V. B. e Menezes, A. F. B. (2018) Comparisons of ten corrections methods for t-test in multiple comparisons via Monte Carlo study, 11(1), 74--91](http://siba-ese.unisalento.it/index.php/ejasa/article/view/17017)
+
+[Jin, M. e Wang, B. (2014) Implementing multiple comparisons on Pearson Chi-square test for RxC contingency table in SAS](/pdf/Implementing Multiple Comparisons on Pearson Chi-square Test.pdf)

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt" data-theme=""><head>
+    <title> André Menezes | Álgebra Linear e os Estimadores de Mínimos Quadrados </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Estatística | Cientista de Dados">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Álgebra Linear e os Estimadores de Mínimos Quadrados"/>
+<meta name="twitter:description" content="Uma nota sobre os estimadores de mínimos quadrados"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Estatística | Cientista de Dados</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/pt/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/pt/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/pt/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/pt/publications/"
+                        
+                   title="">Publicações</a></li>
+        
+            
+            <li><a 
+                   href="/pt/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Álgebra Linear e os Estimadores de Mínimos Quadrados</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                21/03/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">3-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introdução" class="section level2">
+<h2>Introdução</h2>
+<p>Em diversas situações práticas nos deparamos com problemas onde
+existe uma variável (<span class="math inline">\(X\)</span>) mais fácil de ser observada e/ou controlada e temos o interesse de predizer outra variável (<span class="math inline">\(Y\)</span>) que, em contrapartida,
+é mais difícil de ser observada e/ou controlada.</p>
+<p>Seguramente, o modelo de regressão linear simples é uma escolha natural para
+descrever a relação entre as duas variáveis e então obter predições de <span class="math inline">\(Y\)</span> atráves da relação estabelecida.</p>
+<p>Neste modelo assumimos que a variavel explicativa <span class="math inline">\(X\)</span> é fixa, isto é, não existe um mecanismo aleatório que gera os valores observados <span class="math inline">\(x_i\)</span>.
+Na prática observamos os seguintes pares <span class="math inline">\((y_1, x_1), (y_2,x_2), \ldots, (y_n,x_n)\)</span>, de forma que a relação entre as variáveis é expressa por</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1\,x_i + \varepsilon_i, \qquad i = 1,2, \ldots, n
+\]</span>
+em que <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> são constantes desconhecidas (parâmetros) e <span class="math inline">\(\varepsilon_i\)</span> é um erro aleatório que não conseguimos controlar durante o
+experimento.</p>
+</div>
+<div id="álgebra-linear" class="section level2">
+<h2>Álgebra Linear</h2>
+<p>Note que a variável resposta (<span class="math inline">\(Y\)</span>) é escrita como <em>combinação linear</em> da variável independente (<span class="math inline">\(X\)</span>) mais o erro aleatório (<span class="math inline">\(\varepsilon_i\)</span>).
+Em notação matricial o modelo fica escrito da seguinte forma</p>
+<p><span class="math display">\[
+\textbf{y} = \textbf{X}\,\boldsymbol{\beta} + \boldsymbol{\varepsilon}
+\]</span>
+em que</p>
+<ul>
+<li><p><span class="math inline">\(\textbf{y} = (y_1, \ldots, y_n)^\top\)</span>;</p></li>
+<li><p><span class="math inline">\(\textbf{X} = (\textbf{1} \vert \boldsymbol{x})\)</span> é uma matrix <span class="math inline">\(n\times 2\)</span>, sendo
+<span class="math inline">\(\textbf{1}\)</span> um vetor coluna de uns e <span class="math inline">\(\boldsymbol{x} = (x_1, \ldots, x_n)^\top\)</span>;</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\beta} = (\beta_0, \beta_1)^\top\)</span>;</p></li>
+<li><p><span class="math inline">\(\boldsymbol{\varepsilon} = (\varepsilon_1, \ldots, \varepsilon_n)^\top\)</span>.</p></li>
+</ul>
+<p>A componente de erro aleatório, <span class="math inline">\(\boldsymbol{\varepsilon}\)</span>, indica que <span class="math inline">\(\textbf{y}\)</span>
+não possui uma relação determinística com <span class="math inline">\(\textbf{X}\)</span>.
+Em outras palavras, podemos dizer que o vetor <span class="math inline">\(\textbf{y}\)</span> não esta no mesmo <em>espaço vetorial gerado pelas colunas da matriz</em> <span class="math inline">\(\textbf{X}\)</span>. Tal espaço será denota por <span class="math inline">\(C(X)\)</span>.</p>
+<p>Portanto, nosso objetivo é encontrar um vetor
+<span class="math inline">\(\widehat{\boldsymbol{\beta}} = (\widehat{\beta}_0, \widehat{\beta}_1)^\top\)</span> que projete o vetor
+<span class="math inline">\(\textbf{y}\)</span> em <span class="math inline">\(C(X)\)</span>. Existem infinitos vetores desse tipo. No entanto, existe apenas
+um vetor <span class="math inline">\(\widehat{\boldsymbol{\beta}}\)</span> no qual a distância
+<span class="math inline">\(\textbf{y}\)</span> ao espaço vetorial <span class="math inline">\(C(X)\)</span> é minima. Este vetor é a <em>projeção ortogonal</em> de
+<span class="math inline">\(\textbf{y}\)</span> em <span class="math inline">\(C(\textbf{X})\)</span>.</p>
+<p>Vamos supor <span class="math inline">\(n = 3\)</span> então <span class="math inline">\(C(\textbf{X})\)</span> é um subespaço vetorial de <span class="math inline">\(\mathbb{R}^3\)</span> e
+temos a seguinte representação:</p>
+<p><img src="img/representation.png" style="display: block; margin: auto;" /></p>
+<p>Sabemos então que <span class="math inline">\(\boldsymbol{\varepsilon}\)</span> é perpendicular a <span class="math inline">\(C(\textbf{X})\)</span>, logo o produto interno
+entre <span class="math inline">\(\boldsymbol{\varepsilon}\)</span> e <span class="math inline">\(\textbf{X}\)</span> é <span class="math inline">\(0\)</span>. Ou seja,</p>
+<p><span class="math display">\[
+\textbf{X}\cdot \boldsymbol{\varepsilon} = 0.
+\]</span></p>
+<p>Sabemos também que</p>
+<p><span class="math display">\[\varepsilon = \textbf{y} - \widehat{\textbf{y}} = \textbf{y} - \textbf{X}\,\widehat{\boldsymbol{\beta}}.\]</span></p>
+<p>Assim,</p>
+<p><span class="math display">\[\textbf{X}\cdot \varepsilon = \textbf{X}\cdot (\textbf{y} - \textbf{X}\,\widehat{\boldsymbol{\beta}}) = \textbf{X}^\top\,(\textbf{y} - \textbf{X}\,\widehat{\boldsymbol{\beta}})\]</span></p>
+<p><span class="math display">\[\textbf{X}^\top\,\textbf{X}\,\widehat{\boldsymbol{\beta}} = \textbf{X}^\top\,\textbf{y} \qquad (\text{equações normais})\]</span></p>
+<p>Neste ponto devemos observar que só vai existir solução se:</p>
+<ul>
+<li><span class="math inline">\(\textbf{X}^\top\,\textbf{X}\)</span> tiver posto completo;</li>
+<li>o que implica que as colunas de <span class="math inline">\(\textbf{X}\)</span> devem ser linearmente independentes.</li>
+</ul>
+<p>Note que a matriz <span class="math inline">\(\textbf{X}\)</span> é composta pelos vetores <span class="math inline">\(\mathbb{1}\)</span> e <span class="math inline">\(x_i\)</span>.
+O vetor <span class="math inline">\(x_i\)</span> só será combinação linear de <span class="math inline">\(\mathbb{1}\)</span> se os valores observados forem todos iguais,
+o que na prática não faz nenhum sentido.</p>
+<p>Dessa forma, a solução das equações normais é dada por</p>
+<p><span class="math display">\[
+\widehat{\boldsymbol{\beta}} = (\textbf{X}^\top\,\textbf{X})^{-1}\,\textbf{X}^\top\,\textbf{y}.
+\]</span></p>
+</div>
+<div id="conclusões" class="section level2">
+<h2>Conclusões</h2>
+<p>Vimos que os estimadores de mínimos quadrados podem ser obtidos utilizando ferramentas da
+álgebra linear sem suposição da distribuição dos erros.
+Contudo, para estudar o comportamento dos estimadores, realizar inferências acerca dos parâmetros e predizer novas observações
+será necessário impor suposições com relação a distribuição dos <span class="math inline">\(\boldsymbol{\varepsilon}\)</span>.
+Neste ponto que surge a estatística!</p>
+</div>
+<div id="referências" class="section level2">
+<h2>Referências</h2>
+<p><a href="https://medium.com/@andrew.chamberlain/the-linear-algebra-view-of-least-squares-regression-f67044b7f39b">The Linear Algebra View of Least-Squares Regression</a></p>
+<p><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/lecture-16-projection-matrices-and-least-squares/">Linear Algebra: Projection matrices and least squares</a></p>
+<p><a href="https://www.amazon.com/Linear-Regression-Analysis-George-Seber/dp/0471415405">Linear Regression Analysis</a></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/pt/categories/regress%C3%A3o-linear/">regressão linear</a><a class="category" href="/pt/categories/m%C3%ADnimos-quadrados/">mínimos quadrados</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

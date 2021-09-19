@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>likelihood on André Menezes</title>
+    <link>http://AndrMeneze.github.io/categories/likelihood/</link>
+    <description>Recent content in likelihood on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/categories/likelihood/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autoregressive time series models</title>
+      <link>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</guid>
+      
+        <description>Simulation, estimation and forecast AR(1)</description>
+      
+    </item>
+    
+  </channel>
+</rss>

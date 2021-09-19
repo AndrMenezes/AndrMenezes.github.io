@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt" data-theme=""><head>
+    <title> André Menezes | Correções do Viés dos Estimadores de Máxima Verossimilhança </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Estatística | Cientista de Dados">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/pt/post/2019-09-12-corre%C3%A7%C3%B5es-do-vi%C3%A9s-dos-estimadores-de-m%C3%A1xima-verossimilhan%C3%A7a/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Correções do Viés dos Estimadores de Máxima Verossimilhança"/>
+<meta name="twitter:description" content="Principais métodos para correção de viés dos estimadores de máxima verossimilhança"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Estatística | Cientista de Dados</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/pt/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/pt/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/pt/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/pt/publications/"
+                        
+                   title="">Publicações</a></li>
+        
+            
+            <li><a 
+                   href="/pt/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Correções do Viés dos Estimadores de Máxima Verossimilhança</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                12/09/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">3-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/pt/post/2019-09-12-corre%C3%A7%C3%B5es-do-vi%C3%A9s-dos-estimadores-de-m%C3%A1xima-verossimilhan%C3%A7a/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introdução" class="section level2">
+<h2>Introdução</h2>
+<p>O termo viés é bastante usual na estatística para expressar um erro sistemático que muitas vezes pode ser identificado e
+até mesmo corrigido.
+No contexto da inferência estatística o termo viés esta relacionado a uma importante propriedade dos estimadores.</p>
+<p>Como discutido neste <a href="\url%7Bhttps://andrefbm.netlify.com/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/%7D"><em>post</em></a> o método da máxima verossimilhança é bastante utilizado na prática,
+devido seu apelo intuitivo e as propriedades que desfruta.
+Entretanto, as propriedades estatísticas que fazem dos estimadores de máxima verossimilhança (EMV) atraentes são,
+em sua maioria, propriedades assintóticas, isto é, são válidas para grandes amostras.
+Por exemplo, os EMV possuem um viés de ordem <span class="math inline">\(\mathcal{O}(n^{-1})\)</span>, em que <span class="math inline">\(n\)</span> é tamanho da amostra,
+ou seja, esse viés reduz a medida que a amostra aumenta.
+Portanto, para amostras de tamanho pequeno ou moderado os EMV podem ser altamente tendenciosos.</p>
+<p>Seja <span class="math inline">\({\widehat{\theta}}\)</span> o EMV
+do parâmetro <span class="math inline">\({\theta}\)</span>, então o viés do estimador é dado por
+<span class="math display">\[\mathcal{B}\left(\widehat{{\theta}}\right) = \mathbb{E}\left({\widehat{\theta}}\right) - {\theta}\]</span>
+em que <span class="math inline">\(\mathbb{E}(\cdot)\)</span> denota a esperança com relação a distribuição amostral do estimador
+<span class="math inline">\(\widehat{{\theta}}\)</span>.</p>
+<p>Em vários modelos estatísticos não é possível determinar o EMV por meio de uma formula explícita, então
+obtemos <span class="math inline">\({\widehat{\theta}}\)</span> numericamente, isto é, maximização a função de log-verossimilhança.
+Nestes casos, é natural pensarmos que não seja possível encontrar o viés de <span class="math inline">\({\widehat{\theta}}\)</span>.
+Porém, existem na literatura ao menos três abordagens para correção do viés dos EMV em amostras finitas.
+Neste <em>post</em> irei descrever brevemente tais métodos. Uma discussão mais detalhada pode ser encontrada
+<a href="https://github.com/AndrMenezes/si2017/raw/master/final_report.pdf">aqui</a>.</p>
+</div>
+<div id="abordagens" class="section level2">
+<h2>Abordagens</h2>
+<p>Utilizando expansão de Taylor até a segunda ordem sob o vetor escore, <a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/j.2517-6161.1968.tb00724.x">Cox e Snell (1968)</a> desenvolveram uma metodologia que permite obter expressões analíticas para o viés dos EMV.
+Este método tem sido bastante explorado na literatura para diferentes modelos estatísticos.
+Conjuntamente com o professor Josmar desenvolvi vários trabalhos deduzindo expressões analíticas para o viés
+dos parâmetros de diferentes modelos estatísticos. O principal destaque é o artigo <a href="https://journal.r-project.org/archive/2017/RJ-2017-055/index.html">mle.tools: An R Package for Maximum Likelihood Bias Correction</a>,
+publicado na revista <a href="https://journal.r-project.org/">R Journal</a>, onde avaliamos a eficiência da biblioteca <strong>mle.tools</strong> para estimação do viés de várias distribuições de probabilidade.</p>
+<p>Uma segunda abordagem foi proposta por <a href="https://www.jstor.org/stable/2336755?seq=1#page_scan_tab_contents">Firth (1993)</a> e é considerada de preventiva, pois o autor propõe transformar o
+vetor escore antes de obter a(s) estimativa(s) de máxima verossimilhança. Para maiores detalhes desta metodologia
+recomendo o excelente livro <a href="https://www.springer.com/gp/book/9783642552540">An Introduction to Bartlett Correction and Bias Reduction</a> dos professores Gauss e Cribari da UFPE.</p>
+<p>Por fim, vale mencionar que métodos de reamostragem como o Bootstrap e Jacknife são alternativas computacionais bastante
+interessante que também podem ser utilizadas para estimação do viés.
+Um exemplo prático utilizando métodos Bootstrap pode ser encontrado neste <a href="https://github.com/AndrMenezes/sts2017/raw/master/work5/draft-5.pdf">trabalho</a>.</p>
+</div>
+<div id="referências" class="section level2">
+<h2>Referências</h2>
+<p><a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/j.2517-6161.1968.tb00724.x">A General Definition of Residuals</a></p>
+<p><a href="https://www.springer.com/gp/book/9783642552540">An Introduction to Bartlett Correction and Bias Reduction</a></p>
+<p><a href="https://www.jstor.org/stable/2336755?seq=1#page_scan_tab_contents">Bias Reduction of Maximum Likelihood Estimates</a></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/pt/categories/infer%C3%AAncia/">inferência</a><a class="category" href="/pt/categories/verossimilhan%C3%A7a/">verossimilhança</a><a class="category" href="/pt/categories/corre%C3%A7%C3%A3o-de-vi%C3%A9s/">correção de viés</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

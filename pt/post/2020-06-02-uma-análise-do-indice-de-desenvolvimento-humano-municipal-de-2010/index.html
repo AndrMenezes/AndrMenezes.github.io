@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt" data-theme=""><head>
+    <title> André Menezes | Modelos de Regressão Beta e Simples aplicados ao IDHM de 2010 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Estatística | Cientista de Dados">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/pt/post/2020-06-02-uma-an%C3%A1lise-do-indice-de-desenvolvimento-humano-municipal-de-2010/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Modelos de Regressão Beta e Simples aplicados ao IDHM de 2010"/>
+<meta name="twitter:description" content="Uma análise do índice de desenvolvimento humano municipal de 2010"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Estatística | Cientista de Dados</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/pt/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/pt/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/pt/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/pt/publications/"
+                        
+                   title="">Publicações</a></li>
+        
+            
+            <li><a 
+                   href="/pt/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Modelos de Regressão Beta e Simples aplicados ao IDHM de 2010</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                02/06/2020
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">2-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/pt/post/2020-06-02-uma-an%C3%A1lise-do-indice-de-desenvolvimento-humano-municipal-de-2010/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>No fim da minha graduação, em 2018, realizei um trabalho juntamente com meu caro amigo e cientista
+de dados Wesley Furriel, que acabou sendo publicado na Revista Brasileira de Biometria em 2019.
+Neste trabalho, realizamos um estudo empírico para investigar a relação do Índice de Desenvolvimento Humano Municipal
+(IDHM) de 2010 com variáveis de caráter socioeconômico e espacial.
+Em particular, selecionamos variáveis que não são empregadas diretamente na construção do IDHM, porém
+que nos permitiram averiguar sua consonância com demais medidas que buscam expressar
+as aspectos da realidade social do município, tais como desigualdade, vulnerabilidade infantil,
+habitação e região.</p>
+<p>Compreender a relação do IDHM com outras variáveis que mensuram a realidade do município é, sob
+o ponto de vista prático, importante e tem sido estudado e utilizado na administração pública brasileira.
+Por exemplo, o trabalho de Kieling (2014) estudou 14 politicas públicas, em âmbito federal e governamental,
+realizadas entre 1998 e 2013, avaliando como o IDHM é utilizado, seja como critério de de elegibilidade de
+municípios para o recebimento de programas, recursos, políticas públicas,financiamentos públicos ou
+até mesmo parte de elaboração de projetos de lei.
+O IDHM e mais de 200 indicadores socioeconômicos estão disponíveis no Atlas do Desenvolvimento Humano.</p>
+<p>Como conhecido o IDHM varia entre 0 e 1, sendo que quanto mais próximo de 1, maior o desenvolvimento humano
+do município. Nestes casos, o modelo de regressão sob suposição Normal
+não é adequado. Isso nos motivou a comparar os modelos de regressão Beta e Simplex. Nossa comparação
+foi realizada considerando critérios de informação e a análise de resíduos.</p>
+<p>Concluímos que ambos os modelos apresentaram ajuste satisfatório aos dados com uma vantagem do modelo Beta.
+Além disso, ambos os modelos levaram a conclusões similares em relação ao efeito das variáveis explicativas
+no IDHM. Entre as interpretações obtidas na nossa modelagem destaco as seguintes:</p>
+<p>Importante mencionar que as variáveis que compõem o IDHM são coletadas durante o censo demográfico, que
+ocorrer somente de 10 em 10 anos. Nesse sentido, nossa análise apresenta um viés temporal, pois os dados
+utilizados são referente ao último censo realizado o censo de 2010.</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/pt/categories/regress%C3%A3o/">regressão</a><a class="category" href="/pt/categories/idhm/">IDHM</a><a class="category" href="/pt/categories/distribui%C3%A7%C3%A3o-beta/">distribuição Beta</a><a class="category" href="/pt/categories/distribui%C3%A7%C3%A3o-simplex/">distribuição Simplex</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

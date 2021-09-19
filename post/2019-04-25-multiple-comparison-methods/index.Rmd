@@ -1,0 +1,86 @@
+---
+title: Multiple comparison methods
+summary: A note on multiple comparison methods
+author: André Felipe Berdusco Menezes
+date: "2019-04-25"
+draft: false
+categories:
+  - multiple comparisons
+  - hypotheses test
+  - statistical inference
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+Conducting planned experimental studies, the so-called experimental design, is very
+common in areas such as, engineering, biology and medicine.
+In general, the researcher has the interest in investigate how certain factors influence
+some characteristic of interest, the response variable.
+
+To compare different factors several methodologies can be used. The choice
+depending on the nature of characteristic of interest was measure.
+Some examples of techniques that can be used are:
+
+- Comparisons of means: [Student's t-test](https://en.wikipedia.org/wiki/Student%27s_t-test)
+
+- Comparisons of medians: [Wilcoxon–Mann–Whitney test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test)
+
+- Comparisons of contingency tables: [Chi-squared test](https://en.wikipedia.org/wiki/Chi-squared_test);
+
+- Comparisons of survival curves: [Logrank test](https://en.wikipedia.org/wiki/Logrank_test).
+
+Regardless the nature of characteristic of interest, in the comparison of several factors
+simultaneously under the statistical point of view we are conducting **simultaneously inference**,
+either through simultaneous confidence intervals or simultaneous hypothesis tests.
+
+Consider the interest in comparing the means of $k$ factor, i.e., testing $m = \dfrac{k\,(k- 1)}{2}$
+hypotheses of the form
+$$
+\mathcal{H}_0: \mu_i = \mu_j \quad \text{versus} \quad
+\mathcal{H}_1: \mu_i \neq \mu_j
+$$
+where $i \neq j$.
+
+When conduct a simple statistical hypothesis test it can happen the Type I error, i.e.,
+the probability to reject the null hypothesis when it is true.
+In case of multiple comparisons, there are two kinds of Type I error:
+
+- Comparison-wise error rate $(\alpha)$: probability of making a Type I error in any comparison.
+
+- Family-wise error rate $(\alpha_f)$: probability of making one or more Type I error in a set (family) of comparisons.
+
+When the simultaneous tests are independents the relationship between these error rates is expressed by:
+$$
+\alpha_f = 1 - (1 - \alpha)^m.
+$$
+
+The conventional hypothesis tests, e.g., the Student's t-test and the Chi-squared test,
+are not proposed to evaluate several hypoteses simultaneously, since such tests control only
+the comparison-wise Type I error $(\alpha)$. Thus, when used in multiple comparisons problems
+they inflate the family-wise Type I error $(\alpha_f)$, leading to misleading interpretations of the study.
+
+Certainly the [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction)
+is the well known and perhaps the most used by
+statistics users in order to overcome this issue.
+However, several other corrections are available and have better statistical properties than
+the Bonferroni correction.
+
+In a joint work with [Vinicius Félix](https://twitter.com/vbfelix), we evaluate by
+Monte Carlo simulations the power and family-wise Type I error rate of ten corrections applied
+on Student's t-test for means comparisons between groups in different scenarios.
+We conclude that the Bonferroni correction was the second worst based on the evaluate
+criteria and scenarios. The [Benjamini-Hochberg](https://en.wikipedia.org/wiki/False_discovery_rate)
+correction was provide the best performance among the ten corrections.
+
+More details of the paper can be found [here](/pdf/papers/2018__corrections_t-test.pdf).
+The codes used for the simulations are available [here](https://github.com/AndrMenezes/mcp/tree/master/Scripts/paper)
+
+## References
+[Calvo, B. e Santafé, G. (2016) scmamp: Statistical Comparison of Multiple Algorithms in Multiple Problems. The R Journal, 8(1), 248--256.](https://journal.r-project.org/archive/2016/RJ-2016-017/index.html)
+
+[Félix, V. B. e Menezes, A. F. B. (2018) Comparisons of ten corrections methods for t-test in multiple comparisons via Monte Carlo study, 11(1), 74--91](http://siba-ese.unisalento.it/index.php/ejasa/article/view/17017)
+
+[Jin, M. e Wang, B. (2014) Implementing multiple comparisons on Pearson Chi-square test for RxC contingency table in SAS](/pdf/Implementing Multiple Comparisons on Pearson Chi-square Test.pdf)

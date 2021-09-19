@@ -1,0 +1,64 @@
+---
+title: Modelos de Regressão Beta e Simples aplicados ao IDHM de 2010
+summary: Uma análise do índice de desenvolvimento humano municipal de 2010
+author: André Felipe Berdusco Menezes
+date: '2020-06-02'
+draft: false
+categories:
+  - regressão
+  - IDHM
+  - distribuição Beta
+  - distribuição Simplex
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+
+No fim da minha graduação, em 2018, realizei um trabalho juntamente com meu caro amigo e cientista
+de dados Wesley Furriel, que acabou sendo publicado na Revista Brasileira de Biometria em 2019.
+Neste trabalho, realizamos um estudo empírico para investigar a relação do Índice de Desenvolvimento Humano Municipal
+(IDHM) de 2010 com variáveis de caráter socioeconômico e espacial.
+Em particular, selecionamos variáveis que não são empregadas diretamente na construção do IDHM, porém
+que nos permitiram averiguar sua consonância com demais medidas que buscam expressar
+as aspectos da realidade social do município, tais como desigualdade, vulnerabilidade infantil,
+habitação e região.
+
+Compreender a relação do IDHM com outras variáveis que mensuram a realidade do município é, sob
+o ponto de vista prático, importante e tem sido estudado e utilizado na administração pública brasileira.
+Por exemplo, o trabalho de Kieling (2014) estudou 14 politicas públicas, em âmbito federal e governamental,
+realizadas entre 1998 e 2013, avaliando como o IDHM é utilizado, seja como critério de de elegibilidade de
+municípios para o recebimento de programas, recursos, políticas públicas,financiamentos públicos ou 
+até mesmo parte de elaboração de projetos de lei.
+O IDHM e mais de 200 indicadores socioeconômicos estão disponíveis no Atlas do Desenvolvimento Humano.
+
+
+Como conhecido o IDHM varia entre 0 e 1, sendo que quanto mais próximo de 1, maior o desenvolvimento humano
+do município. Nestes casos, o modelo de regressão sob suposição Normal
+não é adequado. Isso nos motivou a comparar os modelos de regressão Beta e Simplex. Nossa comparação
+foi realizada considerando critérios de informação e a análise de resíduos.
+
+Concluímos que ambos os modelos apresentaram ajuste satisfatório aos dados com uma vantagem do modelo Beta.
+Além disso, ambos os modelos levaram a conclusões similares em relação ao efeito das variáveis explicativas
+no IDHM. Entre as interpretações obtidas na nossa modelagem destaco as seguintes:
+
+\begin{itemize}
+	\item Municípios com alta proporção de crianças em extrema pobreza tendem
+	a ser menos desenvolvidos. Essa mesma relação também foi identificada para
+	municípios com alta proporção de pessoas em domicílios com abastecimento de
+	água e esgoto inadequados e elevada mortalidade infantil (até um ano de idade).
+
+	\item Os municípios que apresentam alto índice de Gini, portanto possuem maior
+	desigualdade na distribuição de renda, tendem a apresentar maiores Índices de
+	Desenvolvimento Humano.
+
+	\item Em relação as regiões brasileira, constatamos que quando comparadas ao Sul,
+	com exceção da região Sudeste todas as outras apresentam IDHM inferiores.
+\end{itemize}
+
+
+Importante mencionar que as variáveis que compõem o IDHM são coletadas durante o censo demográfico, que
+ocorrer somente de 10 em 10 anos. Nesse sentido, nossa análise apresenta um viés temporal, pois os dados
+utilizados são referente ao último censo realizado o censo de 2010.

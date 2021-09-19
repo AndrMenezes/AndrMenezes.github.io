@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>superfície de resposta on André Menezes</title>
+    <link>http://AndrMeneze.github.io/pt/categories/superf%C3%ADcie-de-resposta/</link>
+    <description>Recent content in superfície de resposta on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/pt/categories/superf%C3%ADcie-de-resposta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metodologia de Superfície de Resposta</title>
+      <link>http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</guid>
+      
+        <description>Uma breve discussão sobre a metodologia de superfície de resposta</description>
+      
+    </item>
+    
+  </channel>
+</rss>

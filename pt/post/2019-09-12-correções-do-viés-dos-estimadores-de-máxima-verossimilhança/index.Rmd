@@ -1,0 +1,66 @@
+---
+title: Correções do Viés dos Estimadores de Máxima Verossimilhança
+summary: Principais métodos para correção de viés dos estimadores de máxima verossimilhança
+author: André Felipe Berdusco Menezes
+date: '2019-09-12'
+draft: false
+categories:
+  - inferência estatística
+  - verossimilhança
+  - correção de viés
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introdução
+
+O termo viés é bastante usual na estatística para expressar um erro sistemático que muitas vezes pode ser identificado e
+até mesmo corrigido.
+No contexto da inferência estatística o termo viés esta relacionado a uma importante propriedade dos estimadores.
+
+Como discutido neste [*post*](\url{https://andrefbm.netlify.com/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/}) o método da máxima verossimilhança é bastante utilizado na prática,
+devido seu apelo intuitivo e as propriedades que desfruta.
+Entretanto, as propriedades estatísticas que fazem dos estimadores de máxima verossimilhança (EMV) atraentes são,
+em sua maioria, propriedades assintóticas, isto é, são válidas para grandes amostras.
+Por exemplo, os EMV possuem um viés de ordem $\mathcal{O}(n^{-1})$, em que $n$ é tamanho da amostra,
+ou seja, esse viés reduz a medida que a amostra aumenta.
+Portanto, para amostras de tamanho pequeno ou moderado os EMV podem ser altamente tendenciosos.
+
+Seja ${\widehat{\theta}}$ o EMV
+do parâmetro ${\theta}$, então o viés do estimador é dado por
+$$\mathcal{B}\left(\widehat{{\theta}}\right) = \mathbb{E}\left({\widehat{\theta}}\right) - {\theta}$$
+em que $\mathbb{E}(\cdot)$ denota a esperança com relação a distribuição amostral do estimador
+$\widehat{{\theta}}$.
+
+Em vários modelos estatísticos não é possível determinar o EMV por meio de uma formula explícita, então
+obtemos ${\widehat{\theta}}$ numericamente, isto é, maximização a função de log-verossimilhança.
+Nestes casos, é natural pensarmos que não seja possível encontrar o viés de ${\widehat{\theta}}$.
+Porém, existem na literatura ao menos três abordagens para correção do viés dos EMV em amostras finitas.
+Neste *post* irei descrever brevemente tais métodos. Uma discussão mais detalhada pode ser encontrada
+[aqui](https://github.com/AndrMenezes/si2017/raw/master/final_report.pdf).
+
+## Abordagens
+
+Utilizando expansão de Taylor até a segunda ordem sob o vetor escore, [Cox e Snell (1968)](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.2517-6161.1968.tb00724.x) desenvolveram uma metodologia que permite obter expressões analíticas para o viés dos EMV.
+Este método tem sido bastante explorado na literatura para diferentes modelos estatísticos.
+Conjuntamente com o professor Josmar desenvolvi vários trabalhos deduzindo expressões analíticas para o viés
+dos parâmetros de diferentes modelos estatísticos. O principal destaque é o artigo [mle.tools: An R Package for Maximum Likelihood Bias Correction](https://journal.r-project.org/archive/2017/RJ-2017-055/index.html),
+publicado na revista [R Journal](https://journal.r-project.org/), onde avaliamos a eficiência da biblioteca **mle.tools** para estimação do viés de várias distribuições de probabilidade.
+
+Uma segunda abordagem foi proposta por [Firth (1993)](https://www.jstor.org/stable/2336755?seq=1#page_scan_tab_contents) e é considerada de preventiva, pois o autor propõe transformar o
+vetor escore antes de obter a(s) estimativa(s) de máxima verossimilhança. Para maiores detalhes desta metodologia
+recomendo o excelente livro [An Introduction to Bartlett Correction and Bias Reduction](https://www.springer.com/gp/book/9783642552540) dos professores Gauss e Cribari da UFPE.
+
+Por fim, vale mencionar que métodos de reamostragem como o Bootstrap e Jacknife são alternativas computacionais bastante
+interessante que também podem ser utilizadas para estimação do viés.
+Um exemplo prático utilizando métodos Bootstrap pode ser encontrado neste [trabalho](https://github.com/AndrMenezes/sts2017/raw/master/work5/draft-5.pdf).
+
+## Referências
+[A General Definition of Residuals](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.2517-6161.1968.tb00724.x)
+
+[An Introduction to Bartlett Correction and Bias Reduction](https://www.springer.com/gp/book/9783642552540)
+
+[Bias Reduction of Maximum Likelihood Estimates](https://www.jstor.org/stable/2336755?seq=1#page_scan_tab_contents)

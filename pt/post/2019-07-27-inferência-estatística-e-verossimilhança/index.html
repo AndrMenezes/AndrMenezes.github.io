@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt" data-theme=""><head>
+    <title> André Menezes | Inferência Estatística e Verossimilhança </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Estatística | Cientista de Dados">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Inferência Estatística e Verossimilhança"/>
+<meta name="twitter:description" content="O conceito de inferência estatística e o paradigma da verossimilhança"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Estatística | Cientista de Dados</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/pt/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/pt/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/pt/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/pt/publications/"
+                        
+                   title="">Publicações</a></li>
+        
+            
+            <li><a 
+                   href="/pt/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Inferência Estatística e Verossimilhança</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                27/07/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introdução" class="section level2">
+<h2>Introdução</h2>
+<p>Em sua essência a ciência estatística procura maneiras de mensurar a incerteza.
+O objetivo principal da estatística é realizar inferências sobre uma população ou fenômeno a partir de uma amostra
+aleatória. A inferência é conduzida considerando que o fenômeno pode ser representado por um modelo, isto é, uma simplificação de
+uma realidade mais complexa.
+Dizemos que um bom modelo deve compreender e retratar as principais características do fenômeno.</p>
+<p>Em geral, o modelo estatístico contém uma componente estocástica que representa as incertezas do fenômeno
+e quantidades fixas e desconhecidas denominadas parâmetros.
+A inferência estatística é realizada sobre os parâmetros do modelo utilizando os dados amostrais.
+Note que ao realizar inferências sobre os parâmetros, fazemos inferências sobre o modelo e, portanto, sobre o fenômeno
+que aquele modelo supostamente descreve.</p>
+<p>A inferência estatística pode ser realizada de três diferentes formas:</p>
+<ol style="list-style-type: decimal">
+<li>estimação pontual;</li>
+<li>estimação intervalar;</li>
+<li>testes de hipóteses.</li>
+</ol>
+<p>Na literatura, várias abordagens para estimação pontual dos parâmetros foram propostas. Por exemplo, neste
+<a href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-74382018000300555&amp;tlng=en">trabalho</a>
+em parceria com meu orientador, professor <a href="http://lattes.cnpq.br/8899185212821611">Josmar Mazucheli</a> e o professor <a href="https://www.researchgate.net/profile/Sanku_Dey">Sanku Dey</a>,
+discutimos onze métodos para estimação pontual dos parâmetros de um modelo estatístico adequado para fenômenos restritos ao intervalo <span class="math inline">\((0,1).\)</span></p>
+</div>
+<div id="verossimilhança" class="section level2">
+<h2>Verossimilhança</h2>
+<p>Desde que foi proposto por <a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Sir Ronald Fisher</a> em uma série de artigos durante o período de 1912 a 1934 o
+método da máxima verossimilhança é seguramente o mais empregado em situações práticas.
+Os estimadores de máxima verossimilhança (EMV) possuem propriedades desejáveis e são utilizados na construção
+de intervalos de confiança e testes de hipóteses.</p>
+<p>As propriedades que fazem dos estimadores de máxima verossimilhança atraentes são:</p>
+<ul>
+<li><p>assintoticamente não viesados;</p></li>
+<li><p>consistentes;</p></li>
+<li><p>eficientes;</p></li>
+<li><p>invariantes sob transformação;</p></li>
+<li><p>possuem distribuição assintótica Normal.</p></li>
+</ul>
+<p>Assumindo um modelo estatístico parametrizado por um vetor de parâmetros
+<span class="math inline">\(\mathbf{\theta} = (\theta_1, \ldots, \theta_p)^\top\)</span> fixo e desconhecido, a função de verossimilhança,
+<span class="math inline">\(L(\mathbf{\theta} \mid \mathbf{x})\)</span>, é uma medida de plausibilidade com a amostra observada <span class="math inline">\(\mathbf{x}\)</span>,
+tendo como propósito transmitir informações dos dados sobre <span class="math inline">\(\mathbf{\theta}\)</span>.
+Vamos supor que <span class="math inline">\(\mathbf{x} = (x_1, \ldots, x_n)^\top\)</span> é uma amostra independente e identicamente
+distribuída de uma variável aleatória <span class="math inline">\(X\)</span> cuja função densidade de probabilidade <span class="math inline">\(f(x \mid \mathbf{\theta})\)</span> é
+indexada pelo vetor de parâmetros <span class="math inline">\(\mathbf{\theta}\)</span>. Então, a função de verossimilhança é definida por
+<span class="math display">\[\begin{equation}\label{eq:likelihood}
+L(\mathbf{\theta} \mid \mathbf{x}) = \prod_{i=1}^{n}\,f(x_i \mid \mathbf{\theta}).
+\end{equation}\]</span></p>
+<p>Dizemos que <span class="math inline">\(\widehat{\mathbf{\theta}}\)</span> é um estimador de máxima verossimilhança de <span class="math inline">\(\mathbf{\theta}\)</span>
+se <span class="math inline">\(L(\widehat{\mathbf{\theta}} \mid \mathbf{x}) \geq L(\mathbf{\theta} \mid \mathbf{x}), \forall \ \mathbf{\theta}\)</span>.
+Uma vez que a função logaritmo é monótona crescente, por questões de conveniência computacional lidamos com a função de log-verossimilhança, <span class="math inline">\(\ell(\mathbf{\theta} \mid \mathbf{x}) = \log L(\mathbf{\theta} \mid \mathbf{x})\)</span>, pois ambas levam ao mesmo ponto de máximo.
+Usualmente, os EMVs não podem ser expressos em um fórmula analítica,
+assim são obtidos maximizando numericamente a função log-verossimilhança.</p>
+<p>A primeira derivada da função de log-verossimilhança com respeito a <span class="math inline">\(\mathbf{\theta}_j, j = 1, \ldots, p\)</span>, é denominada
+de função escore de Fisher. É possível mostrar que
+<span class="math display">\[\begin{equation*}
+\mathbb{E}\left[\dfrac{\textrm{d}}{\textrm{d}\mathbf{\theta}_j}\,\ell(\mathbf{\theta} \mid \mathbf{x})\right] = 0,
+\end{equation*}\]</span>
+isto é, a função escore tem média zero. Note que a função escore é um vetor de primeiras derivadas parciais, uma para cada elemento de <span class="math inline">\(\mathbf{\theta}\)</span>.
+Se a função log-verossimilhança é côncava, pode-se encontrar o EMV <span class="math inline">\(\widehat{\mathbf{\theta}}\)</span> de
+<span class="math inline">\(\mathbf{\theta}\)</span> igualando a função escore a zero e resolvendo o sistemas de equações.</p>
+<p>Outra quantidade importante presente na teoria da verossimilhança é a matriz informação de Fisher esperada, definida por
+<span class="math display">\[\begin{equation}\label{eq:fisher-esp}
+\mathbf{I}\left(\mathbf{\theta}\right) = \mathbb{E}\left [-\dfrac{\partial^2}{\partial\mathbf{\theta}_j\,\partial\mathbf{\theta}_k} \log f(x \mid \mathbf{\theta})\right]
+\end{equation}\]</span>
+para <span class="math inline">\(j, k = 1, \ldots, p\)</span>.</p>
+<p>O inconveniente de se trabalhar com <span class="math inline">\(\mathbf{I}\)</span> é a dificuldade de obter uma expressão analítica para a esperança.
+Sob certas condições de regularidades, a matriz informação de Fisher observada,
+definida por
+<span class="math display">\[\begin{equation}\label{eq:fisher-obs}
+\mathbf{H}\left(\mathbf{\theta}\right) = -\dfrac{\partial}{\partial\mathbf{\theta}_j\,\partial\mathbf{\theta}_k} \log f(x_i \mid \mathbf{\theta}), %\at[\big]{\mathbf{\theta}=\widehat{\mathbf{\theta}}}
+\end{equation}\]</span>
+é um estimador consistente de <span class="math inline">\(\mathbf{I}\left(\mathbf{\theta}\right)\)</span>.</p>
+<p>O conceito de informação esta associado a curvatura da função de verossimilhança sendo que quanto maior a curvatura mais precisa é a informação contida na verossimilhança. Em outras palavras a matriz de informação de Fisher indica
+a precisão das estimativas dos parâmetros, sendo portanto, imprescindível para construção de intervalos de confiança e testes de hipóteses.</p>
+</div>
+<div id="considerações-finais" class="section level2">
+<h2>Considerações finais</h2>
+<p>Neste texto procurei esclarecer o conceito de inferência e o paradigma da verossimilhança.
+Em um próximo momento irei explorar o conceito de viés e discutir alguns métodos
+para correções de viés dos estimadores de máxima verossimilhança em amostras finitas.</p>
+</div>
+<div id="referências" class="section level2">
+<h2>Referências</h2>
+<p><a href="https://www.springer.com/gp/book/9783642552540">An Introduction to Bartlett Correction and Bias Reduction</a></p>
+<p><a href="https://www.amazon.com.br/Statistical-Inference-George-Casella/dp/0534243126">Statistical Inference</a></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/pt/categories/infer%C3%AAncia/">inferência</a><a class="category" href="/pt/categories/verossimilhan%C3%A7a/">verossimilhança</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

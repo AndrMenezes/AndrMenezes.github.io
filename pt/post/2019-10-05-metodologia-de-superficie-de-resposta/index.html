@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="pt" data-theme=""><head>
+    <title> André Menezes | Metodologia de Superfície de Resposta </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Estatística | Cientista de Dados">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Metodologia de Superfície de Resposta"/>
+<meta name="twitter:description" content="Uma breve discussão sobre a metodologia de superfície de resposta"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Estatística | Cientista de Dados</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenzes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/pt/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/pt/about/"
+                        
+                   title="">Sobre</a></li>
+        
+            
+            <li><a 
+                   href="/pt/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/pt/publications/"
+                        
+                   title="">Publicações</a></li>
+        
+            
+            <li><a 
+                   href="/pt/contact/"
+                        
+                   title="">Contato</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Metodologia de Superfície de Resposta</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                05/10/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">3-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introdução" class="section level2">
+<h2>Introdução</h2>
+<p>Quando o pesquisador possui controle sobre o experimento e seu interesse é determinar a região experimental que otimiza a
+variável resposta, a metodologia de superfície de resposta é uma técnica estatística bastante apropriada.
+Introduzida formalmente por Box e Wilson em 1951,
+os modelos de superfície de resposta assumem que a relação entre os fatores <span class="math inline">\(\mathbf{x} = (x_1, \ldots, x_p)\)</span> (fixos) e a variável resposta <span class="math inline">\(\mathbf{y}\)</span> (aleatória) é
+descrita por um modelo linear, definido por
+<span class="math display">\[\mathbf{y} = f(\mathbf{x}) + \mathbf{\varepsilon}\]</span>
+em que a verdadeira função <span class="math inline">\(f\)</span> é usualmente desconhecida e <span class="math inline">\(\varepsilon\)</span> é denominado de erro aleatório, isto é,
+representa outras fontes de variabilidade que não puderam ser controladas no experimento.</p>
+<p>Na maior parte das situações a verdadeira relação entre <span class="math inline">\(\mathbf{y}\)</span> e <span class="math inline">\(\mathbf{x}\)</span> não é conhecida.
+Assim, aproximações obtidas por meio da expansão de Taylor da função <span class="math inline">\(f\)</span> são consideradas.
+A aproximação mais simples, por exemplo, é o modelo de primeira ordem, o qual considera uma expansão de Taylor de
+primeira ordem.
+Devido sua simplicidade é comum o modelo de primeira ordem apresentar problemas de falta de ajuste,
+principalmente quando a região experimental apresenta alguma curvatura.
+Nestes casos, utiliza-se aproximações de ordem maiores.
+Em geral, modelos de segunda ordem são suficientes para descrever a superfície.</p>
+<p>Outro aspecto relevante para determinar a forma funcional do modelo é a coleta dos dados, ou seja, o delineamento experimental.
+De forma geral, as propriedades desejáveis de um delineamento são:</p>
+<ul>
+<li><p>Rotabilidade: quando a mesma quantidade de informação sobre a superfície de resposta na mesma distância <span class="math inline">\(d\)</span> independente da direção em relação ao ponto central do experimento.</p></li>
+<li><p>Ortogonalidade: quando os efeitos lineares, de interação, quadráticos ou ordem superiores do modelo são independentes.</p></li>
+</ul>
+<p>Com o delineamento estabelecido e o modelo apropriado ajustado o próximo passo é determinar a região ótima ou então
+caminhar até uma região ótima. Para isso, técnicas matemáticas para determinação e caracterização da região ótima são
+utilizadas.
+Leitores interessados em uma discussão mais detalhada com aspectos teóricos sobre a metodologia de superfície de resposta podem acessar este <a href="https://github.com/AndrMenezes/rsm2019/raw/master/report.pdf">trabalho</a>.</p>
+<p>Para ilustrar a aplicação da metodologia de resposta considere o experimento que
+envolve um procedimento para armazenamento de sêmen bovino. O objetivo é compreender sua eficácia.
+As condições experimentais são
+adições da porcentagem de citrato de sódio (<span class="math inline">\(x_1\)</span>),
+porcentagem de glicerol (<span class="math inline">\(x_2\)</span>) e
+o tempo de equilíbrio (<span class="math inline">\(x_3\)</span>) em horas antes do congelamento com temperatura mantida a 5ºC.
+A variável resposta é porcentagem de espermatozoides móveis sobreviventes.</p>
+<p>Para coleta dos dados os pesquisadores adotaram o delineamento Composto Central <span class="math inline">\(2^3\)</span> com um ponto central e ponto axial <span class="math inline">\(\alpha = 2\)</span> sem replicações.</p>
+<p>O modelo final escolhido para descrever o experimento é dado por
+<span class="math display">\[\widehat{y} = 57.769 -1.312z_1 -2.312z_2 + 9.125 z_1 z_2 -9.048z^2_{1} -11.423z^2_{2}\]</span>
+em que <span class="math inline">\(z_i = \frac{x_i - m_i }{h_i}\)</span> é o fator <span class="math inline">\(i\)</span> codificado em -1 e 1, sendo que $ m_i $ denota a média entre o maior e menor valor observado do fator <span class="math inline">\(x_i\)</span> e <span class="math inline">\(h_i\)</span> é metade da diferença entre o maior e o menor valor observado.</p>
+<p>Para estudar a região experimental ótima escrevemos o modelo final na forma canônica
+<span class="math display">\[\widehat{y} = 58.06 - 5.520 w^2_{1} - 14.948w^2_{2}\]</span>
+em que <span class="math inline">\(w_1 = -0.791(z_1 + 0.155) - 0.612(z_2 + 0.163)\)</span> e <span class="math inline">\(w_2 = - 0.612(z_1 + 0.155) + 0.791(z_2 + 0.163)\)</span>.</p>
+<p>Os dois autovalores são negativos, assim o ponto critico é máximo local, sendo ele <span class="math inline">\((z_1,z_2) = (-0.155,-0.163)\)</span> ou
+na escala original dos fatores <span class="math inline">\((x_1,x_2) = (2.891,7.511)\)</span>.
+Uma representação gráfica da superfície de resposta estimada é ilustrada abaixo.</p>
+<p><img align="center" width="800" height="400" src="img/plot_msr.png"></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/pt/categories/superf%C3%ADcie-de-resposta/">superfície de resposta</a><a class="category" href="/pt/categories/regress%C3%A3o-linear/">regressão linear</a></span>
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

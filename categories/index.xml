@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on André Menezes</title>
+    <link>http://AndrMeneze.github.io/categories/</link>
+    <description>Recent content in Categories on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>autoregressive model</title>
+      <link>http://AndrMeneze.github.io/categories/autoregressive-model/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/autoregressive-model/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>likelihood</title>
+      <link>http://AndrMeneze.github.io/categories/likelihood/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/likelihood/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Markov chain</title>
+      <link>http://AndrMeneze.github.io/categories/markov-chain/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/markov-chain/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>statistical inference</title>
+      <link>http://AndrMeneze.github.io/categories/statistical-inference/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/statistical-inference/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>time series</title>
+      <link>http://AndrMeneze.github.io/categories/time-series/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/time-series/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>hypotheses test</title>
+      <link>http://AndrMeneze.github.io/categories/hypotheses-test/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/hypotheses-test/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>multiple comparisons</title>
+      <link>http://AndrMeneze.github.io/categories/multiple-comparisons/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/multiple-comparisons/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>least squares</title>
+      <link>http://AndrMeneze.github.io/categories/least-squares/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/least-squares/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>linear algebra</title>
+      <link>http://AndrMeneze.github.io/categories/linear-algebra/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/linear-algebra/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>linear regression</title>
+      <link>http://AndrMeneze.github.io/categories/linear-regression/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://AndrMeneze.github.io/categories/linear-regression/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

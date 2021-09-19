@@ -1,0 +1,133 @@
+---
+title: Matriz de Projeção e os Resíduos Deletados
+summary: Importância da matriz de projeção nos modelos de regressão linear
+author: André Felipe Berdusco Menezes
+date: '2019-06-25'
+draft: false
+categories:
+  - resíduos deletados
+  - regressão linear
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+
+Avaliar a qualidade do ajuste e as suposições do modelo estatístico utilizado
+é uma tarefa fundamental que compete ao analista de dados.
+No caso dos modelos de regressão linear várias medidas
+podem ser utilizadas para avaliação da qualidade do ajuste,
+por exemplo,
+os resíduos deletados,
+distância de Cook,
+DFFits,
+DFBetas,
+Covratio,
+estatística PRESS, entre outras.
+Além de investigarem a qualidade do ajuste essas medidas dependem, de alguma forma, da matriz de projeção
+$\mathbf{H} = \mathbf{X}\left(\mathbf{X}^\top\,\mathbf{X}\right)^{-1}\mathbf{X}^\top$, em que
+$\mathbf{X}$ é uma matriz de dimensão $n\times p$ composta pelos valores das variáveis explicadas, ou seja,
+
+\begin{equation}\label{eq:X}
+\mathbf{X} = \begin{bmatrix}
+1 & x_{11} & \cdots & x_{1(p-1)}\\
+1 & x_{21} & \cdots & x_{2(p-1)}\\
+\vdots&   \vdots &  \cdots& \vdots \\
+1 & x_{n1} & \cdots & x_{n(p-1)}
+\end{bmatrix}
+\end{equation}
+sendo $x_{ij}$ a $i$-ésima observação da $j$-ésima variável preditora.
+A definição da cada medida e sua interpretação pode ser encontrada [aqui](https://github.com/AndrMenezes/ra2016/raw/master/report.pdf).
+
+Neste *post* irei explorar a relação entre a matriz de projeção $\mathbf{H}$ com os resíduos deletados,
+os quais são úteis, principalmente para identificação de observações aberrantes.
+Para qualquer modelo de regressão os resíduos deletados, também conhecidos como
+resíduos *studentizados*, podem ser definidos como
+\begin{equation}\label{eq:di_1}
+d_i = y_i - \widehat{y}_{i(i)}
+\end{equation}
+em que $y_i$ é o $i$-ésimo valor da variável resposta e
+$\widehat{y}_{i(i)}$ é o $i$-ésimo valor predito da variável resposta sem a $i$-ésima observação,
+ou seja,
+\begin{equation}\label{eq:yhat_i}
+\widehat{y}_{i(i)} = \mathbf{x}_i^\top \widehat{\mathbf{\beta}}_{(i)}
+\end{equation}
+sendo $\mathbf{x}_i = (1, x_{i1}, \ldots, x_{i(p-1)} )^\top$ a $i$-ésima linha de $\mathbf{X}$ e
+$\widehat{\mathbf{\beta}}_{(i)}$ o estimador de mínimos quadrados do modelo de regressão sem a $i$-ésima observação.
+
+Como vimos neste [*post*](https://andrefbm.netlify.com/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/) os estimadores de mínimos quadrados do vetor $\mathbf{\beta}$
+é a projeção ortogonal do vetor $\mathbf{Y}$
+no espaço vetorial gerado pelas colunas da matriz $\mathbf{X}$.
+Dessa forma, excluindo a $i$-ésima observação, obtemos que
+\begin{equation}\label{eq:beta_ii}
+\widehat{\mathbf{\beta}}_{(i)} = \left(\mathbf{X}_{(i)}^\top\,\mathbf{X}_{(i)}\right)^{-1}\mathbf{X}_{(i)}^\top\,\mathbf{Y}_{(i)}
+\end{equation}
+em que $\mathbf{X}_{(i)}$ é a matriz $\mathbf{X}$ excluindo a $i$-ésima linha e
+$\mathbf{Y}_{(i)}$ é o vetor de valores observados da variável resposta excluindo a $i$-ésima observação.
+
+Note, portanto que utilizando os resíduos deletados evitamos que um suposto valor aberrante $y_i$
+influencie o seu respectivo valor predito $\widehat{y}_i$, e então o valor do resíduo $d_i$ tende a ser grande e
+mais propenso a caracterizar uma observação aberrante.
+No entanto, utilizando essa expressão para obter os valores dos resíduos deletados devemos
+excluir a $i$-ésima observação e ajustar o modelo para as demais  $n - 1$ observações. Este procedimento é repetido
+$n$ vezes, ou seja, devemos ajustar $n$ modelos de regressão.
+
+Felizmente, para o caso dos modelos de regressão linear não é necessário realizar tal procedimento, que na prática poderia ser
+computacionalmente custoso, dependendo do tamanho amostral.
+Particularmente, é possível expressar os resíduos deletados em termos do modelo ajustado com todas as observações.
+
+Seja $e_i = y_i - \widehat{y}_i$ o resíduo ordinário e
+$h_{ii} = \mathbf{x}_i^\top\left(\mathbf{X}^\top\,\mathbf{X}\right)^{-1}\mathbf{x}_i$ o elemento da diagonal da matriz de projeção
+$\mathbf{H}$.
+Para obter uma fórmula para $d_i$ usando somente o ajuste com os dados completos devemos escrever
+$\widehat{\mathbf{\beta}}_{(i)}$ em termos da matriz $\mathbf{X}$ e o vetor $\mathbf{Y}$ com todas as observações.
+Observe que
+$$
+\mathbf{X}_{(i)}^\top\,\mathbf{X}_{(i)} = \mathbf{X}^\top\mathbf{X} - \mathbf{x}_i\mathbf{x}_i^\top \qquad \mbox{e} \qquad
+\mathbf{X}_{(i)}^\top\,\mathbf{Y}_{(i)} = \mathbf{X}^\top\,\mathbf{Y} - \mathbf{x}_iy_i
+$$
+
+Além disso, utilizando a fórmula de Sherman–Morrison chegamos que
+$$
+\left(\mathbf{X}_{(i)}^\top\,\mathbf{X}_{(i)}\right)^{-1} =
+\left(\mathbf{X}^\top\mathbf{X}\right)^{-1} + \dfrac{\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\mathbf{x}_i^\top \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}}
+{1 - \mathbf{x}^\top_i\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i}
+$$
+
+Assim, podemos escrever $\widehat{\mathbf{\beta}}_{(i)}$ da seguinte forma
+\begin{eqnarray}
+\widehat{\mathbf{\beta}}_{(i)} &=& \left[\left(\mathbf{X}^\top\mathbf{X}\right)^{-1} +
+\dfrac{\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\mathbf{x}_i^\top \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}}
+{1 - \mathbf{x}^\top_i\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i}\right]\,
+\left(
+\mathbf{X}^\top\,\mathbf{Y} - \mathbf{x}_iy_i
+\right) \nonumber \\ \nonumber
+&=&
+\widehat{\mathbf{\beta}} -  \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,
+\left[\dfrac{y_i\,(1-h_{ii}) - \mathbf{x}_i^\top\widehat{\mathbf{\beta}} + h_{ii}\,y_i}{1-h_{ii}}\right]\\
+&=&
+\widehat{\mathbf{\beta}} - \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\left[\dfrac{y_i - \mathbf{x}^\top_i\widehat{\mathbf{\beta}}}{1-h_{ii}}\right] \nonumber\\\label{eq:beta_ii_2}
+\therefore \widehat{\mathbf{\beta}}_{(i)}&=&
+\widehat{\mathbf{\beta}} - \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\cdot\dfrac{e_i}{1-h_{ii}}.
+\end{eqnarray}
+
+Logo, substituindo a ultima igualdade na expressão de $\widehat{y}_{i(i)}$ concluímos que
+\begin{eqnarray}
+d_i &=& y_i - \mathbf{x}_i^\top\left[\widehat{\mathbf{\beta}} - \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\cdot\dfrac{e_i}{1-h_{ii}}\right] \nonumber\\
+&=&
+y_i - \mathbf{x}_i^\top\widehat{\mathbf{\beta}} + \mathbf{x}_i^\top\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\cdot\dfrac{e_i}{1-h_{ii}} \nonumber\\
+&=&
+e_i + \dfrac{h_{ii}\,e_i}{1 - h_{ii}} \nonumber\\\nonumber
+\therefore d_i &=& \dfrac{e_i}{1 - h_{ii}}.
+\end{eqnarray}
+
+
+
+## Referências
+[Fast computation of cross-validation in linear models](https://robjhyndman.com/hyndsight/loocv-linear-models/)
+
+[Applied Linear Regression Models](https://www.amazon.com.br/Applied-Linear-Regression-Models-Neter/dp/025608601X)
+
+[Linear Regression Analysis](https://www.amazon.com/Linear-Regression-Analysis-George-Seber/dp/0471415405)
