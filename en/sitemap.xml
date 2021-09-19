@@ -3,199 +3,199 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/autoregressive-model/</loc>
+    <loc>http://andrmenezes.github.io/categories/autoregressive-model/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</loc>
+    <loc>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://AndrMeneze.github.io/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://AndrMeneze.github.io/categories/likelihood/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://AndrMeneze.github.io/categories/markov-chain/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://AndrMeneze.github.io/post/</loc>
+    <loc>http://andrmenezes.github.io/categories/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/post/"
+                href="http://andrmenezes.github.io/pt/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/post/"
+                href="http://andrmenezes.github.io/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/statistical-inference/</loc>
+    <loc>http://andrmenezes.github.io/categories/likelihood/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/time-series/</loc>
+    <loc>http://andrmenezes.github.io/categories/markov-chain/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/</loc>
+    <loc>http://andrmenezes.github.io/post/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://andrmenezes.github.io/pt/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://andrmenezes.github.io/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/statistical-inference/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/time-series/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/"
+                href="http://andrmenezes.github.io/pt/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/"
+                href="http://andrmenezes.github.io/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/archives/</loc>
+    <loc>http://andrmenezes.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/archives/"
+                href="http://andrmenezes.github.io/pt/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/archives/"
+                href="http://andrmenezes.github.io/archives/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/hypotheses-test/</loc>
+    <loc>http://andrmenezes.github.io/categories/hypotheses-test/</loc>
     <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/post/2019-04-25-multiple-comparison-methods/</loc>
+    <loc>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</loc>
     <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/multiple-comparisons/</loc>
+    <loc>http://andrmenezes.github.io/categories/multiple-comparisons/</loc>
     <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/least-squares/</loc>
+    <loc>http://andrmenezes.github.io/categories/least-squares/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/linear-algebra/</loc>
+    <loc>http://andrmenezes.github.io/categories/linear-algebra/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</loc>
+    <loc>http://andrmenezes.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/categories/linear-regression/</loc>
+    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/contact/</loc>
+    <loc>http://andrmenezes.github.io/contact/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/contact/"
+                href="http://andrmenezes.github.io/pt/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/contact/"
+                href="http://andrmenezes.github.io/contact/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/about/</loc>
+    <loc>http://andrmenezes.github.io/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/about/"
+                href="http://andrmenezes.github.io/pt/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/about/"
+                href="http://andrmenezes.github.io/about/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/tags/index/</loc>
+    <loc>http://andrmenezes.github.io/tags/index/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/tags/index/"
+                href="http://andrmenezes.github.io/pt/tags/index/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/tags/index/"
+                href="http://andrmenezes.github.io/tags/index/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/publications/</loc>
+    <loc>http://andrmenezes.github.io/publications/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/publications/"
+                href="http://andrmenezes.github.io/pt/publications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/publications/"
+                href="http://andrmenezes.github.io/publications/"
                 />
   </url>
   
   <url>
-    <loc>http://AndrMeneze.github.io/tags/</loc>
+    <loc>http://andrmenezes.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://AndrMeneze.github.io/pt/tags/"
+                href="http://andrmenezes.github.io/pt/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://AndrMeneze.github.io/tags/"
+                href="http://andrmenezes.github.io/tags/"
                 />
   </url>
   

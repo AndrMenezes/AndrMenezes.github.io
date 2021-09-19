@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>regressão linear on André Menezes</title>
-    <link>http://AndrMeneze.github.io/pt/categories/regress%C3%A3o-linear/</link>
+    <link>http://andrmenezes.github.io/pt/categories/regress%C3%A3o-linear/</link>
     <description>Recent content in regressão linear on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/pt/categories/regress%C3%A3o-linear/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/pt/categories/regress%C3%A3o-linear/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Metodologia de Superfície de Resposta</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</guid>
       
         <description>Uma breve discussão sobre a metodologia de superfície de resposta</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Matriz de Projeção e os Resíduos Deletados</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</link>
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</guid>
       
         <description>Importância da matriz de projeção nos modelos de regressão linear</description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Álgebra Linear e os Estimadores de Mínimos Quadrados</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</link>
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</guid>
       
         <description>Uma nota sobre os estimadores de mínimos quadrados</description>
       

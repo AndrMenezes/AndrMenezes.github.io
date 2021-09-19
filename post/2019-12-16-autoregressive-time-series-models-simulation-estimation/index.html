@@ -54,7 +54,7 @@
                 crossorigin="anonymous"></script>
     
     <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://AndrMeneze.github.io/images/site-feature-image.png"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
 
 <meta name="twitter:title" content="Autoregressive time series models"/>
 <meta name="twitter:description" content="Simulation, estimation and forecast AR(1)"/>
@@ -197,7 +197,7 @@
             </div>
 
             
-<script src="http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/header-attrs/header-attrs.js"></script>
+<script src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/header-attrs/header-attrs.js"></script>
 
 
 <div id="introduction" class="section level2">
@@ -257,7 +257,7 @@ log-verossimilhança.</p>
   return(ll)
 }</code></pre>
 <p>Para <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\sigma^2\)</span> fixos a função de verossimilhança perfilhada de <span class="math inline">\(\phi\)</span> para os dados simulados tem o seguinte comportamento.</p>
-<p><img src="http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>A maximização numérica da log-verossimilhança no R é realizada pela função <code>optim</code>. Neste caso, optei
 pelo método BFGS (<code>method = "BFGS"</code>), indiquei para maximizar a função (<code>control = list(fnscale = -1)</code>) e
 pedi para retornar a matriz hessiana (<code>hessian = TRUE</code>).</p>
@@ -287,7 +287,7 @@ yhat &lt;- numeric(n)
 for(t in 2:n) yhat[t] &lt;- phi_hat * y[t-1]
 ts.plot(y)
 lines(yhat + alpha_hat, type = &quot;l&quot;, col = &quot;blue&quot;, lwd = 2)</code></pre>
-<p><img src="http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
         <div class="post-footer">

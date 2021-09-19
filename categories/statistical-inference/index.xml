@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statistical inference on André Menezes</title>
-    <link>http://AndrMeneze.github.io/categories/statistical-inference/</link>
+    <link>http://andrmenezes.github.io/categories/statistical-inference/</link>
     <description>Recent content in statistical inference on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/categories/statistical-inference/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/statistical-inference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Autoregressive time series models</title>
-      <link>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</link>
+      <link>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</link>
       <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</guid>
+      <guid>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</guid>
       
         <description>Simulation, estimation and forecast AR(1)</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Multiple comparison methods</title>
-      <link>http://AndrMeneze.github.io/post/2019-04-25-multiple-comparison-methods/</link>
+      <link>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</link>
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/post/2019-04-25-multiple-comparison-methods/</guid>
+      <guid>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</guid>
       
         <description>A note on multiple comparison methods</description>
       

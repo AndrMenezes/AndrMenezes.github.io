@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linear algebra on André Menezes</title>
-    <link>http://AndrMeneze.github.io/categories/linear-algebra/</link>
+    <link>http://andrmenezes.github.io/categories/linear-algebra/</link>
     <description>Recent content in linear algebra on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/categories/linear-algebra/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/linear-algebra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linear Algebra and Least Squares Estimators</title>
-      <link>http://AndrMeneze.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</link>
+      <link>http://andrmenezes.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</link>
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</guid>
+      <guid>http://andrmenezes.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</guid>
       
         <description>A note on least squares estimators</description>
       

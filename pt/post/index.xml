@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on André Menezes</title>
-    <link>http://AndrMeneze.github.io/pt/post/</link>
+    <link>http://andrmenezes.github.io/pt/post/</link>
     <description>Recent content in Posts on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://AndrMeneze.github.io/pt/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/pt/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modelos de Regressão Beta e Simples aplicados ao IDHM de 2010</title>
-      <link>http://AndrMeneze.github.io/pt/post/2020-06-02-uma-an%C3%A1lise-do-indice-de-desenvolvimento-humano-municipal-de-2010/</link>
+      <link>http://andrmenezes.github.io/pt/post/2020-06-02-uma-an%C3%A1lise-do-indice-de-desenvolvimento-humano-municipal-de-2010/</link>
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2020-06-02-uma-an%C3%A1lise-do-indice-de-desenvolvimento-humano-municipal-de-2010/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2020-06-02-uma-an%C3%A1lise-do-indice-de-desenvolvimento-humano-municipal-de-2010/</guid>
       
         <description>Uma análise do índice de desenvolvimento humano municipal de 2010</description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Modelos de Regressão para Respostas Limitadas</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-12-31-modelos-de-regress%C3%A3o-para-respostas-limitadas/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-12-31-modelos-de-regress%C3%A3o-para-respostas-limitadas/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-12-31-modelos-de-regress%C3%A3o-para-respostas-limitadas/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-12-31-modelos-de-regress%C3%A3o-para-respostas-limitadas/</guid>
       
         <description>Uma discussão sobre modelos de regressão quando a variável resposta é restrita ao intervalo $(0, 1)$</description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Modelos de Séries Temporais Autoregressivos</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-12-16-modelos-de-s%C3%A9ries-temporais-autoregressivos-simulando-e-estimando/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-12-16-modelos-de-s%C3%A9ries-temporais-autoregressivos-simulando-e-estimando/</link>
       <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-12-16-modelos-de-s%C3%A9ries-temporais-autoregressivos-simulando-e-estimando/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-12-16-modelos-de-s%C3%A9ries-temporais-autoregressivos-simulando-e-estimando/</guid>
       
         <description>Simulação, estimação e previsão de um modelo AR(1)</description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Metodologia de Superfície de Resposta</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-10-05-metodologia-de-superficie-de-resposta/</guid>
       
         <description>Uma breve discussão sobre a metodologia de superfície de resposta</description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Correções do Viés dos Estimadores de Máxima Verossimilhança</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-09-12-corre%C3%A7%C3%B5es-do-vi%C3%A9s-dos-estimadores-de-m%C3%A1xima-verossimilhan%C3%A7a/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-09-12-corre%C3%A7%C3%B5es-do-vi%C3%A9s-dos-estimadores-de-m%C3%A1xima-verossimilhan%C3%A7a/</link>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-09-12-corre%C3%A7%C3%B5es-do-vi%C3%A9s-dos-estimadores-de-m%C3%A1xima-verossimilhan%C3%A7a/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-09-12-corre%C3%A7%C3%B5es-do-vi%C3%A9s-dos-estimadores-de-m%C3%A1xima-verossimilhan%C3%A7a/</guid>
       
         <description>Principais métodos para correção de viés dos estimadores de máxima verossimilhança</description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Inferência Estatística e Verossimilhança</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/</link>
       <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/</guid>
       
         <description>O conceito de inferência estatística e o paradigma da verossimilhança</description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>Matriz de Projeção e os Resíduos Deletados</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</link>
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-06-25-matriz-de-projecao-residuos-deletados/</guid>
       
         <description>Importância da matriz de projeção nos modelos de regressão linear</description>
       
@@ -86,10 +86,10 @@
     
     <item>
       <title>Métodos de Comparações Múltiplas</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-04-25-metodos-de-comparacaoes-multiplas/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-04-25-metodos-de-comparacaoes-multiplas/</link>
       <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-04-25-metodos-de-comparacaoes-multiplas/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-04-25-metodos-de-comparacaoes-multiplas/</guid>
       
         <description>Uma nota sobre métodos de comparações múltiplas</description>
       
@@ -97,10 +97,10 @@
     
     <item>
       <title>Álgebra Linear e os Estimadores de Mínimos Quadrados</title>
-      <link>http://AndrMeneze.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</link>
+      <link>http://andrmenezes.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</link>
       <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://AndrMeneze.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</guid>
+      <guid>http://andrmenezes.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</guid>
       
         <description>Uma nota sobre os estimadores de mínimos quadrados</description>
       
