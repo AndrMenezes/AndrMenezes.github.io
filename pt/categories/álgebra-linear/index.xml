@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>álgebra linear on André Menezes</title>
+    <link>http://andrmenezes.github.io/pt/categories/%C3%A1lgebra-linear/</link>
+    <description>Recent content in álgebra linear on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/pt/categories/%C3%A1lgebra-linear/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Álgebra Linear e os Estimadores de Mínimos Quadrados</title>
+      <link>http://andrmenezes.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</link>
+      <pubDate>Thu, 21 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/pt/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/</guid>
+      
+        <description>Uma nota sobre os estimadores de mínimos quadrados</description>
+      
+    </item>
+    
+  </channel>
+</rss>
