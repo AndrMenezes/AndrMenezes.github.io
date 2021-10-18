@@ -63,6 +63,41 @@
   </url>
   
   <url>
+    <loc>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/regress%C3%A3o-linear/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://andrmenezes.github.io/pt/categories/regress%C3%A3o-linear/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://andrmenezes.github.io/categories/regress%C3%A3o-linear/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/res%C3%ADduos-deletados/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://andrmenezes.github.io/pt/categories/res%C3%ADduos-deletados/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://andrmenezes.github.io/categories/res%C3%ADduos-deletados/"
+                />
+  </url>
+  
+  <url>
     <loc>http://andrmenezes.github.io/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link

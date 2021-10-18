@@ -19,24 +19,26 @@ output:
 
 ## Introduction
 
-Os processos autoregressivos são um dos mais simples modelos estudados em séries temporais.
-Uma característica interessante é sua semelhança com os modelos de regressão.
-Por exemplo, o modelo autoregressivo de ordem $1$, $\mathrm{AR}(1)$, pode ser definido da seguinte forma
+The [autoregressive](https://en.wikipedia.org/wiki/Autoregressive_model)
+process are one of the most simple models studied in coursed or time series analysis.
+An interessante feature of autoregressive process is their similar with linear regression models.
+For instance, the firs order autoregressive, $\mathrm{AR}(1)$, can be definied as follows:
 \begin{equation}\label{eq:ar1}
-Y_t \sim N(\mu_t, \sigma^2), \quad \text{em que} \quad \mu_t = \alpha + \phi\,y_{t-1}
+Y_t \sim N(\mu_t, \sigma^2), \quad \text{where} \quad \mu_t = \alpha + \phi\,y_{t-1}
 \end{equation}
-para $t = 1,\ldots,n.$
-Note que $y_{t-1}$ faz o papel das covariáveis e a variância é constante ao longo do tempo.
+for $t = 1,\ldots,n$.
+Note that $y_{t-1}$ play the role of covariate and the variance is constant along time.
 
-Este post tem objetivo apresentar uma implementação em R para simulação e estimação de um processo $\mathrm{AR}(1)$.
-Embora já esteja implementado nas funções `arima.sim()` e `arima()` este exercício
-fornece uma compreensão da estrutura do modelo e consequentemente um caminho para implementações de modelos mais
-complexos.
+The goal of this post is to show a naive implementation in `R` for simulation, esitmatiopn and forecasting
+an $\mathrm{AR}(1)$ model.
+Although it is already available thought the functions `arima.sim()` and
+`arima()` this exercise provides a understanding of model structure, and
+consequently a path to more complex model implementations.
 
 ## Simulation
-Let consider the true parameter values as
+Let us consider the true parameter values as
 $\alpha = -2.0$, $\phi = 0.7$, $\sigma^2 = 4.0$ and the sample size
-$n = 500$. Since the probability distribution of the $Y_t$ is Normal I will use theta
+$n = 500$. Since the probability distribution of the $Y_t$ is Normal I will use
 `rnorm()` function.
 
 ```{r}
@@ -50,18 +52,20 @@ for(t in 2:n) {
   mu_t <- alpha + phi * y[t-1]
   y[t] <- rnorm(1, mean = mu_t, sd = sigma)
 }
+ts.plot(y)
 ```
 
 ## Estimation
-Dada uma amostra $\mathbf{y} = (y_1, \ldots, y_n)$ do modelo $\mathrm{AR}(1)$, sob a suposição de normalidade a verossimilhança do modelo é dada por
+Given a random sample $\mathbf{y} = (y_1, \ldots, y_n)$ of the model $\mathrm{AR}(1)$,
+under normality assumption the likelihood is given by
 $$
 L(\mathbf{\theta} \mid \mathbf{y}) \propto
 (\sigma^2)^{-\frac{n}{2}}\,\exp\left\{-\frac{1}{2\,\sigma^2}\sum_{t=2}^{n}\left[y_t - (\alpha -\phi\,y_{t-1}) \right]^2 \right\}
 $$
-em que $\mathbf{\theta} = (\alpha, \phi, \sigma^2)$.
+where $\mathbf{\theta} = (\alpha, \phi, \sigma^2)$.
 
-A estimativa de máxima verossimilhança de $\mathbf{\theta}$ é obtida numericamente maximizando a função
-log-verossimilhança.
+The maximum likelihood estimates of parameter vector $\mathbf{\theta}$ is obtained
+by the maximization of the log-likelihood.
 
 ```{r}
 log_like <- function(parms, y) {
@@ -73,16 +77,14 @@ log_like <- function(parms, y) {
 
   eta <- numeric(n)
 
-  for(k in 2:length(y)) eta[k] <- phi * y[k-1]
+  for(k in 2:n) eta[k] <- phi * y[k-1]
 
   ll <- sum(dnorm(x = y, mean = eta + alpha, sd = sigma, log = TRUE))
-  return(ll)
+  ll
 }
 ```
-
-
-Para $\alpha$ e $\sigma^2$ fixos a função de verossimilhança perfilhada de $\phi$ para os dados simulados tem o seguinte comportamento.
-
+For fixed values of $\alpha$ and $\sigma^2$ the profile likelihood of $\phi$
+for the simulated data has the follwing behaviour
 ```{r, echo=FALSE, fig.align='center', fig.height=6, fig.width=8}
 p <- seq(-1, 1, l = 50)
 f <- sapply(1:50, function(i) log_like(parms = c(p[i], alpha, sigma), y = y))
@@ -90,39 +92,42 @@ plot(p, f, type = "b", ylab = "l", xlab = expression(phi))
 abline(v = p[which.max(f)], col = "red")
 ```
 
-
-A maximização numérica da log-verossimilhança no R é realizada pela função `optim`. Neste caso, optei
-pelo método BFGS (`method = "BFGS"`), indiquei para maximizar a função (`control = list(fnscale = -1)`) e
-pedi para retornar a matriz hessiana (`hessian = TRUE`).
+The numeric maximization of log-likelihood in `R` is performed by the `optim`
+function. I use the quasi-newton [BFGS](https://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm) optimization algorithm (`method = "BFGS"`), I stated to maximize the function
+by using `control = list(fnscale = -1)` and requested to compute the numerical
+hessian (`hessian = TRUE`).
 ```{r, warning=FALSE}
 fit <- optim(par = c(phi, alpha, sigma), fn = log_like, y = y, method = "BFGS",
              control = list(fnscale = -1), hessian = TRUE)
 ```
 
-As estimativas dos parâmetros $\phi$, $\alpha$ e $\sigma$ foram, respectivamente,
+The paramter estimated for $\phi$, $\alpha$, and $\sigma$ are, respectively,
 ```{r, echo=FALSE}
 fit$par
 ```
-muito próximas dos verdadeiros valores estipulados.
+Very close to the true values:
+```{r, echo=FALSE}
+c(phi, alpha, sigma)
+```
 
-Note que os autovalores da matriz hessiana são negativos, portanto tais estimativas são de fato as estimativas
-de máxima verossimilhança.
+Note that the eigenvalues of hessian matriz are negatives, then such estimates
+are in fact the maximum likelihood estimates.
 ```{r}
 eigen(fit$hessian)$values
 ```
 
-
 ## Forecast
-No modelo $\mathrm{AR}(1)$ o valor predito no instante $t$ é dado por
+For the $\mathrm{AR}(1)$ model the forecast value at time $t$ is given by
+
 $$
 y_{t} = \hat{\alpha} + \hat{\phi}\,y_{t-1}
 $$
-em que $\hat{\alpha}$ e $\hat{\phi}$ são as estimativas de máxima verossimilhança.
+where $\hat{\alpha}$ and $\hat{\phi}$ are the maximum likelihood estimates of
+$\alpha$ and $\phi$, respectively.
 
-O gráfico abaixo apresenta a série observada sobreposta pela séria com os valores preditos.
-
+The picture below shows the simulated time series and the forecast values of
+$\mathrm{AR}(1)$ model.
 ```{r, fig.align='center', fig.height=6, fig.width=8}
-
 mles <- fit$par
 phi_hat <- mles[1]
 alpha_hat <- mles[2]

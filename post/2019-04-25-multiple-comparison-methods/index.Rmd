@@ -79,8 +79,8 @@ More details of the paper can be found [here](/pdf/papers/2018__corrections_t-te
 The codes used for the simulations are available [here](https://github.com/AndrMenezes/mcp/tree/master/Scripts/paper)
 
 ## References
-[Calvo, B. e Santafé, G. (2016) scmamp: Statistical Comparison of Multiple Algorithms in Multiple Problems. The R Journal, 8(1), 248--256.](https://journal.r-project.org/archive/2016/RJ-2016-017/index.html)
+[Calvo, B. and Santafé, G. (2016) scmamp: Statistical Comparison of Multiple Algorithms in Multiple Problems. The R Journal, 8(1), 248--256.](https://journal.r-project.org/archive/2016/RJ-2016-017/index.html)
 
-[Félix, V. B. e Menezes, A. F. B. (2018) Comparisons of ten corrections methods for t-test in multiple comparisons via Monte Carlo study, 11(1), 74--91](http://siba-ese.unisalento.it/index.php/ejasa/article/view/17017)
+[Félix, V. B. and Menezes, A. F. B. (2018) Comparisons of ten corrections methods for t-test in multiple comparisons via Monte Carlo study, 11(1), 74--91](http://siba-ese.unisalento.it/index.php/ejasa/article/view/17017)
 
-[Jin, M. e Wang, B. (2014) Implementing multiple comparisons on Pearson Chi-square test for RxC contingency table in SAS](/pdf/Implementing Multiple Comparisons on Pearson Chi-square Test.pdf)
+[Jin, M. and Wang, B. (2014) Implementing multiple comparisons on Pearson Chi-square test for RxC contingency table in SAS](/pdf/Implementing Multiple Comparisons on Pearson Chi-square Test.pdf)

@@ -202,24 +202,26 @@
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Os processos autoregressivos são um dos mais simples modelos estudados em séries temporais.
-Uma característica interessante é sua semelhança com os modelos de regressão.
-Por exemplo, o modelo autoregressivo de ordem <span class="math inline">\(1\)</span>, <span class="math inline">\(\mathrm{AR}(1)\)</span>, pode ser definido da seguinte forma
+<p>The <a href="https://en.wikipedia.org/wiki/Autoregressive_model">autoregressive</a>
+process are one of the most simple models studied in coursed or time series analysis.
+An interessante feature of autoregressive process is their similar with linear regression models.
+For instance, the firs order autoregressive, <span class="math inline">\(\mathrm{AR}(1)\)</span>, can be definied as follows:
 <span class="math display">\[\begin{equation}\label{eq:ar1}
-Y_t \sim N(\mu_t, \sigma^2), \quad \text{em que} \quad \mu_t = \alpha + \phi\,y_{t-1}
+Y_t \sim N(\mu_t, \sigma^2), \quad \text{where} \quad \mu_t = \alpha + \phi\,y_{t-1}
 \end{equation}\]</span>
-para <span class="math inline">\(t = 1,\ldots,n.\)</span>
-Note que <span class="math inline">\(y_{t-1}\)</span> faz o papel das covariáveis e a variância é constante ao longo do tempo.</p>
-<p>Este post tem objetivo apresentar uma implementação em R para simulação e estimação de um processo <span class="math inline">\(\mathrm{AR}(1)\)</span>.
-Embora já esteja implementado nas funções <code>arima.sim()</code> e <code>arima()</code> este exercício
-fornece uma compreensão da estrutura do modelo e consequentemente um caminho para implementações de modelos mais
-complexos.</p>
+for <span class="math inline">\(t = 1,\ldots,n\)</span>.
+Note that <span class="math inline">\(y_{t-1}\)</span> play the role of covariate and the variance is constant along time.</p>
+<p>The goal of this post is to show a naive implementation in <code>R</code> for simulation, esitmatiopn and forecasting
+an <span class="math inline">\(\mathrm{AR}(1)\)</span> model.
+Although it is already available thought the functions <code>arima.sim()</code> and
+<code>arima()</code> this exercise provides a understanding of model structure, and
+consequently a path to more complex model implementations.</p>
 </div>
 <div id="simulation" class="section level2">
 <h2>Simulation</h2>
-<p>Let consider the true parameter values as
+<p>Let us consider the true parameter values as
 <span class="math inline">\(\alpha = -2.0\)</span>, <span class="math inline">\(\phi = 0.7\)</span>, <span class="math inline">\(\sigma^2 = 4.0\)</span> and the sample size
-<span class="math inline">\(n = 500\)</span>. Since the probability distribution of the <span class="math inline">\(Y_t\)</span> is Normal I will use theta
+<span class="math inline">\(n = 500\)</span>. Since the probability distribution of the <span class="math inline">\(Y_t\)</span> is Normal I will use
 <code>rnorm()</code> function.</p>
 <pre class="r"><code>set.seed(666)
 n &lt;- 500
@@ -230,18 +232,21 @@ y &lt;- numeric(n)
 for(t in 2:n) {
   mu_t &lt;- alpha + phi * y[t-1]
   y[t] &lt;- rnorm(1, mean = mu_t, sd = sigma)
-}</code></pre>
+}
+ts.plot(y)</code></pre>
+<p><img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 <div id="estimation" class="section level2">
 <h2>Estimation</h2>
-<p>Dada uma amostra <span class="math inline">\(\mathbf{y} = (y_1, \ldots, y_n)\)</span> do modelo <span class="math inline">\(\mathrm{AR}(1)\)</span>, sob a suposição de normalidade a verossimilhança do modelo é dada por
+<p>Given a random sample <span class="math inline">\(\mathbf{y} = (y_1, \ldots, y_n)\)</span> of the model <span class="math inline">\(\mathrm{AR}(1)\)</span>,
+under normality assumption the likelihood is given by
 <span class="math display">\[
 L(\mathbf{\theta} \mid \mathbf{y}) \propto
 (\sigma^2)^{-\frac{n}{2}}\,\exp\left\{-\frac{1}{2\,\sigma^2}\sum_{t=2}^{n}\left[y_t - (\alpha -\phi\,y_{t-1}) \right]^2 \right\}
 \]</span>
-em que <span class="math inline">\(\mathbf{\theta} = (\alpha, \phi, \sigma^2)\)</span>.</p>
-<p>A estimativa de máxima verossimilhança de <span class="math inline">\(\mathbf{\theta}\)</span> é obtida numericamente maximizando a função
-log-verossimilhança.</p>
+where <span class="math inline">\(\mathbf{\theta} = (\alpha, \phi, \sigma^2)\)</span>.</p>
+<p>The maximum likelihood estimates of parameter vector <span class="math inline">\(\mathbf{\theta}\)</span> is obtained
+by the maximization of the log-likelihood.</p>
 <pre class="r"><code>log_like &lt;- function(parms, y) {
   n &lt;- length(y)
 
@@ -251,34 +256,39 @@ log-verossimilhança.</p>
 
   eta &lt;- numeric(n)
 
-  for(k in 2:length(y)) eta[k] &lt;- phi * y[k-1]
+  for(k in 2:n) eta[k] &lt;- phi * y[k-1]
 
   ll &lt;- sum(dnorm(x = y, mean = eta + alpha, sd = sigma, log = TRUE))
-  return(ll)
+  ll
 }</code></pre>
-<p>Para <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\sigma^2\)</span> fixos a função de verossimilhança perfilhada de <span class="math inline">\(\phi\)</span> para os dados simulados tem o seguinte comportamento.</p>
-<p><img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
-<p>A maximização numérica da log-verossimilhança no R é realizada pela função <code>optim</code>. Neste caso, optei
-pelo método BFGS (<code>method = "BFGS"</code>), indiquei para maximizar a função (<code>control = list(fnscale = -1)</code>) e
-pedi para retornar a matriz hessiana (<code>hessian = TRUE</code>).</p>
+<p>For fixed values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\sigma^2\)</span> the profile likelihood of <span class="math inline">\(\phi\)</span>
+for the simulated data has the follwing behaviour
+<img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-3-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>The numeric maximization of log-likelihood in <code>R</code> is performed by the <code>optim</code>
+function. I use the quasi-newton <a href="https://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm">BFGS</a> optimization algorithm (<code>method = "BFGS"</code>), I stated to maximize the function
+by using <code>control = list(fnscale = -1)</code> and requested to compute the numerical
+hessian (<code>hessian = TRUE</code>).</p>
 <pre class="r"><code>fit &lt;- optim(par = c(phi, alpha, sigma), fn = log_like, y = y, method = &quot;BFGS&quot;,
              control = list(fnscale = -1), hessian = TRUE)</code></pre>
-<p>As estimativas dos parâmetros <span class="math inline">\(\phi\)</span>, <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\sigma\)</span> foram, respectivamente,</p>
+<p>The paramter estimated for <span class="math inline">\(\phi\)</span>, <span class="math inline">\(\alpha\)</span>, and <span class="math inline">\(\sigma\)</span> are, respectively,</p>
 <pre><code>## [1]  0.6997547 -2.0902103  2.0239194</code></pre>
-<p>muito próximas dos verdadeiros valores estipulados.</p>
-<p>Note que os autovalores da matriz hessiana são negativos, portanto tais estimativas são de fato as estimativas
-de máxima verossimilhança.</p>
+<p>Very close to the true values:</p>
+<pre><code>## [1]  0.7 -2.0  2.0</code></pre>
+<p>Note that the eigenvalues of hessian matriz are negatives, then such estimates
+are in fact the maximum likelihood estimates.</p>
 <pre class="r"><code>eigen(fit$hessian)$values</code></pre>
 <pre><code>## [1]   -17.22736  -244.12550 -6993.97570</code></pre>
 </div>
 <div id="forecast" class="section level2">
 <h2>Forecast</h2>
-<p>No modelo <span class="math inline">\(\mathrm{AR}(1)\)</span> o valor predito no instante <span class="math inline">\(t\)</span> é dado por
-<span class="math display">\[
+<p>For the <span class="math inline">\(\mathrm{AR}(1)\)</span> model the forecast value at time <span class="math inline">\(t\)</span> is given by</p>
+<p><span class="math display">\[
 y_{t} = \hat{\alpha} + \hat{\phi}\,y_{t-1}
 \]</span>
-em que <span class="math inline">\(\hat{\alpha}\)</span> e <span class="math inline">\(\hat{\phi}\)</span> são as estimativas de máxima verossimilhança.</p>
-<p>O gráfico abaixo apresenta a série observada sobreposta pela séria com os valores preditos.</p>
+where <span class="math inline">\(\hat{\alpha}\)</span> and <span class="math inline">\(\hat{\phi}\)</span> are the maximum likelihood estimates of
+<span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\phi\)</span>, respectively.</p>
+<p>The picture below shows the simulated time series and the forecast values of
+<span class="math inline">\(\mathrm{AR}(1)\)</span> model.</p>
 <pre class="r"><code>mles &lt;- fit$par
 phi_hat &lt;- mles[1]
 alpha_hat &lt;- mles[2]
@@ -287,7 +297,7 @@ yhat &lt;- numeric(n)
 for(t in 2:n) yhat[t] &lt;- phi_hat * y[t-1]
 ts.plot(y)
 lines(yhat + alpha_hat, type = &quot;l&quot;, col = &quot;blue&quot;, lwd = 2)</code></pre>
-<p><img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/index_files/figure-html/unnamed-chunk-8-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
         <div class="post-footer">

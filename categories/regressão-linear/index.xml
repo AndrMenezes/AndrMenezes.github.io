@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>regressão linear on André Menezes</title>
+    <link>http://andrmenezes.github.io/categories/regress%C3%A3o-linear/</link>
+    <description>Recent content in regressão linear on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/regress%C3%A3o-linear/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matriz de Projeção e os Resíduos Deletados</title>
+      <link>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</guid>
+      
+        <description>Importância da matriz de projeção nos modelos de regressão linear</description>
+      
+    </item>
+    
+  </channel>
+</rss>

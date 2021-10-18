@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | Matriz de Projeção e os Resíduos Deletados </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2019-06-25-projection-matrix-deleted-residual/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Matriz de Projeção e os Resíduos Deletados"/>
+<meta name="twitter:description" content="Importância da matriz de projeção nos modelos de regressão linear"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenezes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Matriz de Projeção e os Resíduos Deletados</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                25/06/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Avaliar a qualidade do ajuste e as suposições do modelo estatístico utilizado
+é uma tarefa fundamental que compete ao analista de dados.
+No caso dos modelos de regressão linear várias medidas
+podem ser utilizadas para avaliação da qualidade do ajuste,
+por exemplo,
+os resíduos deletados,
+distância de Cook,
+DFFits,
+DFBetas,
+Covratio,
+estatística PRESS, entre outras.
+Além de investigarem a qualidade do ajuste essas medidas dependem, de alguma forma, da matriz de projeção
+<span class="math inline">\(\mathbf{H} = \mathbf{X}\left(\mathbf{X}^\top\,\mathbf{X}\right)^{-1}\mathbf{X}^\top\)</span>, em que
+<span class="math inline">\(\mathbf{X}\)</span> é uma matriz de dimensão <span class="math inline">\(n\times p\)</span> composta pelos valores das variáveis explicadas, ou seja,</p>
+<p><span class="math display">\[\begin{equation}\label{eq:X}
+\mathbf{X} = \begin{bmatrix}
+1 &amp; x_{11} &amp; \cdots &amp; x_{1(p-1)}\\
+1 &amp; x_{21} &amp; \cdots &amp; x_{2(p-1)}\\
+\vdots&amp;   \vdots &amp;  \cdots&amp; \vdots \\
+1 &amp; x_{n1} &amp; \cdots &amp; x_{n(p-1)}
+\end{bmatrix}
+\end{equation}\]</span>
+sendo <span class="math inline">\(x_{ij}\)</span> a <span class="math inline">\(i\)</span>-ésima observação da <span class="math inline">\(j\)</span>-ésima variável preditora.
+A definição da cada medida e sua interpretação pode ser encontrada <a href="https://github.com/AndrMenezes/ra2016/raw/master/report.pdf">aqui</a>.</p>
+<p>Neste <em>post</em> irei explorar a relação entre a matriz de projeção <span class="math inline">\(\mathbf{H}\)</span> com os resíduos deletados,
+os quais são úteis, principalmente para identificação de observações aberrantes.
+Para qualquer modelo de regressão os resíduos deletados, também conhecidos como
+resíduos <em>studentizados</em>, podem ser definidos como
+<span class="math display">\[\begin{equation}\label{eq:di_1}
+d_i = y_i - \widehat{y}_{i(i)}
+\end{equation}\]</span>
+em que <span class="math inline">\(y_i\)</span> é o <span class="math inline">\(i\)</span>-ésimo valor da variável resposta e
+<span class="math inline">\(\widehat{y}_{i(i)}\)</span> é o <span class="math inline">\(i\)</span>-ésimo valor predito da variável resposta sem a <span class="math inline">\(i\)</span>-ésima observação,
+ou seja,
+<span class="math display">\[\begin{equation}\label{eq:yhat_i}
+\widehat{y}_{i(i)} = \mathbf{x}_i^\top \widehat{\mathbf{\beta}}_{(i)}
+\end{equation}\]</span>
+sendo <span class="math inline">\(\mathbf{x}_i = (1, x_{i1}, \ldots, x_{i(p-1)} )^\top\)</span> a <span class="math inline">\(i\)</span>-ésima linha de <span class="math inline">\(\mathbf{X}\)</span> e
+<span class="math inline">\(\widehat{\mathbf{\beta}}_{(i)}\)</span> o estimador de mínimos quadrados do modelo de regressão sem a <span class="math inline">\(i\)</span>-ésima observação.</p>
+<p>Como vimos neste <a href="https://andrefbm.netlify.com/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/"><em>post</em></a> os estimadores de mínimos quadrados do vetor <span class="math inline">\(\mathbf{\beta}\)</span>
+é a projeção ortogonal do vetor <span class="math inline">\(\mathbf{Y}\)</span>
+no espaço vetorial gerado pelas colunas da matriz <span class="math inline">\(\mathbf{X}\)</span>.
+Dessa forma, excluindo a <span class="math inline">\(i\)</span>-ésima observação, obtemos que
+<span class="math display">\[\begin{equation}\label{eq:beta_ii}
+\widehat{\mathbf{\beta}}_{(i)} = \left(\mathbf{X}_{(i)}^\top\,\mathbf{X}_{(i)}\right)^{-1}\mathbf{X}_{(i)}^\top\,\mathbf{Y}_{(i)}
+\end{equation}\]</span>
+em que <span class="math inline">\(\mathbf{X}_{(i)}\)</span> é a matriz <span class="math inline">\(\mathbf{X}\)</span> excluindo a <span class="math inline">\(i\)</span>-ésima linha e
+<span class="math inline">\(\mathbf{Y}_{(i)}\)</span> é o vetor de valores observados da variável resposta excluindo a <span class="math inline">\(i\)</span>-ésima observação.</p>
+<p>Note, portanto que utilizando os resíduos deletados evitamos que um suposto valor aberrante <span class="math inline">\(y_i\)</span>
+influencie o seu respectivo valor predito <span class="math inline">\(\widehat{y}_i\)</span>, e então o valor do resíduo <span class="math inline">\(d_i\)</span> tende a ser grande e
+mais propenso a caracterizar uma observação aberrante.
+No entanto, utilizando essa expressão para obter os valores dos resíduos deletados devemos
+excluir a <span class="math inline">\(i\)</span>-ésima observação e ajustar o modelo para as demais <span class="math inline">\(n - 1\)</span> observações. Este procedimento é repetido
+<span class="math inline">\(n\)</span> vezes, ou seja, devemos ajustar <span class="math inline">\(n\)</span> modelos de regressão.</p>
+<p>Felizmente, para o caso dos modelos de regressão linear não é necessário realizar tal procedimento, que na prática poderia ser
+computacionalmente custoso, dependendo do tamanho amostral.
+Particularmente, é possível expressar os resíduos deletados em termos do modelo ajustado com todas as observações.</p>
+<p>Seja <span class="math inline">\(e_i = y_i - \widehat{y}_i\)</span> o resíduo ordinário e
+<span class="math inline">\(h_{ii} = \mathbf{x}_i^\top\left(\mathbf{X}^\top\,\mathbf{X}\right)^{-1}\mathbf{x}_i\)</span> o elemento da diagonal da matriz de projeção
+<span class="math inline">\(\mathbf{H}\)</span>.
+Para obter uma fórmula para <span class="math inline">\(d_i\)</span> usando somente o ajuste com os dados completos devemos escrever
+<span class="math inline">\(\widehat{\mathbf{\beta}}_{(i)}\)</span> em termos da matriz <span class="math inline">\(\mathbf{X}\)</span> e o vetor <span class="math inline">\(\mathbf{Y}\)</span> com todas as observações.
+Observe que
+<span class="math display">\[
+\mathbf{X}_{(i)}^\top\,\mathbf{X}_{(i)} = \mathbf{X}^\top\mathbf{X} - \mathbf{x}_i\mathbf{x}_i^\top \qquad \mbox{e} \qquad
+\mathbf{X}_{(i)}^\top\,\mathbf{Y}_{(i)} = \mathbf{X}^\top\,\mathbf{Y} - \mathbf{x}_iy_i
+\]</span></p>
+<p>Além disso, utilizando a fórmula de Sherman–Morrison chegamos que
+<span class="math display">\[
+\left(\mathbf{X}_{(i)}^\top\,\mathbf{X}_{(i)}\right)^{-1} =
+\left(\mathbf{X}^\top\mathbf{X}\right)^{-1} + \dfrac{\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\mathbf{x}_i^\top \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}}
+{1 - \mathbf{x}^\top_i\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i}
+\]</span></p>
+<p>Assim, podemos escrever <span class="math inline">\(\widehat{\mathbf{\beta}}_{(i)}\)</span> da seguinte forma
+<span class="math display">\[\begin{eqnarray}
+\widehat{\mathbf{\beta}}_{(i)} &amp;=&amp; \left[\left(\mathbf{X}^\top\mathbf{X}\right)^{-1} +
+\dfrac{\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\mathbf{x}_i^\top \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}}
+{1 - \mathbf{x}^\top_i\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i}\right]\,
+\left(
+\mathbf{X}^\top\,\mathbf{Y} - \mathbf{x}_iy_i
+\right) \nonumber \\ \nonumber
+&amp;=&amp;
+\widehat{\mathbf{\beta}} -  \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,
+\left[\dfrac{y_i\,(1-h_{ii}) - \mathbf{x}_i^\top\widehat{\mathbf{\beta}} + h_{ii}\,y_i}{1-h_{ii}}\right]\\
+&amp;=&amp;
+\widehat{\mathbf{\beta}} - \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\left[\dfrac{y_i - \mathbf{x}^\top_i\widehat{\mathbf{\beta}}}{1-h_{ii}}\right] \nonumber\\\label{eq:beta_ii_2}
+\therefore \widehat{\mathbf{\beta}}_{(i)}&amp;=&amp;
+\widehat{\mathbf{\beta}} - \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\cdot\dfrac{e_i}{1-h_{ii}}.
+\end{eqnarray}\]</span></p>
+<p>Logo, substituindo a ultima igualdade na expressão de <span class="math inline">\(\widehat{y}_{i(i)}\)</span> concluímos que
+<span class="math display">\[\begin{eqnarray}
+d_i &amp;=&amp; y_i - \mathbf{x}_i^\top\left[\widehat{\mathbf{\beta}} - \left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\cdot\dfrac{e_i}{1-h_{ii}}\right] \nonumber\\
+&amp;=&amp;
+y_i - \mathbf{x}_i^\top\widehat{\mathbf{\beta}} + \mathbf{x}_i^\top\left(\mathbf{X}^\top\mathbf{X}\right)^{-1}\mathbf{x}_i\,\cdot\dfrac{e_i}{1-h_{ii}} \nonumber\\
+&amp;=&amp;
+e_i + \dfrac{h_{ii}\,e_i}{1 - h_{ii}} \nonumber\\\nonumber
+\therefore d_i &amp;=&amp; \dfrac{e_i}{1 - h_{ii}}.
+\end{eqnarray}\]</span></p>
+<div id="referências" class="section level2">
+<h2>Referências</h2>
+<p><a href="https://robjhyndman.com/hyndsight/loocv-linear-models/">Fast computation of cross-validation in linear models</a></p>
+<p><a href="https://www.amazon.com.br/Applied-Linear-Regression-Models-Neter/dp/025608601X">Applied Linear Regression Models</a></p>
+<p><a href="https://www.amazon.com/Linear-Regression-Analysis-George-Seber/dp/0471415405">Linear Regression Analysis</a></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/res%C3%ADduos-deletados/">resíduos deletados</a><a class="category" href="/categories/regress%C3%A3o-linear/">regressão linear</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWS4M8T1XR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWS4M8T1XR');
+</script></body>
+
+</html>
