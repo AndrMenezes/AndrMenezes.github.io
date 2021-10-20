@@ -1,13 +1,13 @@
 ---
-title: Projection Matrix and Deleted Residuals
+title: The Projection Matrix and Deleted Residuals
 summary: The importance of projection matrix in linear regression models
 author: André Felipe Berdusco Menezes
 date: '2019-06-25'
-draft: false
+draft: true
 categories:
   - deleted residuals
-  - hat matrix
   - projection matrix
+  - hat matrix
   - linear regression
 output:
   blogdown::html_page:
@@ -16,22 +16,26 @@ output:
     toc_depth: 1
 ---
 
+## Introduction
 
-Avaliar a qualidade do ajuste e as suposições do modelo estatístico utilizado
-é uma tarefa fundamental que compete ao analista de dados.
-No caso dos modelos de regressão linear várias medidas
-podem ser utilizadas para avaliação da qualidade do ajuste,
-por exemplo,
-os resíduos deletados,
-distância de Cook,
-DFFits,
-DFBetas,
-Covratio,
-estatística PRESS, entre outras.
-Além de investigarem a qualidade do ajuste essas medidas dependem, de alguma forma, da matriz de projeção
-$\mathbf{H} = \mathbf{X}\left(\mathbf{X}^\top\,\mathbf{X}\right)^{-1}\mathbf{X}^\top$, em que
-$\mathbf{X}$ é uma matriz de dimensão $n\times p$ composta pelos valores das variáveis explicadas, ou seja,
+Assessing the goodness-of-fit and the assumptions of statistical model used is a crucial
+task for the data analyst. In case of linear regression models several measures can be
+used to evaluate the goodness-of-fit and model assumptions. For instance,
 
+- deleted residuals,
+- Cook distance,
+- DFFits,
+- DFBetas,
+- Covratio statistic,
+- PRESS statistic
+
+among others.
+
+In addition, to evaluate the model assumptions these measures depend, in some way, on
+the projection matrix, also known hat matrix, which is defined as follows:
+
+$$\mathbf{H} = \mathbf{X}\left(\mathbf{X}^\top\,\mathbf{X}\right)^{-1}\mathbf{X}^\top$$
+where $\mathbf{X}$ is the design matrix $n\times p$, i.e.,
 \begin{equation}\label{eq:X}
 \mathbf{X} = \begin{bmatrix}
 1 & x_{11} & \cdots & x_{1(p-1)}\\
@@ -40,11 +44,17 @@ $\mathbf{X}$ é uma matriz de dimensão $n\times p$ composta pelos valores das v
 1 & x_{n1} & \cdots & x_{n(p-1)}
 \end{bmatrix}
 \end{equation}
-sendo $x_{ij}$ a $i$-ésima observação da $j$-ésima variável preditora.
-A definição da cada medida e sua interpretação pode ser encontrada [aqui](https://github.com/AndrMenezes/ra2016/raw/master/report.pdf).
+where $x_{ij}$ is the $i$-th observation of $j$-th predictor..
 
-Neste *post* irei explorar a relação entre a matriz de projeção $\mathbf{H}$ com os resíduos deletados,
-os quais são úteis, principalmente para identificação de observações aberrantes.
+The definition of mentioned measured and their interpretations can be found
+[here](https://github.com/AndrMenezes/ra2016/raw/master/report.pdf).
+
+In this *post* I shall explore the relationship between the projection matrix, $\mathbf{H}$
+and the deleted residuals. The later are useful mainly for influence diagnostics to detect
+outlier observations.
+
+## Deleted residuals and Projection matrix
+
 Para qualquer modelo de regressão os resíduos deletados, também conhecidos como
 resíduos *studentizados*, podem ser definidos como
 \begin{equation}\label{eq:di_1}
@@ -57,9 +67,9 @@ ou seja,
 \widehat{y}_{i(i)} = \mathbf{x}_i^\top \widehat{\mathbf{\beta}}_{(i)}
 \end{equation}
 sendo $\mathbf{x}_i = (1, x_{i1}, \ldots, x_{i(p-1)} )^\top$ a $i$-ésima linha de $\mathbf{X}$ e
-$\widehat{\mathbf{\beta}}_{(i)}$ o estimador de mínimos quadrados do modelo de regressão sem a $i$-ésima observação.
+$\widehat{\boldsymbol{\beta}}_{(i)}$ o estimador de mínimos quadrados do modelo de regressão sem a $i$-ésima observação.
 
-Como vimos neste [*post*](https://andrefbm.netlify.com/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/) os estimadores de mínimos quadrados do vetor $\mathbf{\beta}$
+Como vimos neste [*post*](https://andrefbm.netlify.com/post/2019-03-21-regress%C3%A3o-linear-simples-sob-a-perspectiva-de-%C3%A1lgebra-linear/) os estimadores de mínimos quadrados do vetor $\boldsymbol{\beta}$
 é a projeção ortogonal do vetor $\mathbf{Y}$
 no espaço vetorial gerado pelas colunas da matriz $\mathbf{X}$.
 Dessa forma, excluindo a $i$-ésima observação, obtemos que
@@ -127,7 +137,7 @@ e_i + \dfrac{h_{ii}\,e_i}{1 - h_{ii}} \nonumber\\\nonumber
 
 
 
-## Referências
+## References
 [Fast computation of cross-validation in linear models](https://robjhyndman.com/hyndsight/loocv-linear-models/)
 
 [Applied Linear Regression Models](https://www.amazon.com.br/Applied-Linear-Regression-Models-Neter/dp/025608601X)
