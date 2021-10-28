@@ -6,7 +6,18 @@
     <description>Recent content in linear regression on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/linear-regression/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/linear-regression/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Projection Matrix and Deleted Residuals</title>
+      <link>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</link>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</guid>
+      
+        <description>The importance of projection matrix in linear regression models</description>
+      
+    </item>
+    
     <item>
       <title>Linear Algebra and Least Squares Estimators</title>
       <link>http://andrmenezes.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</link>

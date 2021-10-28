@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | Statistical Inference and Likelihood </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Statistical Inference and Likelihood"/>
+<meta name="twitter:description" content="The concept of stastical inference and the likelihood paradigm"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenezes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Statistical Inference and Likelihood</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                27/07/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://andrmenezes.github.io/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>At its core, statistical science looks for ways to measure the uncertainty.
+The main goal of statistics is to perform inference about a phenomena based on
+a random sample from the population phenomena.
+The inference is conducted considering that the phenomena can be represented by a model,
+i.e., a simplification of a more complex reality. A good model must understand e describe the
+main features of phenomena.</p>
+<p>In general, a statistical model has a stochastic component that represents the uncertainties
+of phenomena, and fixed and unknown quantities called parameters.
+Inference statistics is performed on model parameters using sample data.
+Note that when making inferences about parameters, we make inferences about the model and
+therefore about the phenomenon that the model is supposed to describe.</p>
+<p>Statistical inference can be performed in three different ways:</p>
+<ol style="list-style-type: decimal">
+<li><p>point estimation;</p></li>
+<li><p>interval estimation;</p></li>
+<li><p>hypothesis tests.</p></li>
+</ol>
+<p>Several approaches for point estimation are available in the literature. In this
+joint <a href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-74382018000300555&amp;tlng=en">work</a>
+with <a href="http://lattes.cnpq.br/8899185212821611">Josmar Mazucheli</a> and <a href="https://www.researchgate.net/profile/Sanku_Dey">Sanku Dey</a>,
+we discussed eleven methods of point estimation for a statistical model suitable
+for bounded phenomena.</p>
+</div>
+<div id="likelihood" class="section level2">
+<h2>Likelihood</h2>
+<p>Since it was proposed by the famous
+<a href="https://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> in a series of articles during
+the period of 1912 to 1934 the maximum likelihood method is certainly the most used in
+practical situations. The maximum likelihood estimators (MLE) have desirable properties and
+are used in the construction of confidence interval and hypothesis testing.</p>
+<p>The properties that make the MLE attractive are:</p>
+<ul>
+<li><p>asymptotically unbiased;</p></li>
+<li><p>consistency;</p></li>
+<li><p>efficiency;</p></li>
+<li><p>invariance under transformation;</p></li>
+<li><p>asymptotically normally distributed.</p></li>
+</ul>
+<p>Assuming that a statistical model is parameterized by the unknown and fixed parameter vector
+<span class="math inline">\(\boldsymbol{\theta} = (\theta_1, \ldots, \theta_p)^\top\)</span>, the likelihood function
+<span class="math inline">\(L(\boldsymbol{\theta} \mid \boldsymbol{x})\)</span>, is a measure of plausibility with the observed sample
+<span class="math inline">\(\boldsymbol{x}\)</span>, with the purpose of transmitting data information about <span class="math inline">\(\boldsymbol{\theta}\)</span>.
+The general definition is that the likelihood function is the joint probability function
+seen as function of the parameter, i.e.,
+<span class="math display">\[
+L(\boldsymbol{\theta} \mid \boldsymbol{x}) = f(\boldsymbol{\theta} \mid \boldsymbol{x}).
+\]</span></p>
+<p>It should be important to emphasize that the function form of the likelihood function
+depends of the assumptions of the probabilistic model. For instance, under independence of
+observations the join distribution is given by the product of densities functions.
+In contrast, under dependence of observations the joint distribution can be written by
+conditional probabilities.</p>
+<div id="the-i.i.d.-case" class="section level3">
+<h3>The i.i.d. case</h3>
+<p>Let be <span class="math inline">\(\boldsymbol{x} = (x_1, \ldots, x_n)^\top\)</span> an <strong>independent</strong> and <strong>identical distributed</strong>
+random sample from the random variable <span class="math inline">\(X\)</span>, which the probability density function <span class="math inline">\(f(x \mid \boldsymbol{\theta})\)</span>
+depends on the parameter vector <span class="math inline">\(\boldsymbol{\theta}\)</span>.
+Then, the likelihood function is defined by
+<span class="math display">\[\begin{equation}
+L(\boldsymbol{\theta} \mid \boldsymbol{x}) = \prod_{i=1}^{n}\,f(x_i \mid \boldsymbol{\theta}).
+\end{equation}\]</span></p>
+<p>We say that <span class="math inline">\(\widehat{\boldsymbol{\theta}}\)</span> is the maximum likelihood estimator of
+<span class="math inline">\(\boldsymbol{\theta}\)</span> if</p>
+<p><span class="math display">\[L(\widehat{\boldsymbol{\theta}} \mid \boldsymbol{x}) \geq L(\boldsymbol{\theta} \mid \boldsymbol{x}), \forall \ \boldsymbol{\theta}\]</span>.</p>
+<p>Since the logarithm function is monotonically increasing, for computational simplicity it
+is usual use the log-likelihood function,
+<span class="math display">\[\ell(\boldsymbol{\theta} \mid \boldsymbol{x}) = \log  L(\boldsymbol{\theta} \mid \boldsymbol{x}),\]</span>
+since both function lead to the same maximum point.
+Usually, the MLEs cannot be expressed in analytically formula, then they are obtained by
+numerical maximization of the log-likelihood function.</p>
+<p>The first derivative of log-likelihood function with respect to each parameter,
+<span class="math inline">\(\boldsymbol{\theta}_j, j = 1, \ldots, p\)</span>, is known as score function. It can be shown
+that
+<span class="math display">\[\begin{equation*}
+\mathbb{E}\left[\dfrac{\textrm{d}}{\textrm{d}\boldsymbol{\theta}_j}\,\ell(\boldsymbol{\theta} \mid \boldsymbol{x})\right] = 0,
+\end{equation*}\]</span>
+that is, the score function has mean zero.
+Note that the score function is a vector of first partial derivatives, one for each
+element of <span class="math inline">\(\boldsymbol{\theta}\)</span>. If the log-likelihood is concave, then the MLEs can be
+obtained by setting the score function to vector zero and solving the system equation.</p>
+<p>Another important quantity in the likelihood theory is the expected Fisher information
+matrix, defined by
+<span class="math display">\[\begin{equation}\label{eq:fisher-esp}
+\mathbf{I}\left(\boldsymbol{\theta}\right) = \mathbb{E}\left [-\dfrac{\partial^2}{\partial\boldsymbol{\theta}_j\,\partial\boldsymbol{\theta}_k} \log f(x \mid \boldsymbol{\theta})\right]
+\end{equation}\]</span>
+for <span class="math inline">\(j, k = 1, \ldots, p\)</span>.</p>
+<p>The drawback of working with <span class="math inline">\(\mathbf{I}\left(\boldsymbol{\theta}\right)\)</span> is the
+difficult to obtain analytically expression for the expectation, since a
+integral needs to be solved.</p>
+<p>Under certain regularity conditions, the observed Fisher information matrix, given by
+<span class="math display">\[\begin{equation}\label{eq:fisher-obs}
+\mathbf{H}\left(\boldsymbol{\theta}\right) = -\dfrac{\partial}{\partial\boldsymbol{\theta}_j\,\partial\boldsymbol{\theta}_k} \log f(x_i \mid \boldsymbol{\theta}), %\at[\big]{\boldsymbol{\theta}=\widehat{\boldsymbol{\theta}}}
+\end{equation}\]</span>
+is an consistent estimator of <span class="math inline">\(\mathbf{I}\left(\boldsymbol{\theta}\right)\)</span>.</p>
+<p>The concept of information is associate to the curvature of likelihood function and
+the greater the curvature the more accurate the information contained in the likelihood,
+the data!
+In other words, the Fisher information matrix indicate the accuracy of estimates,
+therefore it is essential for the construction of confidence intervals and
+hypothesis tests.</p>
+</div>
+</div>
+<div id="final-comments" class="section level2">
+<h2>Final comments</h2>
+<p>In this text, I tried to clarify the concept of statistical inference and the likelihood
+paradigm.
+In the sequel, I will explore the concept of bias and discus some methods for bias correction
+of the maximum likelihood estimators in finite samples.</p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p><a href="https://www.springer.com/gp/book/9783642552540">An Introduction to Bartlett Correction and Bias Reduction</a></p>
+<p><a href="https://www.amazon.com.br/Statistical-Inference-George-Casella/dp/0534243126">Statistical Inference</a></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/statistical-inference/">statistical inference</a><a class="category" href="/categories/likelihood/">likelihood</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWS4M8T1XR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWS4M8T1XR');
+</script></body>
+
+</html>

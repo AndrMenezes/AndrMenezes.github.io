@@ -63,6 +63,46 @@
   </url>
   
   <url>
+    <loc>http://andrmenezes.github.io/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/</loc>
+    <lastmod>2019-07-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://andrmenezes.github.io/pt/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://andrmenezes.github.io/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/deleted-residuals/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/hat-matrix/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/projection-matrix/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://andrmenezes.github.io/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -119,11 +159,6 @@
   
   <url>
     <loc>http://andrmenezes.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</loc>
-    <lastmod>2019-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
   </url>
   
