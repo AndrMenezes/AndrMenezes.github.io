@@ -1,0 +1,153 @@
+---
+title: Statistical Inference and Likelihood
+summary: The concept of stastical inference and the likelihood paradigm
+author: André Felipe Berdusco Menezes
+date: '2019-07-27'
+draft: false
+categories:
+  - statistical inference
+  - likelihood
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+
+## Introduction
+
+At its core, statistical science looks for ways to measure the uncertainty.
+The main goal of statistics is to perform inference about a phenomena based on
+a random sample from the population phenomena.
+The inference is conducted considering that the phenomena can be represented by a model,
+i.e., a simplification of a more complex reality. A good model must understand e describe the
+main features of phenomena.
+
+In general, a statistical model has a stochastic component that represents the uncertainties
+of phenomena, and fixed and unknown quantities called parameters.
+Inference statistics is performed on model parameters using sample data.
+Note that when making inferences about parameters, we make inferences about the model and
+therefore about the phenomenon that the model is supposed to describe. 
+
+
+Statistical inference can be performed in three different ways: 
+
+1. point estimation;
+
+2. interval estimation;
+
+3. hypothesis tests.
+
+
+Several approaches for point estimation are available in the literature. In this
+joint [work](http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0101-74382018000300555&tlng=en)
+with [Josmar Mazucheli](http://lattes.cnpq.br/8899185212821611) and [Sanku Dey](https://www.researchgate.net/profile/Sanku_Dey),
+we discussed eleven methods of point estimation for a statistical model suitable
+for bounded phenomena.
+
+## Likelihood
+
+Since it was proposed by the famous
+[Ronald Fisher](https://en.wikipedia.org/wiki/Ronald_Fisher) in a series of articles during
+the period of 1912 to 1934 the maximum likelihood method is certainly the most used in
+practical situations. The maximum likelihood estimators (MLE) have desirable properties and
+are used in the construction  of confidence interval and hypothesis testing.
+
+The properties that make the MLE attractive are:
+
+- asymptotically unbiased;
+
+- consistency;
+
+- efficiency;
+
+- invariance under transformation;
+
+- asymptotically normally distributed.
+
+Assuming that a statistical model is parameterized by the unknown and fixed parameter vector
+$\boldsymbol{\theta} = (\theta_1, \ldots, \theta_p)^\top$, the likelihood function 
+$L(\boldsymbol{\theta} \mid \boldsymbol{x})$, is a measure of plausibility with the observed sample
+$\boldsymbol{x}$, with the purpose of transmitting data information about $\boldsymbol{\theta}$.
+The general definition is that the likelihood function is the joint probability function
+seen as function of the parameter, i.e.,
+$$
+L(\boldsymbol{\theta} \mid \boldsymbol{x}) = f(\boldsymbol{\theta} \mid \boldsymbol{x}).
+$$
+
+It should be important to emphasize that the function form of the likelihood function
+depends of the assumptions of the probabilistic model. For instance, under independence of
+observations the join distribution is given by the product of densities functions. 
+In contrast, under dependence of observations the joint distribution can be written by
+conditional probabilities.
+
+### The i.i.d. case
+
+Let be $\boldsymbol{x} = (x_1, \ldots, x_n)^\top$ an **independent** and **identical distributed**
+random sample from the random variable $X$, which the probability density function $f(x \mid \boldsymbol{\theta})$
+depends on the parameter vector $\boldsymbol{\theta}$.
+Then, the likelihood function is defined by
+\begin{equation}
+L(\boldsymbol{\theta} \mid \boldsymbol{x}) = \prod_{i=1}^{n}\,f(x_i \mid \boldsymbol{\theta}).
+\end{equation}
+
+We say that $\widehat{\boldsymbol{\theta}}$ is the maximum likelihood estimator of 
+$\boldsymbol{\theta}$ if 
+
+$$L(\widehat{\boldsymbol{\theta}} \mid \boldsymbol{x}) \geq L(\boldsymbol{\theta} \mid \boldsymbol{x}), \forall \ \boldsymbol{\theta}$$.
+
+Since the logarithm function is monotonically increasing, for computational simplicity it 
+is usual use the log-likelihood function,
+$$\ell(\boldsymbol{\theta} \mid \boldsymbol{x}) = \log  L(\boldsymbol{\theta} \mid \boldsymbol{x}),$$
+since both function lead to the same maximum point.
+Usually, the MLEs cannot be expressed in analytically formula, then they are obtained by
+numerical maximization of the log-likelihood function.
+
+The first derivative of log-likelihood function with respect to each parameter,
+$\boldsymbol{\theta}_j, j  = 1, \ldots, p$, is known as score function. It can be shown 
+that
+\begin{equation*}
+\mathbb{E}\left[\dfrac{\textrm{d}}{\textrm{d}\boldsymbol{\theta}_j}\,\ell(\boldsymbol{\theta} \mid \boldsymbol{x})\right] = 0,
+\end{equation*}
+that is, the score function has mean zero.
+Note that the score function is a vector of first partial derivatives, one for each
+element of $\boldsymbol{\theta}$. If the log-likelihood is concave, then the MLEs can be
+obtained by setting the score function to vector zero and solving the system equation.
+
+Another important quantity in the likelihood theory is the expected Fisher information
+matrix, defined by
+\begin{equation}\label{eq:fisher-esp}
+\mathbf{I}\left(\boldsymbol{\theta}\right) = \mathbb{E}\left [-\dfrac{\partial^2}{\partial\boldsymbol{\theta}_j\,\partial\boldsymbol{\theta}_k} \log f(x \mid \boldsymbol{\theta})\right]
+\end{equation}
+for $j, k = 1, \ldots, p$.
+
+The drawback of working with $\mathbf{I}\left(\boldsymbol{\theta}\right)$ is the 
+difficult to obtain analytically expression for the expectation, since a
+integral needs to be solved.
+
+Under certain regularity conditions, the observed Fisher information matrix, given by
+\begin{equation}\label{eq:fisher-obs}
+\mathbf{H}\left(\boldsymbol{\theta}\right) = -\dfrac{\partial}{\partial\boldsymbol{\theta}_j\,\partial\boldsymbol{\theta}_k} \log f(x_i \mid \boldsymbol{\theta}), %\at[\big]{\boldsymbol{\theta}=\widehat{\boldsymbol{\theta}}}
+\end{equation}
+is an consistent estimator of $\mathbf{I}\left(\boldsymbol{\theta}\right)$.
+
+The concept of information is associate to the curvature of likelihood function and
+the greater the curvature the more accurate the information contained in the likelihood,
+the data!
+In other words, the Fisher information matrix indicate the accuracy of estimates,
+therefore it is essential for the construction of confidence intervals and
+hypothesis tests.
+
+## Final comments
+
+In this text, I tried to clarify the concept of statistical inference and the likelihood
+paradigm. 
+In the sequel, I will explore the concept of bias and discus some methods for bias correction
+of the maximum likelihood estimators in finite samples.
+
+
+## References
+[An Introduction to Bartlett Correction and Bias Reduction](https://www.springer.com/gp/book/9783642552540)
+
+[Statistical Inference](https://www.amazon.com.br/Statistical-Inference-George-Casella/dp/0534243126)

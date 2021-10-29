@@ -1,0 +1,84 @@
+---
+title: Bias Correction of Maximum Likelihood Estimators
+summary: The main method for maximum likelihood bias correction
+author: André Felipe Berdusco Menezes
+date: '2019-09-12'
+draft: false
+categories:
+  - statistical inference
+  - likelihood
+  - bias correction
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introduction
+
+The term bias is quite common in statistics to express a systematic error that can often
+be identified and even corrected.
+In the context of statistical inferecen the bias is related to an important property of
+estimators.
+
+
+As I discussed in this [*post*](https://andrmenezes.github.io/post/2019-07-27-infer%C3%AAncia-estat%C3%ADstica-e-verossimilhan%C3%A7a/)
+the maximum likelihood method is widely used in practice, mainly because its intuitive 
+appeal and the properties it enjoys.
+
+However, the statistical properties that make the maximum likelihood estimators (MLEs)
+attractive are mostly asymptotic properties, which means holds for large sample size.
+For instance, the MLEs have a bias of order $\mathcal{O}(n^{-1})$, where $n$ is the 
+sample size, i.e., this bias decreases as sample size increases.
+Thus, for small or moderate sample sizes the MLEs can be highly biased
+
+
+## Definition
+Let be  $\widehat{\theta}$ the MLE of the parameter ${\theta}$, then the bias of the estimator
+is given by
+$$\mathcal{B}\left(\widehat{\theta}\right) = \mathbb{E}\left({\widehat{\theta}}\right) - \theta$$
+where $\mathbb{E}(\cdot)$ denotes the expectation with respect to the sampling distribution
+of the estimator $\widehat{\theta}$.
+
+Usually, it is not possible to determine the MLE through a explicit formula, then we obtained
+numerical estimate of ${\widehat{\theta}}$ from the maximization of the log-likelihood
+function.
+In these cases, it is natural to think that it is not possible to find the bias of 
+${\widehat{\theta}}$, but, there are at least three approaches in the literature for
+maximum likelihood bias correction.
+
+In the next section, I will briefly describe such approaches, interested readers may found
+more technical details in my undergraduate research [here](https://github.com/AndrMenezes/si2017/raw/master/final_report.pdf).
+
+## The bias correction approaches
+
+By using second degree Taylor approximation on the score vector,
+[Cox e Snell (1968)](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.2517-6161.1968.tb00724.x)
+developed a methodology that allows to obtain analytical expression for the bias of MLEs
+This method has been extensively explored in the literature for different statistical models.
+I and professor [Josmar Mazucheli](https://orcid.org/0000-0001-6740-0445)
+developed several works deducing analytical expressions for the bias of the parameters of different statistical models.
+The main highlight of this partnership is the paper 
+[mle.tools: An R Package for Maximum Likelihood Bias Correction](https://journal.r-project.org/archive/2017/RJ-2017-055/index.html),
+published in [R Journal](https://journal.r-project.org/),
+where we evaluated the efficiency of the `mle.tools` R package for Cox-Snell bias correction
+on several probability distributions.
+
+A second approach was proposed by 
+[Firth (1993)](https://www.jstor.org/stable/2336755?seq=1#page_scan_tab_contents)
+and it is known as preventive, because the author proposed to transform the score vector
+before obtain the maximum likelihood estimates. For technical details on this methodology
+I recommend the excellent book [An Introduction to Bartlett Correction and Bias Reduction](https://www.springer.com/gp/book/9783642552540)
+from professors Gauss and Cribari of UFPE.
+
+Finnaly, it is worth mentioning that resampling methods such as Bootstrap and Jacknife
+are computational alternatives that can be used for bias estimation.
+A practical example can be found in my work [here](https://github.com/AndrMenezes/sts2017/raw/master/work5/draft-5.pdf).
+
+## References
+[A General Definition of Residuals](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.2517-6161.1968.tb00724.x)
+
+[An Introduction to Bartlett Correction and Bias Reduction](https://www.springer.com/gp/book/9783642552540)
+
+[Bias Reduction of Maximum Likelihood Estimates](https://www.jstor.org/stable/2336755?seq=1#page_scan_tab_contents)
