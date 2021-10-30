@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>response surface on André Menezes</title>
+    <link>http://andrmenezes.github.io/categories/response-surface/</link>
+    <description>Recent content in response surface on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/response-surface/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Response Surface Methodology</title>
+      <link>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</guid>
+      
+        <description>Briefly discussion about response surface methodology</description>
+      
+    </item>
+    
+  </channel>
+</rss>

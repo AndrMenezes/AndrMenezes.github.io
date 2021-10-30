@@ -63,6 +63,21 @@
   </url>
   
   <url>
+    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
+    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/response-surface/</loc>
+    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</loc>
+    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://andrmenezes.github.io/categories/bias-correction/</loc>
     <lastmod>2019-09-12T00:00:00+00:00</lastmod>
   </url>
@@ -84,11 +99,6 @@
   
   <url>
     <loc>http://andrmenezes.github.io/categories/hat-matrix/</loc>
-    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
     <lastmod>2019-06-25T00:00:00+00:00</lastmod>
   </url>
   

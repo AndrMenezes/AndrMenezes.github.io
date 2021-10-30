@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | Response Surface Methodology </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2019-10-05-response-surface-methodology/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Response Surface Methodology"/>
+<meta name="twitter:description" content="Briefly discussion about response surface methodology"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenezes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Response Surface Methodology</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                05/10/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">3-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="concepts" class="section level2">
+<h2>Concepts</h2>
+<p>When a researcher has control about the experiment and her/his interest is to determine
+the experimental region that optimizes the response variable, the response surface methodology
+is a very suitable statistical technique for this task.</p>
+<p>Formally introduced by George P. Box and K. B. Wilson in 1951, the response surface models
+assume that the relationship between the factors <span class="math inline">\(\boldsymbol{x} = (x_1, \ldots, x_p)\)</span>
+(fixed) and the response variable <span class="math inline">\(\boldsymbol{y}\)</span> (random) is described by a linear model,
+defined by
+<span class="math display">\[\boldsymbol{y} = f(\boldsymbol{x}) + \boldsymbol{\varepsilon}\]</span>
+where the true function <span class="math inline">\(f\)</span> is usually unknown and <span class="math inline">\(\boldsymbol{\varepsilon}\)</span> is called
+random term, i.e., it represents other sources of variability that could not controlled in the
+experiment.</p>
+<div id="the-functional-form" class="section level3">
+<h3>The functional form</h3>
+<p>In most application the true relationship between <span class="math inline">\(\boldsymbol{y}\)</span> and <span class="math inline">\(\boldsymbol{x}\)</span>
+is unknown. Hence, Taylor approximations on <span class="math inline">\(f\)</span> are considered.
+The most simple approximation, for instance, is the first order Taylor expansion.
+Due to its simplicity, it is common the first order model to have lack of fit concerns,
+especially when the experimental region presents some curvature.
+In such cases, approximations of higher order are required.
+In general, second order models are sufficient to describe the surface.</p>
+<p>Another relevant aspect to determine the functional form of the model is data collection,
+that is, the experimental design.
+The desirable properties of a design are:</p>
+<ul>
+<li><p><strong>Rotatability:</strong> when the same quantity of information about response surface in the same distance <span class="math inline">\(d\)</span> is independently of direction in relation to the central point of experiment.</p></li>
+<li><p><strong>Orthogonality:</strong> when the linear, interaction, quadratic, or higher order of the model are independent.</p></li>
+</ul>
+<p>With the design established and the appropriate model fitted, the next step is to determine
+the optimal region or walk towards and optimal region.
+For this, mathematical techniques to determine and characterize the optimal region are used.</p>
+<p>Interested readers in a more detail discussion with theoretical aspects about response
+surface methodology can access this <a href="https://github.com/AndrMenezes/rsm2019/raw/master/report.pdf">work</a>.</p>
+</div>
+</div>
+<div id="illustrative-example" class="section level2">
+<h2>Illustrative example</h2>
+<p>Consider the experiment involving a procedure for storing bovine semen, which the main
+goal is to evaluate the effectiveness of this procedure.
+The experimental conditions are:</p>
+<ul>
+<li><p><span class="math inline">\(x_1\)</span>: percentage additions of sodium citrate,</p></li>
+<li><p><span class="math inline">\(x_2\)</span>: glycerol percentage, and</p></li>
+<li><p><span class="math inline">\(x_3\)</span>: the equilibrium time in hours before freezing with a temperature maintained at 5ºC.</p></li>
+</ul>
+<p>The response variable, <span class="math inline">\(y\)</span>, is the percentage of surviving sperm.</p>
+<p>For data collection, the researches adopted the <span class="math inline">\(2^3\)</span> central composite design with
+central and axial points <span class="math inline">\(\alpha = 2\)</span> without replications.</p>
+<p>The final model chosen to describe the experiment is given by
+<span class="math display">\[\widehat{y} = 57.769 -1.312\,z_1 -2.312\,z_2 + 9.125\, z_1\, z_2 -9.048\,z^2_{1} -11.423\,z^2_{2}\]</span>
+where <span class="math inline">\(z_i = \frac{x_i - m_i }{h_i}\)</span> is the factor <span class="math inline">\(i\)</span> encoded in <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, with <span class="math inline">\(m_i\)</span> denotes the
+mean between highest and lowest observed value of the factor <span class="math inline">\(x_i\)</span> and <span class="math inline">\(h_i\)</span> is half
+the difference between highest and lowest observed value.</p>
+<p>To study the experimental region we write the final model in canonical form
+<span class="math display">\[\widehat{y} = 58.06 - 5.520\,w^2_{1} - 14.948\,w^2_{2}\]</span>
+where <span class="math inline">\(w_1 = -0.791(z_1 + 0.155) - 0.612(z_2 + 0.163)\)</span> and <span class="math inline">\(w_2 = - 0.612(z_1 + 0.155) + 0.791(z_2 + 0.163)\)</span>.</p>
+<p>The two eigenvalues are negatives, then the critical point é local maximum, where
+<span class="math inline">\((z_1,z_2) = (-0.155,-0.163)\)</span> or in the original scale of the factors
+<span class="math inline">\((x_1,x_2) = (2.891,7.511)\)</span>.</p>
+<p>A graphical representation of the estimated response surface is shown below</p>
+<p><img align="center" width="800" height="400" src="img/plot_msr.png"></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/response-surface/">response surface</a><a class="category" href="/categories/linear-regression/">linear regression</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWS4M8T1XR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWS4M8T1XR');
+</script></body>
+
+</html>
