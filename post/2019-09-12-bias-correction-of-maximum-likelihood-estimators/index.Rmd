@@ -19,7 +19,7 @@ output:
 
 The term bias is quite common in statistics to express a systematic error that can often
 be identified and even corrected.
-In the context of statistical inferecen the bias is related to an important property of
+In the context of statistical inference the bias is related to an important property of
 estimators.
 
 
