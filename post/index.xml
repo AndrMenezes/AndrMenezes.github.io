@@ -6,7 +6,18 @@
     <description>Recent content in Posts on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regression Models for Bounded Responses</title>
+      <link>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</guid>
+      
+        <description>A disscusion on regression models when the response variable in bounded on the unit interval $(0, 1)$</description>
+      
+    </item>
+    
     <item>
       <title>Autoregressive time series models</title>
       <link>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</link>
@@ -30,17 +41,6 @@
     </item>
     
     <item>
-      <title>Bias Correction of Maximum Likelihood Estimators</title>
-      <link>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</guid>
-      
-        <description>The main method for maximum likelihood bias correction</description>
-      
-    </item>
-    
-    <item>
       <title>Statistical Inference and Likelihood</title>
       <link>http://andrmenezes.github.io/post/2019-07-27-statistical-inference-and-likelihood/</link>
       <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
@@ -59,17 +59,6 @@
       <guid>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</guid>
       
         <description>The importance of projection matrix in linear regression models</description>
-      
-    </item>
-    
-    <item>
-      <title>Multiple comparison methods</title>
-      <link>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</guid>
-      
-        <description>A note on multiple comparison methods</description>
       
     </item>
     

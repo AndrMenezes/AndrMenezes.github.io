@@ -6,7 +6,18 @@
     <description>Recent content in likelihood on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/likelihood/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/likelihood/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regression Models for Bounded Responses</title>
+      <link>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</guid>
+      
+        <description>A disscusion on regression models when the response variable in bounded on the unit interval $(0, 1)$</description>
+      
+    </item>
+    
     <item>
       <title>Autoregressive time series models</title>
       <link>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</link>
@@ -15,17 +26,6 @@
       <guid>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</guid>
       
         <description>Simulation, estimation and forecast AR(1)</description>
-      
-    </item>
-    
-    <item>
-      <title>Bias Correction of Maximum Likelihood Estimators</title>
-      <link>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</guid>
-      
-        <description>The main method for maximum likelihood bias correction</description>
       
     </item>
     

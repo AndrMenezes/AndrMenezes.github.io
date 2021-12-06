@@ -6,13 +6,13 @@
     <description>Recent content in Categories on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>autoregressive model</title>
-      <link>http://andrmenezes.github.io/categories/autoregressive-model/</link>
-      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      <title>Beta distribution</title>
+      <link>http://andrmenezes.github.io/categories/beta-distribution/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://andrmenezes.github.io/categories/autoregressive-model/</guid>
+      <guid>http://andrmenezes.github.io/categories/beta-distribution/</guid>
       
         <description></description>
       
@@ -21,9 +21,42 @@
     <item>
       <title>likelihood</title>
       <link>http://andrmenezes.github.io/categories/likelihood/</link>
-      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/likelihood/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>regression models</title>
+      <link>http://andrmenezes.github.io/categories/regression-models/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/regression-models/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Simplex distribution</title>
+      <link>http://andrmenezes.github.io/categories/simplex-distribution/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/simplex-distribution/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>autoregressive model</title>
+      <link>http://andrmenezes.github.io/categories/autoregressive-model/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/autoregressive-model/</guid>
       
         <description></description>
       
@@ -85,17 +118,6 @@
     </item>
     
     <item>
-      <title>bias correction</title>
-      <link>http://andrmenezes.github.io/categories/bias-correction/</link>
-      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/categories/bias-correction/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
       <title>deleted residuals</title>
       <link>http://andrmenezes.github.io/categories/deleted-residuals/</link>
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
@@ -123,28 +145,6 @@
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/projection-matrix/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>hypotheses test</title>
-      <link>http://andrmenezes.github.io/categories/hypotheses-test/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/categories/hypotheses-test/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>multiple comparisons</title>
-      <link>http://andrmenezes.github.io/categories/multiple-comparisons/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/categories/multiple-comparisons/</guid>
       
         <description></description>
       

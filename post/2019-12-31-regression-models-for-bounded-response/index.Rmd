@@ -1,0 +1,134 @@
+---
+title: Regression Models for Bounded Responses
+summary: A disscusion on regression models when the response variable in bounded on the unit interval $(0, 1)$
+author: André Felipe Berdusco Menezes
+date: '2019-12-31'
+draft: false
+categories:
+  - regression models
+  - Beta distribution
+  - Simplex distribution
+  - likelihood
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introduction
+
+The regression models are a fundamental tool for every data analyst.
+Several natural and anthropogenic phenomena can be describe by regression models.predictions
+In general, this happen when the goal is to investigate a relationship between a response
+variable and others variables (covariates), then from this established relationship obtains
+predictions.
+
+When the response variable in bounded on the unit interval $(0, 1)$ the linear regression
+model under normal random errors is not appropriate anymore.
+A widely used solution consists of carrying out some transformation in the response variable
+so that it assumes values in the set of $\mathbb{R}$. 
+However, such transformation compromises the interpretation of model parameters in the 
+original scale of the response variable, beside that, the predicted values can extrapolate
+the limits of unit interval.
+
+
+## Main Models
+
+In view of this limitation some authors have introduced alternative model so that the
+assumptions used are consistent with the reality of the phenomena.
+A class of models that have been received attention are the parametric regression models
+for bounded response. In this models, the assumption is that the response variable conditional
+to the covariates follows some probability distribution with support on $(0, 1)$
+
+The construction to this models is similar to the [Generalized Linear Models](https://en.wikipedia.org/wiki/Generalized_linear_model),
+but the stochastic component does not belong to the [exponential family of distributions](https://en.wikipedia.org/wiki/Exponential_family),
+a fact that occurs in the GLMs and provide more greater computational ease for
+parameter estimation, which was crucial in the 70s and 80s.
+
+
+Certainly, the most well known probability distribution with support on $(0, 1)$ is the
+Beta family of distributions.
+In the 2000s, both [Cepeda-Cuervo (2001)](/pdf/cepeda-cuervo.pdf) in his doctoral thesis, and 
+[Ferrari e Cribari-Neto (2004)](https://www.tandfonline.com/doi/abs/10.1080/0266476042000214501)
+in a scientific paper, introduced a parametrization of Beta distribution such that 
+the parameters denote the mean and the precision of response variable.
+For this model the probability density function is defined by
+
+\begin{equation}\label{eq:pdf-beta}
+f(y \mid \mu,\phi) = \dfrac{\Gamma(\phi)}{\Gamma(\mu\,\phi)\Gamma((1-\mu)\,\phi)}y^{\mu\phi-1}(1-y)^{(1-\mu)\phi-1} I_{(0, 1)}(y)
+\end{equation}
+where $\mu \in (0,1)$ denotes the mean, $\phi>0$ is the precision parameter, and
+$\Gamma(\cdot)$ is the [gamma](https://en.wikipedia.org/wiki/Gamma_function) function.
+
+
+Following this paraemtrization the Beta regression model assumes that
+$Y_i \sim \text{Beta}(\mu_i, \phi_i) , i = 1, \ldots, n,$ in such way that 
+the mean and precision parameters are defined, respectively, by
+\begin{equation}\label{eq:link}
+g(\mu_i)	 = \mathbf{x}_i^\top\,\mathbf{\beta} \quad \mathrm{e} \quad
+h(\phi_i)	 = \mathbf{z}_i^\top\,\mathbf{\gamma}
+\end{equation}
+where 
+$\mathbf{\beta} = (\beta_0, \ldots, \beta_{p-1})^\top$ and $\mathbf{\gamma} = (\gamma_0, \ldots, \gamma_{k-1})^\top$
+are the parameter vectors associated with the mean and precision, respectively;
+$\mathbf{x}_i$ and $\mathbf{z}_i$ 
+are covariates vectors associated with the mean and precision of the model for the
+$i$-th observation, respectively; $g(\cdot)$ and $h(\cdot)$ are
+appropriates link functions.
+
+The link functions must be twice differentiate with relation to the parameters.
+The link function for $g(\cdot)$ must satisfies $(0, 1) \rightarrow \mathbb{R}$,
+thus usual choices are
+
+- $\mathrm{logit}$: $g(\mu_i) = \log\left(\mu_i / (1-\mu_i)\right)$;
+
+- $\mathrm{probit}$: $g(\mu_i) = \Phi^{-1}(\mu_i)$, where $\Phi^{-1}(\cdot)$ is the quantile function of standard Normal distribution;
+
+- $\mathrm{c}\log$-$\log$: $g(\mu_i) = \log\left[-\log(1-\mu_i)\right]$.
+
+The $h(\cdot)$ link function must satisfies $\mathbb{R}^{+} \rightarrow \mathbb{R}$,
+two usual functions are the logarithm and square root functions.
+
+In the 90s the Norwegian statistician [Bent Jorgensen](https://en.wikipedia.org/wiki/Bent_J%C3%B8rgensen_(statistician))
+extended the GLMs with the dispersion models. This class of models includes the Simplex
+distribution introduced in [Barndorff-Nielsen e Jorgensen (1991)](https://www.sciencedirect.com/science/article/pii/0047259X9190008P),
+which is an interesting alternative to the Beta distrbution.
+Its probability distribution function is given by
+
+$$
+f(y\mid \mu, \phi) = \left[2\pi\phi^2\{y (1-y)\}^3\right]^{-1/2} \exp\left\{-\dfrac{1}{2 \phi^2} \left[\dfrac{(y - \mu)^2}{y (1 - y) \mu^2(1-\mu)^2}\right]\right\}I_{(0, 1)}(y)
+$$
+where $\mu \in (0, 1)$ denotes the mean and e $\phi >0$ is the dispersion parameter.
+
+The Simplex regression model follows a similar structure to the Beta model, where the parameters $\mu$ and $\phi$
+they relate to the predictors through the appropriate binding functions $g(\cdot)$ and $h(\cdot)$. 
+
+
+## Final considerations
+
+Under the parametric statistics paradigm several regression models for bounded response
+have been proposed in the literature. Such model can present regression structure for the mean,
+precision or even the shape of the distribution.
+Furthermore, there are model that seek to obtain a complete view of the response variable
+condition on covariates by means of the quantiles, i.e., the interest parameter that is
+related with the covariate is some quantile.
+
+In the last two year with a partnership with my advisor, professor  [Josmar Mazucheli](http://lattes.cnpq.br/8899185212821611),
+we have published some papers that introduced alternative probability distribution 
+for modeling bounded phenomenas.
+The works are as follows:
+
+- unit-Weibull distribution [1](/pdf/2018-unit-weibull.pdf) [2](/pdf/2018-unit-weibull-regression.pdf);
+- [unit-Lindley](/pdf/2018-unit-lindley) distribution;
+- [unit-Gaussiana](/pdf/2018-unit-inverse-gaussian) distribution;
+- [unit-Gompertz](/pdf/2019-unit-gompertz) distribution;
+- [unit-Birnbaum-Saunders](/pdf/2018-unit-bs) distribution.
+
+## References
+Barndorff-Nielsen, O.; Jorgensen, B. **Some parametric models on the Simplex.** Journal of Multivariate Analysis,
+v. 39, n. 1, p. 106--116, 1991.
+
+Cepeda-Cuervo, E. **Variability modeling in generalized linear models.** Tese (Doutorado) --- Mathematics Institute, Universidade Federal do Rio de Janeiro, 2001.
+
+Ferrari, S.; Cribari-Neto, F. **Beta regression for modelling rates and proportions.** Journal of Applied Statistics, v. 31, n. 7, p. 799--815, 2004.

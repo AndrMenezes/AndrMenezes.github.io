@@ -1,0 +1,68 @@
+<script src="index_files/header-attrs-2.8/header-attrs.js"></script>
+
+
+<div id="concepts" class="section level2">
+<h2>Concepts</h2>
+<p>When a researcher has control about the experiment and her/his interest is to determine
+the experimental region that optimizes the response variable, the response surface methodology
+is a very suitable statistical technique for this task.</p>
+<p>Formally introduced by George P. Box and K. B. Wilson in 1951, the response surface models
+assume that the relationship between the factors <span class="math inline">\(\boldsymbol{x} = (x_1, \ldots, x_p)\)</span>
+(fixed) and the response variable <span class="math inline">\(\boldsymbol{y}\)</span> (random) is described by a linear model,
+defined by
+<span class="math display">\[\boldsymbol{y} = f(\boldsymbol{x}) + \boldsymbol{\varepsilon}\]</span>
+where the true function <span class="math inline">\(f\)</span> is usually unknown and <span class="math inline">\(\boldsymbol{\varepsilon}\)</span> is called
+random term, i.e., it represents other sources of variability that could not controlled in the
+experiment.</p>
+<div id="the-functional-form" class="section level3">
+<h3>The functional form</h3>
+<p>In most application the true relationship between <span class="math inline">\(\boldsymbol{y}\)</span> and <span class="math inline">\(\boldsymbol{x}\)</span>
+is unknown. Hence, Taylor approximations on <span class="math inline">\(f\)</span> are considered.
+The most simple approximation, for instance, is the first order Taylor expansion.
+Due to its simplicity, it is common the first order model to have lack of fit concerns,
+especially when the experimental region presents some curvature.
+In such cases, approximations of higher order are required.
+In general, second order models are sufficient to describe the surface.</p>
+<p>Another relevant aspect to determine the functional form of the model is data collection,
+that is, the experimental design.
+The desirable properties of a design are:</p>
+<ul>
+<li><p><strong>Rotatability:</strong>
+when the same quantity of information about response surface in the same distance <span class="math inline">\(d\)</span> is
+independently of direction in relation to the central point of experiment.</p></li>
+<li><p><strong>Orthogonality:</strong> when the linear, interaction, quadratic, or higher order of the model are independent.</p></li>
+</ul>
+<p>With the design established and the appropriate model fitted, the next step is to determine
+the optimal region or walk towards and optimal region.
+For this, mathematical techniques to determine and characterize the optimal region are used.</p>
+<p>Interested readers in a more detail discussion with theoretical aspects about response
+surface methodology can access this <a href="https://github.com/AndrMenezes/rsm2019/raw/master/report.pdf">work</a>.</p>
+</div>
+</div>
+<div id="illustrative-example" class="section level2">
+<h2>Illustrative example</h2>
+<p>Consider the experiment involving a procedure for storing bovine semen, which the main
+goal is to evaluate the effectiveness of this procedure.
+The experimental conditions are:</p>
+<ul>
+<li><p><span class="math inline">\(x_1\)</span>: percentage additions of sodium citrate,</p></li>
+<li><p><span class="math inline">\(x_2\)</span>: glycerol percentage, and</p></li>
+<li><p><span class="math inline">\(x_3\)</span>: the equilibrium time in hours before freezing with a temperature maintained at 5ºC.</p></li>
+</ul>
+<p>The response variable, <span class="math inline">\(y\)</span>, is the percentage of surviving sperm.</p>
+<p>For data collection, the researches adopted the <span class="math inline">\(2^3\)</span> central composite design with
+central and axial points <span class="math inline">\(\alpha = 2\)</span> without replications.</p>
+<p>The final model chosen to describe the experiment is given by
+<span class="math display">\[\widehat{y} = 57.769 -1.312\,z_1 -2.312\,z_2 + 9.125\, z_1\, z_2 -9.048\,z^2_{1} -11.423\,z^2_{2}\]</span>
+where <span class="math inline">\(z_i = \frac{x_i - m_i }{h_i}\)</span> is the factor <span class="math inline">\(i\)</span> encoded in <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, with <span class="math inline">\(m_i\)</span> denotes the
+mean between highest and lowest observed value of the factor <span class="math inline">\(x_i\)</span> and <span class="math inline">\(h_i\)</span> is half
+the difference between highest and lowest observed value.</p>
+<p>To study the experimental region we write the final model in canonical form
+<span class="math display">\[\widehat{y} = 58.06 - 5.520\,w^2_{1} - 14.948\,w^2_{2}\]</span>
+where <span class="math inline">\(w_1 = -0.791(z_1 + 0.155) - 0.612(z_2 + 0.163)\)</span> and <span class="math inline">\(w_2 = - 0.612(z_1 + 0.155) + 0.791(z_2 + 0.163)\)</span>.</p>
+<p>The two eigenvalues are negatives, then the critical point é local maximum, where
+<span class="math inline">\((z_1,z_2) = (-0.155,-0.163)\)</span> or in the original scale of the factors
+<span class="math inline">\((x_1,x_2) = (2.891,7.511)\)</span>.</p>
+<p>A graphical representation of the estimated response surface is shown below</p>
+<p><img align="center" width="800" height="400" src="img/plot_msr.png"></p>
+</div>

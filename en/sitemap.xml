@@ -3,18 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://andrmenezes.github.io/categories/autoregressive-model/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/categories/beta-distribution/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -29,17 +24,12 @@
   
   <url>
     <loc>http://andrmenezes.github.io/categories/likelihood/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/markov-chain/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -50,6 +40,36 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/post/"
                 />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/regression-models/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/simplex-distribution/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/autoregressive-model/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/markov-chain/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -75,16 +95,6 @@
   <url>
     <loc>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</loc>
     <lastmod>2019-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/bias-correction/</loc>
-    <lastmod>2019-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</loc>
-    <lastmod>2019-09-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -140,21 +150,6 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/archives/"
                 />
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/hypotheses-test/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/multiple-comparisons/</loc>
-    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>

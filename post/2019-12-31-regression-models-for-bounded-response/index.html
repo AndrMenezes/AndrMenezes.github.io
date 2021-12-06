@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | Regression Models for Bounded Responses </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.68.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.20effb3935272df68279aaa52dac3164465d8159f15b1d087fedbda32a121a9a.css"
+        integrity="sha256-IO/7OTUnLfaCeaqlLawxZEZdgVnxWx0If&#43;29oyoSGpo="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2019-12-31-regression-models-for-bounded-response/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.2c507695a28320822cee065375387eac9bc9f3dfd49d4dcf84bbaca2b8efb30c.js"
+                integrity="sha256-LFB2laKDIIIs7gZTdTh&#43;rJvJ89/UnU3PhLusorjvsww="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Regression Models for Bounded Responses"/>
+<meta name="twitter:description" content="A disscusion on regression models when the response variable in bounded on the unit interval $(0, 1)$"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenezes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/pdf/afbm_curriculum.pdf"
+                        
+                   title="">Curriculum</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Regression Models for Bounded Responses</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                31/12/2019
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+<script src="http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>The regression models are a fundamental tool for every data analyst.
+Several natural and anthropogenic phenomena can be describe by regression models.predictions
+In general, this happen when the goal is to investigate a relationship between a response
+variable and others variables (covariates), then from this established relationship obtains
+predictions.</p>
+<p>When the response variable in bounded on the unit interval <span class="math inline">\((0, 1)\)</span> the linear regression
+model under normal random errors is not appropriate anymore.
+A widely used solution consists of carrying out some transformation in the response variable
+so that it assumes values in the set of <span class="math inline">\(\mathbb{R}\)</span>.
+However, such transformation compromises the interpretation of model parameters in the
+original scale of the response variable, beside that, the predicted values can extrapolate
+the limits of unit interval.</p>
+</div>
+<div id="main-models" class="section level2">
+<h2>Main Models</h2>
+<p>In view of this limitation some authors have introduced alternative model so that the
+assumptions used are consistent with the reality of the phenomena.
+A class of models that have been received attention are the parametric regression models
+for bounded response. In this models, the assumption is that the response variable conditional
+to the covariates follows some probability distribution with support on <span class="math inline">\((0, 1)\)</span></p>
+<p>The construction to this models is similar to the <a href="https://en.wikipedia.org/wiki/Generalized_linear_model">Generalized Linear Models</a>,
+but the stochastic component does not belong to the <a href="https://en.wikipedia.org/wiki/Exponential_family">exponential family of distributions</a>,
+a fact that occurs in the GLMs and provide more greater computational ease for
+parameter estimation, which was crucial in the 70s and 80s.</p>
+<p>Certainly, the most well known probability distribution with support on <span class="math inline">\((0, 1)\)</span> is the
+Beta family of distributions.
+In the 2000s, both <a href="/pdf/cepeda-cuervo.pdf">Cepeda-Cuervo (2001)</a> in his doctoral thesis, and
+<a href="https://www.tandfonline.com/doi/abs/10.1080/0266476042000214501">Ferrari e Cribari-Neto (2004)</a>
+in a scientific paper, introduced a parametrization of Beta distribution such that
+the parameters denote the mean and the precision of response variable.
+For this model the probability density function is defined by</p>
+<p><span class="math display">\[\begin{equation}\label{eq:pdf-beta}
+f(y \mid \mu,\phi) = \dfrac{\Gamma(\phi)}{\Gamma(\mu\,\phi)\Gamma((1-\mu)\,\phi)}y^{\mu\phi-1}(1-y)^{(1-\mu)\phi-1} I_{(0, 1)}(y)
+\end{equation}\]</span>
+where <span class="math inline">\(\mu \in (0,1)\)</span> denotes the mean, <span class="math inline">\(\phi&gt;0\)</span> is the precision parameter, and
+<span class="math inline">\(\Gamma(\cdot)\)</span> is the <a href="https://en.wikipedia.org/wiki/Gamma_function">gamma</a> function.</p>
+<p>Following this paraemtrization the Beta regression model assumes that
+<span class="math inline">\(Y_i \sim \text{Beta}(\mu_i, \phi_i) , i = 1, \ldots, n,\)</span> in such way that
+the mean and precision parameters are defined, respectively, by
+<span class="math display">\[\begin{equation}\label{eq:link}
+g(\mu_i)     = \mathbf{x}_i^\top\,\mathbf{\beta} \quad \mathrm{e} \quad
+h(\phi_i)    = \mathbf{z}_i^\top\,\mathbf{\gamma}
+\end{equation}\]</span>
+where
+<span class="math inline">\(\mathbf{\beta} = (\beta_0, \ldots, \beta_{p-1})^\top\)</span> and <span class="math inline">\(\mathbf{\gamma} = (\gamma_0, \ldots, \gamma_{k-1})^\top\)</span>
+are the parameter vectors associated with the mean and precision, respectively;
+<span class="math inline">\(\mathbf{x}_i\)</span> and <span class="math inline">\(\mathbf{z}_i\)</span>
+are covariates vectors associated with the mean and precision of the model for the
+<span class="math inline">\(i\)</span>-th observation, respectively; <span class="math inline">\(g(\cdot)\)</span> and <span class="math inline">\(h(\cdot)\)</span> are
+appropriates link functions.</p>
+<p>The link functions must be twice differentiate with relation to the parameters.
+The link function for <span class="math inline">\(g(\cdot)\)</span> must satisfies <span class="math inline">\((0, 1) \rightarrow \mathbb{R}\)</span>,
+thus usual choices are</p>
+<ul>
+<li><p><span class="math inline">\(\mathrm{logit}\)</span>: <span class="math inline">\(g(\mu_i) = \log\left(\mu_i / (1-\mu_i)\right)\)</span>;</p></li>
+<li><p><span class="math inline">\(\mathrm{probit}\)</span>: <span class="math inline">\(g(\mu_i) = \Phi^{-1}(\mu_i)\)</span>, where <span class="math inline">\(\Phi^{-1}(\cdot)\)</span> is the quantile function of standard Normal distribution;</p></li>
+<li><p><span class="math inline">\(\mathrm{c}\log\)</span>-<span class="math inline">\(\log\)</span>: <span class="math inline">\(g(\mu_i) = \log\left[-\log(1-\mu_i)\right]\)</span>.</p></li>
+</ul>
+<p>The <span class="math inline">\(h(\cdot)\)</span> link function must satisfies <span class="math inline">\(\mathbb{R}^{+} \rightarrow \mathbb{R}\)</span>,
+two usual functions are the logarithm and square root functions.</p>
+<p>In the 90s the Norwegian statistician <a href="https://en.wikipedia.org/wiki/Bent_J%C3%B8rgensen_(statistician)">Bent Jorgensen</a>
+extended the GLMs with the dispersion models. This class of models includes the Simplex
+distribution introduced in <a href="https://www.sciencedirect.com/science/article/pii/0047259X9190008P">Barndorff-Nielsen e Jorgensen (1991)</a>,
+which is an interesting alternative to the Beta distrbution.
+Its probability distribution function is given by</p>
+<p><span class="math display">\[
+f(y\mid \mu, \phi) = \left[2\pi\phi^2\{y (1-y)\}^3\right]^{-1/2} \exp\left\{-\dfrac{1}{2 \phi^2} \left[\dfrac{(y - \mu)^2}{y (1 - y) \mu^2(1-\mu)^2}\right]\right\}I_{(0, 1)}(y)
+\]</span>
+where <span class="math inline">\(\mu \in (0, 1)\)</span> denotes the mean and e <span class="math inline">\(\phi &gt;0\)</span> is the dispersion parameter.</p>
+<p>The Simplex regression model follows a similar structure to the Beta model, where the parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\phi\)</span>
+they relate to the predictors through the appropriate binding functions <span class="math inline">\(g(\cdot)\)</span> and <span class="math inline">\(h(\cdot)\)</span>.</p>
+</div>
+<div id="final-considerations" class="section level2">
+<h2>Final considerations</h2>
+<p>Under the parametric statistics paradigm several regression models for bounded response
+have been proposed in the literature. Such model can present regression structure for the mean,
+precision or even the shape of the distribution.
+Furthermore, there are model that seek to obtain a complete view of the response variable
+condition on covariates by means of the quantiles, i.e., the interest parameter that is
+related with the covariate is some quantile.</p>
+<p>In the last two year with a partnership with my advisor, professor <a href="http://lattes.cnpq.br/8899185212821611">Josmar Mazucheli</a>,
+we have published some papers that introduced alternative probability distribution
+for modeling bounded phenomenas.
+The works are as follows:</p>
+<ul>
+<li>unit-Weibull distribution <a href="/pdf/2018-unit-weibull.pdf">1</a> <a href="/pdf/2018-unit-weibull-regression.pdf">2</a>;</li>
+<li><a href="/pdf/2018-unit-lindley">unit-Lindley</a> distribution;</li>
+<li><a href="/pdf/2018-unit-inverse-gaussian">unit-Gaussiana</a> distribution;</li>
+<li><a href="/pdf/2019-unit-gompertz">unit-Gompertz</a> distribution;</li>
+<li><a href="/pdf/2018-unit-bs">unit-Birnbaum-Saunders</a> distribution.</li>
+</ul>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>Barndorff-Nielsen, O.; Jorgensen, B. <strong>Some parametric models on the Simplex.</strong> Journal of Multivariate Analysis,
+v. 39, n. 1, p. 106–116, 1991.</p>
+<p>Cepeda-Cuervo, E. <strong>Variability modeling in generalized linear models.</strong> Tese (Doutorado) — Mathematics Institute, Universidade Federal do Rio de Janeiro, 2001.</p>
+<p>Ferrari, S.; Cribari-Neto, F. <strong>Beta regression for modelling rates and proportions.</strong> Journal of Applied Statistics, v. 31, n. 7, p. 799–815, 2004.</p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/regression-models/">regression models</a><a class="category" href="/categories/beta-distribution/">Beta distribution</a><a class="category" href="/categories/simplex-distribution/">Simplex distribution</a><a class="category" href="/categories/likelihood/">likelihood</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWS4M8T1XR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWS4M8T1XR');
+</script></body>
+
+</html>
