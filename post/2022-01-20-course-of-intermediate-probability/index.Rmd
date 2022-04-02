@@ -2,7 +2,7 @@
 title: Master's Degree Course of Probability
 summary: Notes on my master's degree course of probability
 author: André Felipe Berdusco Menezes
-date: '2021-12-20'
+date: '2021-12-29'
 draft: false
 categories:
   - master's degree
