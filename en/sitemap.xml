@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>http://andrmenezes.github.io/post/2022-01-20-course-of-intermediate-probability/</loc>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://andrmenezes.github.io/post/2021-12-20-my-master-degree-in-statistics/</loc>
     <lastmod>2021-12-20T00:00:00+00:00</lastmod>
   </url>
@@ -40,6 +45,11 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/post/"
                 />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/probability/</loc>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
