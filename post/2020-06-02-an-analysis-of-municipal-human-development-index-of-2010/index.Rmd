@@ -1,0 +1,66 @@
+---
+title: Beta and Simplex regression models applied to MHDI of 2010
+summary: An analysis of municipal human development index of 2010
+author: André Felipe Berdusco Menezes
+date: '2020-06-02'
+draft: false
+categories:
+  - regression models
+  - MHDI
+  - Beta distribution
+  - Simplex distribution
+  - likelihood
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+
+In 2018, the last year of my undergraduate, I and my dear friend
+[Wesley Furriel](https://github.com/WOLFurriell) submitted a article in
+[Brazilian Journal of Biometrics](https://biometria.ufla.br/index.php/BBJ/index)
+that was published in [Vol. 37, No. 3 of 2019](https://biometria.ufla.br/index.php/BBJ/article/view/408).
+This work, we conducted a empirical study to investige the relationship between
+the Municipal Human Development Index (MHDI) of 2010 and some socioeconimics and spacial
+variables. To avoid potentials redundant relationships, we have selected variables
+that are not used in the construction of MHDI, but can enable explore its
+consonance with other measures that demonstrate aspects of cities social reality,
+such as, inequality, child vulnerability, housing and region.
+
+
+To understand the relationship of MHDI with variables that measure the city reality
+is crucial for the public Brazilian administration. For instance, Kieling (2014)
+studied 14 public politics performed between 1998 and 2013 that evaluate how the
+MHDI is used, either as eligibility criterion for cities recieve a program,
+resource, public funding or as be part of drafting of bills.
+
+The MHDI data as well as the other variables used are available online at
+[Atlas do Desenvolvimento Humano](http://www.atlasbrasil.org.br/).
+
+By definition the MHDI is on unit interval, $(0, 1)$. Values near to $1$ greater
+the human development of the city.
+For this type of variable, the usual linear regression model under Normal
+assumption is not suitable. This motivate us to perform a comparison between
+the Beta and Simplex regression models. The evaluation was achieved by
+information criteria, $AIC$, $BIC$, and Voung test, and also by means of residual
+analysis.
+
+In conclusion, both models shows satisfactory fit to the data with a slight
+advantage for the Beta regression model.
+Furthermore, both models provide same conclusion in respect to the estimate
+effects of the explanatory variables on the MHDI. To be more specific, I highlight
+the following
+
+- Cities with higher child vulnerability have lesser development. The same effect was also identified for cities with higher proportion of households with inadequate water supply and sewer.
+
+- Cities that have a high Gini index, therefore have higher inequality in income distribution, tend to be higher MHDI.
+
+- With respect to Brazilian regions, when compare to the South, with the exception of the Southwest, all other regions (Midwest, North, Northeast) present less MHDI.
+
+It is noteworthy that the data source used in this studied refer to the 2010, and
+were collected during demographic census, which takes place every 10 years, but
+because Brazil has a stupid, genocide and fascist president our 2020 census was
+neglected and did not occur, hence we are not able to provide recent information
+of MHDI and its relationship with the variables in this study.

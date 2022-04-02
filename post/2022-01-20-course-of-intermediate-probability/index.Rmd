@@ -1,0 +1,78 @@
+---
+title: Master's Degree Course of Probability
+summary: Notes on my master's degree course of probability
+author: André Felipe Berdusco Menezes
+date: '2021-12-20'
+draft: false
+categories:
+  - master's degree
+  - probability
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+
+## The fundamental of Statistics
+
+Probability theory is a branch of pure mathematics crucial for statistics.
+In fact, probability theory provides a rigor mathematical description of statistical
+tools. Usual statistical inference results such as frequentist properties of
+estimators, maximum likelihood inference and Bayesian inference have their roots in
+probability theory. 
+
+At advanced probability course student learns the measure theory and the classical book
+[Probability and Measure](https://www.amazon.com.br/Probability-Measure-Patrick-Billingsley/dp/0471007102) of the probability theorist and actor
+[Patrick Billingsley](https://en.wikipedia.org/wiki/Patrick_Billingsley) is one primary
+reference.
+
+In a more elementary level the measure theory is not addressed and no knowledge
+beyond elementary calculus is presumed.
+This restrictions of mathematical knowledge is necessary costly since more technical
+details are omitted, the generality of some theorems reduced,
+make statements without proof, and cumbersome
+arguments is sometimes have to be used.
+All these scarifies, however, is inhibit the importance of the course rather less than
+one might suppose. The essential aspects of theory is entirely comprehensible without
+higher mathematics. 
+
+
+## Course contents
+
+In my Master's Degree I had an intermediate course of probability theory. The textbook was ["Probability: An Intermediate Level Course"](https://impa.br/page-livros/probabilidade-um-curso-em-nivel-intermediario/) by Barry Ree James (in memorial).
+The course was taught by professor
+[Diego Fernando de Bernardini](https://scholar.google.com.br/citations?user=8XKVbggAAAAJ&hl=pt-BR), who literally copied the book on board.
+During the course I organized some notes with the course contents and can be find [here](/pdf/probability_notes_master_degree.pdf) (in Portuguese).
+
+The course was organized in the following major themes:
+
+- Basic definitions
+
+- Random variable and distribution functions
+
+- Mathematical expectation
+
+- Conditional distribution and expectation
+
+- Law of large numbers
+
+- Convergence in distribution
+
+- Central Limit Theorem
+
+
+## Exams
+
+At the end of the course I spent one month studying all the contents and solving a lot of
+exercises in order to prepare myself for the probability exam. I remembered to solve the
+all exercises of the previous exams and reviewed several probability exercises from
+Barry James book. I studied hard.
+
+My probability exam can be find [here](pdf/probability_exam.pdf) (in Portuguese).
+
+
+
+
+

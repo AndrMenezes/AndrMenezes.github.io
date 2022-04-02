@@ -119,11 +119,11 @@ we have published some papers that introduced alternative probability distributi
 for modeling bounded phenomenas.
 The works are as follows:
 
-- unit-Weibull distribution [1](/pdf/2018-unit-weibull.pdf) [2](/pdf/2018-unit-weibull-regression.pdf);
-- [unit-Lindley](/pdf/2018-unit-lindley) distribution;
-- [unit-Gaussiana](/pdf/2018-unit-inverse-gaussian) distribution;
-- [unit-Gompertz](/pdf/2019-unit-gompertz) distribution;
-- [unit-Birnbaum-Saunders](/pdf/2018-unit-bs) distribution.
+- unit-Weibull distribution [1](/pdf/papers/2018__unit-Weibull-distribution.pdf) [2](/pdf/papers/2020__unit_weibull_quantile_regression.pdf);
+- [unit-Lindley](/pdf/papers/2019__unit_lindley.pdf) distribution;
+- [unit-Gaussiana](/pdf/papers/2018__unit-inverse-Gaussian.pdf) distribution;
+- [unit-Gompertz](/pdf/papers/2019__unit-Gompertz.pdf) distribution;
+- [unit-Birnbaum-Saunders](/pdf/papers/2018__unit-Birnbaum-Saunders.pdf) distribution.
 
 ## References
 Barndorff-Nielsen, O.; Jorgensen, B. **Some parametric models on the Simplex.** Journal of Multivariate Analysis,

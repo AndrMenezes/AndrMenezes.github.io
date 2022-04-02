@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://andrmenezes.github.io/categories/beta-distribution/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -23,13 +18,18 @@
   </url>
   
   <url>
-    <loc>http://andrmenezes.github.io/categories/likelihood/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/categories/masters-degree/</loc>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2021-12-20-my-master-degree-in-statistics/</loc>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -43,17 +43,37 @@
   </url>
   
   <url>
-    <loc>http://andrmenezes.github.io/categories/regression-models/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/post/2020-06-02-an-analysis-of-municipal-human-development-index-of-2010/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/categories/beta-distribution/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/likelihood/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/mhdi/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/regression-models/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://andrmenezes.github.io/categories/simplex-distribution/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url>
   

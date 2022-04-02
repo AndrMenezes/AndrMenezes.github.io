@@ -1,0 +1,69 @@
+---
+title: My Master's Degree in Statistics
+summary: Notes on my master's degree in statistics at Unicamp
+author: André Felipe Berdusco Menezes
+date: '2021-12-20'
+draft: false
+categories:
+  - master's degree
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## An Important Change In My Life
+
+I finished my Master's Degree in Statistics at State University of Campinas on
+April 15, 2021 -- during the pandemic.
+I went to Campinas in March 2019 and stayed there for one year and two months.
+
+Like all changes in life the first year was complicated. Several times I
+thought to give up. But now, passed almost one year, I realized that I learn
+many things. It was a good time.
+
+After a long time I don't write new post, I am gathering some contents that I
+learned during my Master Degree's to spread out in a series of posts.
+Particularly, in this series I will write about the following:
+
+- Course of Intermediate Probability
+- Course of Statistical Inference
+- Course of Data Mining
+- Seminar of Bayesian Dynamic Linear Model
+- Seminar of Probability and Statistics
+- My dissertation
+
+## Master Degree's in Statistics at Unicamp
+
+The first year I had three mandatory courses, namely Probability, Statistical Inference,
+and Statistical Methods.
+These courses provide a common and important theoretical background for the student.
+More technical details about the courses I will give in the next posts.
+
+In order to obtain my Master's Degree I must to be approved in the Masters Qualification Exam.
+The Exam consists of two written tests about the contents of the Probability and Statistical
+Inference courses.
+The tests are very difficult and I remember to solve at least one exercise by day.
+For interested readers the previous Mastes Qualification Exams can be found
+[here](https://www.ime.unicamp.br/en/graduate/statistics/qualification) (in Portuguese).
+
+I also must to obtain at least 22 credits in courses. Among the courses I did,
+the most interesting were: Course of Data Mining,
+Seminar of Bayesian Dynamic Linear Models, and
+Seminar of Probability and Statistics.
+
+In the last year, I focusing on researching, codding, and writing my dissertation.
+I studied statistical methods for single cell RNA-seq (scRNA-seq) data modeling.
+I was supervised by professor
+[Benilton de Sá Carvalho](https://bv.fapesp.br/pt/pesquisador/47271/benilton-de-sa-carvalho/),
+and it was an amazing experience for my researcher career.
+
+I want to finish this post with a direct quotation of Lennon-McCartney song
+[In My Life](https://en.wikipedia.org/wiki/In_My_Life), which I think suits very well
+my feeling:
+
+> There are places I'll remember \
+> All my life, thought some have change \
+> Some forever, some not for better \
+> Some have gone and some remain

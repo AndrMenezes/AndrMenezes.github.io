@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MHDI on André Menezes</title>
+    <link>http://andrmenezes.github.io/categories/mhdi/</link>
+    <description>Recent content in MHDI on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/mhdi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beta and Simplex regression models applied to MHDI of 2010</title>
+      <link>http://andrmenezes.github.io/post/2020-06-02-an-analysis-of-municipal-human-development-index-of-2010/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2020-06-02-an-analysis-of-municipal-human-development-index-of-2010/</guid>
+      
+        <description>An analysis of municipal human development index of 2010</description>
+      
+    </item>
+    
+  </channel>
+</rss>
