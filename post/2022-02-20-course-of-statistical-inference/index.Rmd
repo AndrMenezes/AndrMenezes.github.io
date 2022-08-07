@@ -1,0 +1,104 @@
+---
+title: Master's Degree Course of Statistical Inference
+summary: Notes on my master's degree course of statistical inference
+author: André Felipe Berdusco Menezes
+date: '2022-02-20'
+draft: false
+categories:
+  - master's degree
+  - statistical inference
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Scientific Inference
+
+Scientific investigations are required in order to solve and give a more detailed
+explanation of real life problems.
+The scientific method entirely comprehend from the conception
+of one or more research questions to drawing scientific conclusions.
+When real-life problems have perceptible unexplained and haphazard variation,
+the best tool to guide scientific conclusions are statistical methods, especially under
+a quantitative perspective. Statistical methods outlined the design, measurements,
+analysis, and interpretation.
+
+Although it is out of scope of this post, I may emphasize that the design of experiment
+and measurements, which are tasks before the analysis and interpretation, are critical
+for the successful of scientific investigations, since the assumed model should covered
+the phenomena characteristics observed.
+
+Statistical inference makes preposition about a phenomena using data drawn from the
+phenomena population based on a sampling strategy, thus statistical inference is closely
+related to design of experiment. The probability model specified to describe the
+phenomena is very important in the statistical inference context. Such model or family
+of models are based on the assumptions and characteristics of the phenomena.
+Also, the models are completely specified by unknown quantities called parameters, which
+should be estimate from the sample data.
+
+There are two major paradigms in statistical inference, namely Classical and Bayesian. 
+Both of them are braced on probability theory and they have in common the 
+use of a likelihood function. The former uses probability only by the hypothetical
+long-run frequency interpretation to explain and deduce exact and asymptotic results
+concerning the unknown and fixed parameters.
+On the other hand, the latter employs [Bayes' Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem)
+and make probabilistic statement about the unknown parameter -- treating them as random
+variable -- in order to construct a posterior and predictive distributions, which are
+then using for inference purposes.
+The two approaches have their advantages and are useful in real applications. 
+Although in some particular cases both methodologies may coincide numerically in
+their estimation methods, the interpretation is completely different.
+
+Classical inference theory, which consist of hypothesis test, point and interval
+estimation, and design of experiments, is essentially a
+developing of [R. A. Fisher (1890-1962)](https://en.wikipedia.org/wiki/Ronald_Fisher)
+and [J. Neyman (1894-1981)](https://en.wikipedia.org/wiki/Jerzy_Neyman). 
+A curious fact is that the two men cursed each other during their lives.
+Bayesian inference theory as we know nowadays was established and settled by several
+fundamental works, but the mainly contributions came from
+[L. J. Savage (1917-1971)](https://en.wikipedia.org/wiki/Leonard_Jimmie_Savage),
+[H. Jeffreys (1891-1989)](https://en.wikipedia.org/wiki/Harold_Jeffreys), and
+[B. de Finetti (1906-1985)](https://en.wikipedia.org/wiki/Bruno_de_Finetti).
+
+My Master's Degree Statistical Inference course was mainly based on Classical Inference,
+though we briefly studied the Bayesian paradigm at the end of the course. 
+
+## Course contents
+
+The lessons were taught by professor [Caio Azevedo](https://bv.fapesp.br/pt/pesquisador/74866/caio-lucidius-naberezny-azevedo/),
+who had prepared customized slides based on reference books, such as
+["Statistical Inference: Based on the likelihood"](https://www.amazon.com.br/Statistical-Inference-Based-likelihood-Probability-ebook/dp/B077F8B8QW) by Adelchi Azzalini,
+["Parametric Statistical Inference"](https://www.amazon.com/Parametric-Statistical-Inference-Science-Publications/dp/0198523599) by James Lindsey, and
+["Statistical Inference"](https://www.amazon.com.br/Statistical-Inference-Vijay-K-Rohatgi/dp/0486428125), by Vijay Rohatgi.
+
+Throughout the semester I set up a summary notes that can be find
+[here](/pdf/statistical_inference_notes_master_degree.pdf) (in Portuguese).
+
+The primary contents of the course were:
+
+- Review of Common Family of Distributions:
+  - Exponential family
+  - Location-scale family
+
+- Principles of Data Reduction
+
+- Point Estimation
+
+- Interval Estimation
+
+- Hypothesis Tests
+
+- Introduction of Bayesian Inference and Decision Theory
+
+## Exams
+
+As well as in the probability course at the end of the semester I reviewed for one month
+all the contents and solved many exercises in order to prepare for the statistical
+inference exam. The list of exercises I have been solved are at home with other stuffs.
+
+The exam that I did can be find [here](pdf/statistical_inference_exam.pdf) (in Portuguese).
+
+
+
