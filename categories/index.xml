@@ -6,13 +6,24 @@
     <description>Recent content in Categories on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>master&#39;s degree</title>
       <link>http://andrmenezes.github.io/categories/masters-degree/</link>
-      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/masters-degree/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>statistical inference</title>
+      <link>http://andrmenezes.github.io/categories/statistical-inference/</link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/statistical-inference/</guid>
       
         <description></description>
       
@@ -101,17 +112,6 @@
       <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/markov-chain/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>statistical inference</title>
-      <link>http://andrmenezes.github.io/categories/statistical-inference/</link>
-      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/categories/statistical-inference/</guid>
       
         <description></description>
       

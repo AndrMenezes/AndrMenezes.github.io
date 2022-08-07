@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -19,17 +19,17 @@
   
   <url>
     <loc>http://andrmenezes.github.io/categories/masters-degree/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://andrmenezes.github.io/post/2022-01-20-course-of-intermediate-probability/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/post/2022-02-20-course-of-statistical-inference/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -40,6 +40,16 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/post/"
                 />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/statistical-inference/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2022-01-20-course-of-intermediate-probability/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -99,11 +109,6 @@
   
   <url>
     <loc>http://andrmenezes.github.io/categories/markov-chain/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/statistical-inference/</loc>
     <lastmod>2019-12-16T00:00:00+00:00</lastmod>
   </url>
   
