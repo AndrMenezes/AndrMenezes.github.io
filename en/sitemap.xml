@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://andrmenezes.github.io/categories/bagging/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/boosting/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -18,18 +28,33 @@
   </url>
   
   <url>
-    <loc>http://andrmenezes.github.io/categories/masters-degree/</loc>
-    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/categories/data-mining/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://andrmenezes.github.io/post/2022-02-20-course-of-statistical-inference/</loc>
-    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/categories/decision-tree/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/logistic-regression/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/masters-degree/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2022-02-25-course-of-data-mining/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -40,6 +65,21 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/post/"
                 />
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/random-forest/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/categories/support-vector-machines/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrmenezes.github.io/post/2022-02-20-course-of-statistical-inference/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>

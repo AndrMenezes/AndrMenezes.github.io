@@ -6,13 +6,90 @@
     <description>Recent content in Categories on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bagging</title>
+      <link>http://andrmenezes.github.io/categories/bagging/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/bagging/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>boosting</title>
+      <link>http://andrmenezes.github.io/categories/boosting/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/boosting/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>data mining</title>
+      <link>http://andrmenezes.github.io/categories/data-mining/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/data-mining/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>decision tree</title>
+      <link>http://andrmenezes.github.io/categories/decision-tree/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/decision-tree/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>logistic regression</title>
+      <link>http://andrmenezes.github.io/categories/logistic-regression/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/logistic-regression/</guid>
+      
+        <description></description>
+      
+    </item>
+    
     <item>
       <title>master&#39;s degree</title>
       <link>http://andrmenezes.github.io/categories/masters-degree/</link>
-      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/masters-degree/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>random forest</title>
+      <link>http://andrmenezes.github.io/categories/random-forest/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/random-forest/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>support vector machines</title>
+      <link>http://andrmenezes.github.io/categories/support-vector-machines/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/support-vector-machines/</guid>
       
         <description></description>
       
