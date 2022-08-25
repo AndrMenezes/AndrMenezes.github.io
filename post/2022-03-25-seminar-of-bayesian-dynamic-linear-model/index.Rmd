@@ -1,0 +1,100 @@
+---
+title: Master's Degree Seminar of Bayesian Dynamic Linear Model
+summary: Notes on my master's degree seminar of Bayesian dynamic linear model
+author: André Felipe Berdusco Menezes
+date: '2022-03-25'
+draft: false
+categories:
+  - dynamic linear model
+  - Bayesian inference
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introduction
+
+This seminar was minister by the renowned professor
+[Hélio S. Migon](https://scholar.google.com.br/citations?user=Ba2o_wYAAAAJ&hl=pt-BR),
+who is one of the pioneers of statistics in Brazil, especially in the Bayesian statistics
+field.
+The first three weeks of lectures were face to face, however due to the COVID-19 pandemic
+the remain lectures were online.
+
+The seminar was an introduction to Bayesian Dynamic Linear Model (DLM) ideas.
+We have four lessons discussing the basic concepts and definitions of Bayesian DLM and
+after that the students had to choose articles related to Bayesian dynamic models to
+present as a seminar format.
+
+Beyond any doubt the seminar and the possibility to meet professor Migon were a turning
+point in my academic and professional life. I have been really grateful for that
+opportunity.
+
+## Bayesian Dynamic Linear Model
+
+I shall give a brief introduction to DLM focus on the model specification. I plan to do
+a specific post about Bayesian DLM with more details and illustrative examples.
+
+The class of DLM is a natural extension of the linear regression model with the
+parameters varying along time. This class of model was introduced by
+Harrison and Stevens (1976) in their seminal work entitled
+["Bayesian Forecasting"](https://www.jstor.org/stable/2984970)
+published in the _Journal of the Royal Statistical Society. Series B (Methodological)_. 
+
+Based on many years of industrial experience working as "operational" forecaster the
+authors proposed a method which has the following main features:
+
+- **parametric form**: the model has meaningful dynamic parameters, which can be easily interpretable by practitioners.
+
+- **sequential update**: model parameters are sequentially update as new data becomes available using Bayes' theorem.
+
+- **probabilistic information** about parameters and forecasts are available, which can help decision making under uncertainty.
+
+Let $Y_t$ be a scalar series at time $t$. The DLM is defined by the **observation** and
+**evolution** (**state**) equations, respectively:
+
+\begin{eqnarray*}
+Y_t &=& \mathbf{F}_t^\top \boldsymbol{\theta}_t + \nu_t, \qquad \quad \nu_t \sim N(0, V) \\
+\boldsymbol{\theta}_t &=& \mathbf{G}_t \boldsymbol{\theta}_{t-1} + \boldsymbol{\omega}_t, \qquad \boldsymbol{\omega}_t \sim N(0, \mathbf{W}_t)
+\end{eqnarray*}
+where the error sequences $\nu_t$ and $\boldsymbol{\omega}_t$ are internally and
+mutually independent.
+
+For some prior moments $\mathbf{m}_0$ and $\mathbf{C}_0$, the initial prior information
+is denote by
+$(\boldsymbol{\theta}_0 \mid D_0) \sim N(\mathbf{m}_0, \mathbf{C}_0)$.
+By using Bayes' theorem the posterior and one-step ahead predictive distributions 
+can be obtained analytically.
+
+
+## Course assignments
+
+During the seminar we should have read articles about dynamic models and organized
+a presentations about them. In the sequel, I list the papers that I have read and the
+presentations organized (in Portuguese) summarizing the main ideas.
+
+#### First presentation
+
+- Paper: [Multivariate forecasting of road traffic flows in the presence of heteroscedasticity and measurement errors](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1467-9876.2012.01059.x) by Anacleto, O., Queen, C. and Albers, C. J.
+
+- [Presentation](/pdf/anacleto__presentation.pdf)
+
+#### Second presentation
+
+- Paper: [A group analysis using the Multiregression Dynamic Models for fMRI networked time series](https://www.sciencedirect.com/science/article/pii/S0378375818300302) by Costa, L., Smith, J. Q. and Nichols, T.
+
+- [Presentation](/pdf/anacleto__presentation.pdf)
+
+#### Third presentation
+
+- Papers: 
+
+  - [Inferring causal impact using Bayesian structural time-series models](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-9/issue-1/Inferring-causal-impact-using-Bayesian-structural-time-series-models/10.1214/14-AOAS788.full) by Brodersen, K. H., Gallusser, F., Koehler, J., Remy, N. and Scott, S. L.  
+
+  - [Predicting the present with Bayesian structural time series](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2304426) by Scott, S. L. and Varian, H. R.
+
+- [Presentation](/pdf/bsts_casual_impact__presentation.pdf)
+ 
+

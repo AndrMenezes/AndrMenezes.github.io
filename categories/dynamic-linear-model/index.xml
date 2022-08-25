@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dynamic linear model on André Menezes</title>
+    <link>http://andrmenezes.github.io/categories/dynamic-linear-model/</link>
+    <description>Recent content in dynamic linear model on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/dynamic-linear-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Master&#39;s Degree Seminar of Bayesian Dynamic Linear Model</title>
+      <link>http://andrmenezes.github.io/post/2022-03-25-seminar-of-bayesian-dynamic-linear-model/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2022-03-25-seminar-of-bayesian-dynamic-linear-model/</guid>
+      
+        <description>Notes on my master&amp;rsquo;s degree seminar of Bayesian dynamic linear model</description>
+      
+    </item>
+    
+  </channel>
+</rss>

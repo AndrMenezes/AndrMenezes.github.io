@@ -1,205 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/bagging/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/boosting/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="http://andrmenezes.github.io/pt/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://andrmenezes.github.io/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/data-mining/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/decision-tree/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/logistic-regression/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/masters-degree/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2022-02-25-course-of-data-mining/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="http://andrmenezes.github.io/pt/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://andrmenezes.github.io/post/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/random-forest/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/support-vector-machines/</loc>
-    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2022-02-20-course-of-statistical-inference/</loc>
-    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/statistical-inference/</loc>
-    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2022-01-20-course-of-intermediate-probability/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/probability/</loc>
-    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2021-12-20-my-master-degree-in-statistics/</loc>
-    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2020-06-02-an-analysis-of-municipal-human-development-index-of-2010/</loc>
-    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/beta-distribution/</loc>
-    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/likelihood/</loc>
-    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/mhdi/</loc>
-    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/regression-models/</loc>
-    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/simplex-distribution/</loc>
-    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/autoregressive-model/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/markov-chain/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/time-series/</loc>
-    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
-    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/response-surface/</loc>
-    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</loc>
-    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-07-27-statistical-inference-and-likelihood/</loc>
-    <lastmod>2019-07-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/deleted-residuals/</loc>
-    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/hat-matrix/</loc>
-    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/categories/projection-matrix/</loc>
-    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</loc>
-    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
   <url>
     <loc>http://andrmenezes.github.io/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -210,9 +14,141 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/bayesian-inference/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://andrmenezes.github.io/pt/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://andrmenezes.github.io/categories/"
+                />
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/dynamic-linear-model/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2022-03-25-seminar-of-bayesian-dynamic-linear-model/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="http://andrmenezes.github.io/pt/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://andrmenezes.github.io/post/"
+                />
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/bagging/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/boosting/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/data-mining/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/decision-tree/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/logistic-regression/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/masters-degree/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2022-02-25-course-of-data-mining/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/random-forest/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/support-vector-machines/</loc>
+    <lastmod>2022-02-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2022-02-20-course-of-statistical-inference/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/statistical-inference/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2022-01-20-course-of-intermediate-probability/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/probability/</loc>
+    <lastmod>2022-01-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2021-12-20-my-master-degree-in-statistics/</loc>
+    <lastmod>2021-12-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2020-06-02-an-analysis-of-municipal-human-development-index-of-2010/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/beta-distribution/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/likelihood/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/mhdi/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/regression-models/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/simplex-distribution/</loc>
+    <lastmod>2020-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-12-31-regression-models-for-bounded-response/</loc>
+    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/autoregressive-model/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-12-16-autoregressive-time-series-models-simulation-estimation/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/markov-chain/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/time-series/</loc>
+    <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/linear-regression/</loc>
+    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/response-surface/</loc>
+    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</loc>
+    <lastmod>2019-10-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-07-27-statistical-inference-and-likelihood/</loc>
+    <lastmod>2019-07-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/deleted-residuals/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/hat-matrix/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/projection-matrix/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-06-25-projection-matrix-deleted-residual/</loc>
+    <lastmod>2019-06-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://andrmenezes.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -225,24 +161,16 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/archives/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/categories/least-squares/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/categories/linear-algebra/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/post/2019-03-21-simple-linear-regression-under-linear-algebra-perspective/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/contact/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -255,9 +183,7 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/contact/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -270,9 +196,7 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/about/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/tags/index/</loc>
     <xhtml:link
                 rel="alternate"
@@ -284,9 +208,7 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/tags/index/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/publications/</loc>
     <xhtml:link
                 rel="alternate"
@@ -298,9 +220,7 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/publications/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://andrmenezes.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -313,5 +233,4 @@
                 href="http://andrmenezes.github.io/tags/"
                 />
   </url>
-  
 </urlset>
