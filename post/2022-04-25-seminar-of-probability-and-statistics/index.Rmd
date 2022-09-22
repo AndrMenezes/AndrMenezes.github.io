@@ -37,7 +37,7 @@ covariates $\mathbf{x}$, i.e.,
 $$
 Q_\tau(Y \mid \mathbf{x}) = \mathbf{x}_i\,\boldsymbol{\beta}(\tau)
 $$
-My complete [presentation](/pdf/fforma__presentation.pdf)
+My complete [presentation](/pdf/quantile_regression__presentation.pdf)
 (in Portuguese) contains further details about quantile regression, estimation,
 inference (frequentist and Bayesian), and extensions.
 
@@ -46,7 +46,7 @@ The second presentation I chose the paper
 Montero-Manso, P., Athanasopoulos, G., Hyndman, R. J. and Talagala, T. S.
 In this work, the authors proposed a method for computing weighted forecasts
 from different methods using time series features. 
-The full presentation (in Portuguese) can be found [here]().
+The full presentation (in Portuguese) can be found [here](fforma__presentation.pdf).
 My main criticism about the method is related to the computational effort,
 according to the authors the model spent 5 days in order to fit 100.000 of
 time series from M4 competition.
