@@ -28,7 +28,7 @@ classmates' seminar.
 ## Course assignments
 
 In the first presentation my topic was quantile regression. Quantile regression
-was introduced by [Koenker and Basset (1978)](<doi:10.2307/1913643>). This
+was introduced by [Koenker and Basset (1978)](https://www.jstor.org/stable/1913643). This
 model can be view as an extension on linear regression when the interest lies
 on estimate the impact of explanatory variable on the entire distribution of
 the response variable not only on the mean response.
@@ -42,7 +42,7 @@ My complete [presentation](/pdf/fforma__presentation.pdf)
 inference (frequentist and Bayesian), and extensions.
 
 The second presentation I chose the paper
-["FFORMA: Feature-based forecast model averaging"](doi:10.1016/j.ijforecast.2019.02.011) by 
+["FFORMA: Feature-based forecast model averaging"](https://www.sciencedirect.com/science/article/abs/pii/S0169207019300895) by 
 Montero-Manso, P., Athanasopoulos, G., Hyndman, R. J. and Talagala, T. S.
 In this work, the authors proposed a method for computing weighted forecasts
 from different methods using time series features. 
