@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html  dir="ltr" lang="en" data-theme=""><head>
-    <title> André Menezes | hypotheses test </title>
+    <title> André Menezes | Master&#39;s Degree Seminar of Probability and Statistics </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.102.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -33,10 +33,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="/categories/hypotheses-test/">
+    <link rel="canonical" href="/post/2022-04-25-seminar-of-probability-and-statistics/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="/categories/hypotheses-test/index.xml" title="André Menezes" />
     
     
     
@@ -57,8 +56,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="hypotheses test"/>
-<meta name="twitter:description" content="M.Sc. Statistics | Data Scientist"/>
+<meta name="twitter:title" content="Master&#39;s Degree Seminar of Probability and Statistics"/>
+<meta name="twitter:description" content="Notes on my master degree seminar of probability and statistics"/>
 
 
     
@@ -186,24 +185,95 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2019</div>
+            <div class="post-title">
+                <h3>Master&#39;s Degree Seminar of Probability and Statistics</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="/post/2019-04-25-multiple-comparison-methods/" title="Multiple comparison methods">Multiple comparison methods</a>
-                                <div class="post-time"><span class="date"> 
-                                                                            25/04/2019
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                25/04/2022
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">2-minute read</span>
+                    </div>
                 
+            </div>
+
             
-        </ul>
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>The last course I had to do was another seminar minister by professor
+<a href="https://scholar.google.com.br/citations?user=itj-WrUAAAAJ&amp;hl=en">Luis K. Hotta</a>.
+Since it was in COVID-19 period this seminar was online. In the first part,
+we read and summarized three online presentations chosen by the professor.
+While in the last part, we elaborated two presentations. The former
+presentation was a class with topics for master degree level, and the latter
+was about an article. Besides that, we had to do a report on the
+classmates’ seminar.</p>
+</div>
+<div id="course-assignments" class="section level2">
+<h2>Course assignments</h2>
+<p>In the first presentation my topic was quantile regression. Quantile regression
+was introduced by <a href="doi:10.2307/1913643">Koenker and Basset (1978)</a>. This
+model can be view as an extension on linear regression when the interest lies
+on estimate the impact of explanatory variable on the entire distribution of
+the response variable not only on the mean response.
+Particularly, the goal is estimate the <span class="math inline">\(\tau\)</span>-quantile of <span class="math inline">\(Y\)</span> given the
+covariates <span class="math inline">\(\mathbf{x}\)</span>, i.e.,
+<span class="math display">\[
+Q_\tau(Y \mid \mathbf{x}) = \mathbf{x}_i\,\boldsymbol{\beta}(\tau)
+\]</span>
+My complete <a href="/pdf/fforma__presentation.pdf">presentation</a>
+(in Portuguese) contains further details about quantile regression, estimation,
+inference (frequentist and Bayesian), and extensions.</p>
+<p>The second presentation I chose the paper
+<a href="doi:10.1016/j.ijforecast.2019.02.011">“FFORMA: Feature-based forecast model averaging”</a> by
+Montero-Manso, P., Athanasopoulos, G., Hyndman, R. J. and Talagala, T. S.
+In this work, the authors proposed a method for computing weighted forecasts
+from different methods using time series features.
+The full presentation (in Portuguese) can be found <a href="">here</a>.
+My main criticism about the method is related to the computational effort,
+according to the authors the model spent 5 days in order to fit 100.000 of
+time series from M4 competition.</p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/quantile-regression/">quantile regression</a><a class="category" href="/categories/forecasting/">forecasting</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
     </div>
+
 
         </div>
     </div>

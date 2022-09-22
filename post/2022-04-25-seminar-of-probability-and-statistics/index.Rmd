@@ -1,0 +1,53 @@
+---
+title: Master's Degree Seminar of Probability and Statistics
+summary: Notes on my master degree seminar of probability and statistics
+author: André Felipe Berdusco Menezes
+date: '2022-04-25'
+draft: false
+categories:
+  - quantile regression
+  - forecasting
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Overview
+
+The last course I had to do was another seminar minister by professor 
+[Luis K. Hotta](https://scholar.google.com.br/citations?user=itj-WrUAAAAJ&hl=en). 
+Since it was in COVID-19 period this seminar was online. In the first part,
+we read and summarized three online presentations chosen by the professor.
+While in the last part, we elaborated two presentations. The former
+presentation was a class with topics for master degree level, and the latter
+was about an article. Besides that, we had to do a report on the
+classmates' seminar.
+
+## Course assignments
+
+In the first presentation my topic was quantile regression. Quantile regression
+was introduced by [Koenker and Basset (1978)](<doi:10.2307/1913643>). This
+model can be view as an extension on linear regression when the interest lies
+on estimate the impact of explanatory variable on the entire distribution of
+the response variable not only on the mean response.
+Particularly, the goal is estimate the $\tau$-quantile of $Y$ given the
+covariates $\mathbf{x}$, i.e.,
+$$
+Q_\tau(Y \mid \mathbf{x}) = \mathbf{x}_i\,\boldsymbol{\beta}(\tau)
+$$
+My complete [presentation](/pdf/fforma__presentation.pdf)
+(in Portuguese) contains further details about quantile regression, estimation,
+inference (frequentist and Bayesian), and extensions.
+
+The second presentation I chose the paper
+["FFORMA: Feature-based forecast model averaging"](doi:10.1016/j.ijforecast.2019.02.011) by 
+Montero-Manso, P., Athanasopoulos, G., Hyndman, R. J. and Talagala, T. S.
+In this work, the authors proposed a method for computing weighted forecasts
+from different methods using time series features. 
+The full presentation (in Portuguese) can be found [here]().
+My main criticism about the method is related to the computational effort,
+according to the authors the model spent 5 days in order to fit 100.000 of
+time series from M4 competition.
+

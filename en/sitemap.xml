@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://andrmenezes.github.io/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -15,11 +15,8 @@
                 href="http://andrmenezes.github.io/"
                 />
   </url><url>
-    <loc>http://andrmenezes.github.io/categories/bayesian-inference/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -31,14 +28,14 @@
                 href="http://andrmenezes.github.io/categories/"
                 />
   </url><url>
-    <loc>http://andrmenezes.github.io/categories/dynamic-linear-model/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/categories/forecasting/</loc>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://andrmenezes.github.io/post/2022-03-25-seminar-of-bayesian-dynamic-linear-model/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/post/2022-04-25-seminar-of-probability-and-statistics/</loc>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -49,6 +46,18 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/post/"
                 />
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/quantile-regression/</loc>
+    <lastmod>2022-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/bayesian-inference/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/dynamic-linear-model/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2022-03-25-seminar-of-bayesian-dynamic-linear-model/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://andrmenezes.github.io/categories/bagging/</loc>
     <lastmod>2022-02-25T00:00:00+00:00</lastmod>
@@ -134,6 +143,12 @@
     <loc>http://andrmenezes.github.io/post/2019-10-05-response-surface-methodology/</loc>
     <lastmod>2019-10-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://andrmenezes.github.io/categories/bias-correction/</loc>
+    <lastmod>2019-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</loc>
+    <lastmod>2019-09-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://andrmenezes.github.io/post/2019-07-27-statistical-inference-and-likelihood/</loc>
     <lastmod>2019-07-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -161,6 +176,15 @@
                 hreflang="en"
                 href="http://andrmenezes.github.io/archives/"
                 />
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/hypotheses-test/</loc>
+    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2019-04-25-multiple-comparison-methods/</loc>
+    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/categories/multiple-comparisons/</loc>
+    <lastmod>2019-04-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://andrmenezes.github.io/categories/least-squares/</loc>
     <lastmod>2019-03-21T00:00:00+00:00</lastmod>

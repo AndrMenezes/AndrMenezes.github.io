@@ -41,6 +41,17 @@
     </item>
     
     <item>
+      <title>Bias Correction of Maximum Likelihood Estimators</title>
+      <link>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2019-09-12-bias-correction-of-maximum-likelihood-estimators/</guid>
+      
+        <description>The main method for maximum likelihood bias correction</description>
+      
+    </item>
+    
+    <item>
       <title>Statistical Inference and Likelihood</title>
       <link>http://andrmenezes.github.io/post/2019-07-27-statistical-inference-and-likelihood/</link>
       <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>

@@ -6,7 +6,29 @@
     <description>Recent content in Categories on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>forecasting</title>
+      <link>http://andrmenezes.github.io/categories/forecasting/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/forecasting/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>quantile regression</title>
+      <link>http://andrmenezes.github.io/categories/quantile-regression/</link>
+      <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/quantile-regression/</guid>
+      
+        <description></description>
+      
+    </item>
+    
     <item>
       <title>Bayesian inference</title>
       <link>http://andrmenezes.github.io/categories/bayesian-inference/</link>
@@ -250,6 +272,17 @@
     </item>
     
     <item>
+      <title>bias correction</title>
+      <link>http://andrmenezes.github.io/categories/bias-correction/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/bias-correction/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
       <title>deleted residuals</title>
       <link>http://andrmenezes.github.io/categories/deleted-residuals/</link>
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
@@ -277,6 +310,28 @@
       <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/projection-matrix/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>hypotheses test</title>
+      <link>http://andrmenezes.github.io/categories/hypotheses-test/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/hypotheses-test/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>multiple comparisons</title>
+      <link>http://andrmenezes.github.io/categories/multiple-comparisons/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/multiple-comparisons/</guid>
       
         <description></description>
       
