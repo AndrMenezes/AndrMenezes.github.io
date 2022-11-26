@@ -46,7 +46,7 @@ The second presentation I chose the paper
 Montero-Manso, P., Athanasopoulos, G., Hyndman, R. J. and Talagala, T. S.
 In this work, the authors proposed a method for computing weighted forecasts
 from different methods using time series features. 
-The full presentation (in Portuguese) can be found [here](fforma__presentation.pdf).
+The full presentation (in Portuguese) can be found [here](/pdf/fforma__presentation.pdf).
 My main criticism about the method is related to the computational effort,
 according to the authors the model spent 5 days in order to fit 100.000 of
 time series from M4 competition.
