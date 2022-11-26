@@ -1,0 +1,101 @@
+---
+title: My Master's Degree Dissertation
+summary: Notes on my master's degree dissertation
+author: André Felipe Berdusco Menezes
+date: '2022-05-21'
+draft: false
+categories:
+  - omics data
+  - scRNA-seq
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introduction 
+
+The last post of my Master's Degree series is about my dissertation developed
+under the supervision of Prof. [Benilton de Sá Carvalho](https://scholar.google.com/citations?hl=en&user=44vQTS4AAAAJ&view_op=list_works&sortby=pubdate).
+My dissertation can be found [here](https://repositorio.unicamp.br/acervo/detalhe/1164470?guid=1659909699561&returnUrl=%2fresultado%2flistar%3fguid%3d1659909699561%26quantidadePaginas%3d1%26codigoRegistro%3d1164470%231164470&i=2) (in Portuguese) and the codes for
+the analysis performed is available
+[here](https://github.com/AndrMenezes/dissertation).
+
+
+The aim of my dissertation was studied statistical techniques to analyse single
+cell RNA-sequencing (scRNA-seq) data.  This type of experiment has become often
+due to the available technology tools which permits investigating
+the "omics" of a given biological system. It should be mention that omics
+stands for genomics, transcriptomics, proteomics, and metabolomics.
+Besides that, the first established high-throughput technology that provided 
+significant discovers in science is the DNA microarray.
+An interesting discussion about the omics technology developments is presented
+by [Dai and Shen (2022)](https://www.frontiersin.org/articles/10.3389/fmed.2022.911861/full).
+
+Particularly, the scRNA-seq technology enables high-throughput transcriptome
+profiling at the resolution of single cells. In the past, the transcriptome 
+was measured considering a pool of cells through the bulk RNA-sequencing,
+which means that the expression of the genes (or transcripts) were measure
+as an average over a bunch of cells.
+Although the RNA-seq has been using to find out important scientific discovers
+in different biological materials, this technology can mask significant and
+biological differences between the type of cells
+
+The first study using scRNA-seq was presented by
+[Tang et al. (2009)](https://www.nature.com/articles/nmeth.1315), who showed
+how to isolate and sequencing an unique cell. Since them, several studies have
+improved the protocol and nowadays there are studies that enable the sequencing
+of millions of cells in the same time. In 2013 the
+[Nature](https://www.nature.com/articles/nmeth.2801) journal identified the
+single cell sequencing as the method of the year.
+
+
+## The dissertation
+
+With the unique opportunities to investigate biological system that single cell 
+sequencing provides also there are specific characteristics that requires more
+sophisticated computational and statistical treatment.
+In my dissertation I performed a review of state of the art workflow for
+scRNA-seq, which covers the following steps:
+
+1. Processing the count matrix
+  (i) Control quality metrics
+  (ii) Normalization methods
+  (iii) Features selection
+  (iv) Dimensionality reduction techniques
+
+2. Statistical analysis
+  (i) Cluster analysis
+  (ii) Detection of marker genes
+  (iii) Annotation analysis
+  (iv) Differential expression analysis
+
+
+An important reference that guided my studies is the book
+["Orchestrating Single-Cell Analysis with Bioconductor"](https://bioconductor.org/books/release/OSCA/)
+by Amezquita, R., Lun, A., Hicks. S., Gottardo, R., and O’Callaghan, A. which
+covers in detail the most common workflows for the analysis of scRNA-seq using
+the Bioconductor tools.
+
+Furtheremoe, motivated by a data set of cells from bronchoalveolar lavage fluid
+(BALF) tissue from patients with COVID-19, I performed a simulation,
+considering the particularities of a scRNA-seq data, to compare different
+approaches for differential expression analysis that incorporate the cell's
+origin. After that, the usual workflow discussed in the research was adopted to
+analyze the BALF cells data set by characterizing groups of cells and comparing
+the expression genes levels of individuals under different experimental
+conditions.
+
+## Final comments
+
+I am very grateful for the opportunity to work with professor Benilton, who
+have taught me several lessons beyond academia environment.
+
+Although my research does not provide an innovation methodological advances,
+it has contributed for my critical education as a statistician, and also
+is a introductory material in Portuguese for the analysis of scRNA-seq.
+
+Finally, one important lesson that I learned during my dissertation is that 
+if you are able to properly simulate the data of the phenomena you are studying
+you have achieved a good understanding about the phenomena.
