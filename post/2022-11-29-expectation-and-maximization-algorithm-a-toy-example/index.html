@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | Expectation and Maximization algorithm: A toy example </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.107.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.69a557b4fc895e1566037155c2b37c752bb8ccf82803bf8551c60ae44f0f4e23.css"
+        integrity="sha256-aaVXtPyJXhVmA3FVwrN8dSu4zPgoA7&#43;FUcYK5E8PTiM="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2022-11-29-expectation-and-maximization-algorithm-a-toy-example/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.df804b63b5bd8474ea0756ea874bc8f1e92552708cc6ea43aa0d76981dc419f9.js"
+            integrity="sha256-34BLY7W9hHTqB1bqh0vI8eklUnCMxupDqg12mB3EGfk="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.ea8ebe268922ef9849261a1312cd65b640595e65251ce4c00534a176afd1ac0c.js"
+                integrity="sha256-6o6&#43;Joki75hJJhoTEs1ltkBZXmUlHOTABTShdq/RrAw="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Expectation and Maximization algorithm: A toy example"/>
+<meta name="twitter:description" content="A toy example of the EM algorithm"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenezes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2022 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/pdf/afbm_curriculum.pdf"
+                        
+                   title="">Curriculum</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Expectation and Maximization algorithm: A toy example</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                01/12/2022
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">7-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+
+
+<div id="the-problem" class="section level2">
+<h2>The problem</h2>
+<p>The Expectation and Maximization (EM) algorithm is a general procedure to find
+the maximum likelihood estimates when the phenomena of interest is describe by
+a model with missing values or latent variables.</p>
+<p>In this post I will discus the EM algorithm thorough the following example.
+Assume that we observe <span class="math inline">\(X_1, \ldots, X_n\)</span> and know that
+<span class="math display">\[
+X_i = I_{\left\{Z_i &gt; r\right\}} =
+\begin{cases}
+1 &amp; \textrm{if } Z_i &gt; r \\
+0 &amp; \textrm{if } Z_i \leq r
+\end{cases}
+\]</span>
+where <span class="math inline">\(r\)</span> is known and <span class="math inline">\(Z_i \sim N(\mu, \sigma^2) \quad \forall\, i=1, \ldots, n\)</span>
+are unknown.</p>
+<p>The problem is, how can we estimate the parameters
+<span class="math inline">\(\boldsymbol{\theta} = (\mu, \sigma^2)\)</span> using the observed values
+<span class="math inline">\(\boldsymbol{x} = (x_1, \ldots, x_n)\)</span> from the random variables
+<span class="math inline">\(\mathbf{X} = (X_1, \ldots, X_n)\)</span>?</p>
+</div>
+<div id="solution" class="section level2">
+<h2>Solution</h2>
+<p>First, note that <span class="math inline">\(X_i \sim \textrm{Bernoulli}(p)\)</span> where the probability of
+success is
+<span class="math display">\[
+p = P(X_i = 1) = P(Z_i &gt; r) = 1 - \varPhi(r)
+\]</span>
+where <span class="math inline">\(\varPhi(\cdot)\)</span> is the c.d.f. of standard Normal distribution defined as
+<span class="math display">\[
+\varPhi(x) = \int_{-\infty}^{x} \varphi(t) \mathrm{d}t
+\quad \text{e} \quad
+\varphi(x) = \dfrac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{- \dfrac{(x - \mu)^2}{2\sigma^2}}.
+\]</span></p>
+<p>To use the EM algorithm we need to find the <em>complete</em> likelihood, that is the
+joint distribution of
+<span class="math inline">\((\mathbf{X}, \mathbf{Z}) \sim f(\boldsymbol{x}, \boldsymbol{z})\)</span>.
+Using conditional probability arguments we can write the joint distribution
+for a single observation as
+<span class="math display">\[
+f_{X_i, Z_i}(x, z) = f_{Z_i \mid X_i = x}(z \mid x) f_{X_i}(x).
+\]</span></p>
+<p>We also know that
+<span class="math display">\[
+f_{X_i}(x) = \left[1 - \varPhi\left(r\right)\right]^{x}
+\left[\varPhi\left(r\right) \right]^{1 - x},\, \quad \mathrm{para}\, x = 0, 1.
+\]</span></p>
+<p>In addition, an important remark is that <span class="math inline">\(Z_i \mid X_i = x_i\)</span> follows a
+Bernoulli distribution where the probability of success is given by a
+truncated Normal distribution at <span class="math inline">\(r\)</span>. Its p.d.f. can be written as
+<span class="math display">\[
+f_{Z_i \mid X_i = x}(z_i \mid x_i) = \left[\dfrac{\varphi(z_i)}{1 - \varPhi(r)}\right]^{x_i}\,\left[\dfrac{\varphi(z_i)}{\varPhi(r)}\right]^{1 - x_i}, \, \quad x_i = 0, 1.
+\]</span></p>
+<p>Hence, the joint distribution of <span class="math inline">\((X_i, Z_i)\)</span> is given by
+<span class="math display">\[
+f_{X_i, Z_i}(x_i, z_i) = \left[\dfrac{\varphi(z_i)}{1 - \varPhi(r)}\right]^{x_i}\,\left[\dfrac{\varphi(z_i)}{\varPhi(r)}\right]^{1 - x_i}\,
+\left[1 - \varPhi\left(r\right)\right]^{x_i}
+\left[\varPhi\left(r\right) \right]^{1 - x_i} = \varphi(z_i).
+\]</span></p>
+<p>And the complete likelihood for a sample of size <span class="math inline">\(n\)</span> is given by
+<span class="math display">\[
+L_c(\boldsymbol{\theta} \mid \boldsymbol{z}, \boldsymbol{x}) = \prod_{i=1}^n \varphi(z_i) =
+\left(2 \pi \sigma^2\right)^{-n/2}\,\exp\left\{-\dfrac{1}{2\sigma^2}\,\sum_{i=1}^n (z_i - \mu)^2\right\}
+\]</span>
+where <span class="math inline">\(\boldsymbol{\theta} = (\mu, \sigma^2)\)</span></p>
+<p>The E step of EM algorithm is to calculate the expectation of the log-likelihood
+with respect to the distribution of <span class="math inline">\((Z_i \mid X_i = x_i)\)</span>. Given an initial
+value <span class="math inline">\(\boldsymbol{\theta}_0 = (\mu_0, \sigma^2_0)\)</span> we have
+<span class="math display">\[
+\begin{eqnarray}
+Q(\boldsymbol{\theta} \mid \boldsymbol{\theta}_0, \boldsymbol{x}) &amp;=&amp;
+-\dfrac{n}{2}\log(2 \pi \sigma^2) - \dfrac{1}{2\,\sigma^2}\sum_{i=1}^n\left[
+\mathbb{E}(Z_i^2 \mid  x_i, \boldsymbol{\theta}_0) - 2 \mu \mathbb{E}(Z_i \mid x_i, \boldsymbol{\theta}_0) + \mu^2
+\right] \nonumber \\ \nonumber
+&amp;=&amp;
+-\dfrac{n}{2}\log(2 \pi \sigma^2) - \dfrac{1}{2\,\sigma^2}\left[\sum_{i=1}^n
+h_i(\boldsymbol{\theta}_0) - 2 \mu \sum_{i=1}^n k_i(\boldsymbol{\theta}_0) + n\,\mu^2\right].
+\end{eqnarray}
+\]</span>
+where
+<span class="math inline">\(k_i(\boldsymbol{\theta}_0) = \mathbb{E}(Z_i \mid x_i, \boldsymbol{\theta}_0)\)</span>
+and
+<span class="math inline">\(h_i(\boldsymbol{\theta}_0) =\mathbb{E}(Z_i^2 \mid x_i, \boldsymbol{\theta}_0)\)</span>.</p>
+<p>Now, in the M step we should maximize
+<span class="math inline">\(Q(\boldsymbol{\theta} \mid \boldsymbol{\theta}_0, \boldsymbol{x})\)</span>. Note that</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\dfrac{\partial}{\partial \mu} Q(\boldsymbol{\theta} \mid \boldsymbol{\theta}_0, \boldsymbol{x}) &amp;=&amp;
+-\dfrac{1}{2\,\sigma^2}\left[2 \sum_{i=1}^n k_i(\boldsymbol{\theta}_0) + 2n\mu\right]
+\label{eq:mu}  \\ \label{eq:sigma2}
+\dfrac{\partial}{\partial \sigma^2} Q(\boldsymbol{\theta} \mid \boldsymbol{\theta}_0, \boldsymbol{x}) &amp;=&amp;
+-\dfrac{n}{2 \sigma^2} + \dfrac{1}{2\,(\sigma^2)^2}\left[\sum_{i=1}^n
+h_i(\boldsymbol{\theta}_0) - 2 \mu \sum_{i=1}^n k_i(\boldsymbol{\theta}_0) + n\,\mu^2\right].
+\end{eqnarray}
+\]</span></p>
+<p>Setting the above equations to zero and solving for <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>
+it turns out that
+<span class="math display">\[
+\begin{eqnarray}
+\dfrac{\partial}{\partial \mu} Q(\boldsymbol{\theta} \mid \boldsymbol{\theta}_0, \boldsymbol{x}) = 0
+&amp;\rightarrow&amp; \widehat{\mu} = \dfrac{1}{n} \sum_{i=1}^n k_i(\boldsymbol{\theta}_0)
+\\
+\dfrac{\partial}{\partial \sigma^2} Q(\boldsymbol{\theta} \mid \boldsymbol{\theta}_0, \boldsymbol{x}) = 0
+&amp;\rightarrow&amp;
+\widehat{\sigma}^2 = \dfrac{1}{n}\left[\sum_{i=1}^n
+h_i(\boldsymbol{\theta}_0) - 2 \widehat{\mu} \sum_{i=1}^n k_i(\boldsymbol{\theta}_0) + n\,\widehat{\mu}^2\right]
+\rightarrow
+\nonumber \\
+&amp;\rightarrow&amp;
+\widehat{\sigma}^2 = \dfrac{1}{n}\left[\sum_{i=1}^n
+h_i(\boldsymbol{\theta}_0) - \dfrac{1}{n}\left(\sum_{i=1}^n k_i(\boldsymbol{\theta}_0)\right)^2   \right].
+\end{eqnarray}
+\]</span>
+Now, we should find the expectations, i.e.,
+<span class="math inline">\(k_i(\boldsymbol{\theta}_0) = \mathbb{E}(Z_i \mid x_i, \boldsymbol{\theta}_0)\)</span> and
+<span class="math inline">\(h_i(\boldsymbol{\theta}_0) =\mathbb{E}(Z_i^2 \mid x_i, \boldsymbol{\theta}_0)\)</span>.
+Remembering that <span class="math inline">\((Z_i \mid X_i = x_i)\)</span> has Bernoulli distribution with the
+probability of success being a truncated Normal distribution at <span class="math inline">\(r\)</span>.
+Thus, for <span class="math inline">\(Z_i \mid X_i = 1\)</span> the moment generating function is</p>
+<p><span class="math display">\[
+\begin{align*}
+M_{Z_i \mid X_i = 1}(t) = \mathbb{E}[\mathrm{e}^{t Z}] &amp; = \dfrac{1}{1-\varPhi(r)} \int_r^{\infty}  \mathrm{e}^{tz}
+\phi(z)\mathrm{d}z =
+\dfrac{1}{1-\varPhi(r)} \int_r^{\infty}  \mathrm{e}^{tz}
+\dfrac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{- \dfrac{(z - \mu)^2}{2\sigma^2}}\mathrm{d}z\\ \\
+&amp;=
+\exp\left\{\mu t+ \sigma^2 t^2 / 2 \right\}\,\dfrac{1 - \varPhi(r - \sigma t)}{1 - \varPhi(r)}.
+\end{align*}
+\]</span>
+On the other hand, the moment generating function of <span class="math inline">\(Z_i \mid X_i = 1\)</span> is</p>
+<p><span class="math display">\[
+\begin{align*}
+M(t) = \mathbb{E}[\mathrm{e}^{t Z}] &amp; = \dfrac{1}{\varPhi(r)} \int_{-\infty}^r  \mathrm{e}^{tz}
+\phi(z)\mathrm{d}z =
+\dfrac{1}{\varPhi(r)} \int_{-\infty}^r  \mathrm{e}^{tz}
+\dfrac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{- \dfrac{(z - \mu)^2}{2\sigma^2}}\mathrm{d}z\\ \\
+&amp;=
+\exp\left\{\mu t+ \sigma^2 t^2 / 2 \right\}\,\dfrac{\varPhi(r - \sigma t)}{\varPhi(r)}.
+\end{align*}
+\]</span>
+Then the first two moments of <span class="math inline">\(Z_i \mid X_i = x_i\)</span> are given by</p>
+<p><span class="math display">\[
+E(Z_i \mid X_i = x_i) = M^{\prime}(t)|_{t=0} =
+\begin{cases}
+\mu + \sigma \dfrac{\varphi(r)}{1 - \varPhi(r)}, &amp; \mathrm{if} \, x_i = 1 \\ \\
+\mu - \sigma \dfrac{\varphi(r)}{\varPhi(r)}, &amp; \mathrm{if} \, x_i = 0
+\end{cases}
+\]</span>
+and
+<span class="math display">\[
+E(Z^2_i \mid X_i = x_i) = M^{\prime\prime}(t)|_{t=0} =
+\begin{cases}
+\mu^2 + \sigma^2 + \sigma(r + \sigma) \dfrac{\varphi(r)}{1 - \varPhi(r)}, &amp; \mathrm{if} \, x_i = 1 \\ \\
+\mu^2 + \sigma^2 - \sigma(r + \sigma) \dfrac{\varphi(r)}{\varPhi(r)}, &amp; \mathrm{if} \, x_i = 0.
+\end{cases}
+\]</span>
+Finally, using the expressions of <span class="math inline">\(k_i(\boldsymbol{\theta}_0)\)</span> and <span class="math inline">\(h_i(\boldsymbol{\theta}_0)\)</span>
+we can implement the EM algorithm to estimate <span class="math inline">\(\boldsymbol{\theta} = (\mu , \sigma^2)\)</span>.</p>
+<p>In general, the EM steps are the following</p>
+<ol style="list-style-type: decimal">
+<li><p>Given initial guess <span class="math inline">\(\boldsymbol{\theta}_j = (\mu_j, \sigma_j^2)\)</span>;</p></li>
+<li><p>Compute:
+<span class="math display">\[\begin{eqnarray*}
+  \widehat{\mu}_{j+1} &amp;=&amp; \dfrac{1}{n} \sum_{i=1}^n k_i(\boldsymbol{\theta}_{j}) \\
+  \widehat{\sigma}^2_{j+1} &amp;=&amp; \dfrac{1}{n}\left[\sum_{i=1}^n h_i(\boldsymbol{\theta}_{j}) - \dfrac{1}{n}\left(\sum_{i=1}^n k_i(\boldsymbol{\theta}_j)\right)^2   \right].
+\end{eqnarray*}\]</span>
+and then <span class="math inline">\(\boldsymbol{\theta}_{j+1} = (\widehat{\mu}_{j+1}, \widehat{\sigma}^2_{j+1})\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\max\left(|\boldsymbol{\theta}_{j} - \boldsymbol{\theta}_{j+1}|\right) &lt; \varepsilon\)</span> then the convergence criteria is satisfied and the EM estimates of
+<span class="math inline">\(\boldsymbol{\theta}\)</span> is <span class="math inline">\(\boldsymbol{\theta}_{j+1}\)</span>.</p></li>
+<li><p>Otherwise, update <span class="math inline">\(\boldsymbol{\theta}_{j}\)</span> for <span class="math inline">\(\boldsymbol{\theta}_{j+1}\)</span> and go through to step (ii).</p></li>
+</ol>
+<p>It is noteworthy that this is a naive example where the two steps of EM
+algorithm, the expectation and the maximization can be derived analytically.
+Generally, this is not the case for more complex problem although it is possible
+to obtain some sort of approximations.</p>
+</div>
+<div id="r-implementation" class="section level2">
+<h2><code>R</code> implementation</h2>
+<p>In the sequel an R implementation is presented. First, we need to define a
+function to compute the first and second moments of the distribution
+<span class="math inline">\((Z_i \mid X_i = x_i)\)</span>. The below <code>moments</code> function can do that.</p>
+<pre class="r"><code>moments &lt;- function(x, r, theta) {
+  mu &lt;- theta[1]
+  sigma2 &lt;- theta[2]
+  sigma &lt;- sqrt(sigma2)
+  if (x == 1) {
+    ki &lt;- mu + sigma * dnorm(r, mu, sigma) / 
+      pnorm(r, mu, sigma, lower.tail = F)
+    hi &lt;- mu^2 + sigma^2 + sigma * (r + mu) * 
+      dnorm(r, mu, sigma) / pnorm(r, mu, sigma, lower.tail = F)
+  } else {
+    ki &lt;- mu - sigma * dnorm(r, mu, sigma) / 
+      pnorm(r, mu, sigma)
+    hi &lt;- mu^2 + sigma^2 - sigma * (r + mu) * 
+      dnorm(r, mu, sigma) / pnorm(r, mu, sigma)
+  }
+  c(ki, hi)
+}</code></pre>
+<p>Then, the EM algorithm is implemented in the <code>expectation_maximization</code> showed
+in the sequence. Note that for each iteration we keep the estimates of <span class="math inline">\(\mu\)</span>
+and <span class="math inline">\(\sigma^2\)</span>. The function returns a matrix with the parameter estimates in
+each iteration. The algorithm stops when reach out the convergence criteria,
+which is defined as
+<span class="math display">\[
+\max(|\boldsymbol{\theta}_{j} - \boldsymbol{\theta}_{j+1}|) &lt; \epsilon
+\]</span>
+where <span class="math inline">\(\epsilon = 10^{-5}\)</span>.</p>
+<pre class="r"><code>expectation_maximization &lt;- function(x, r, theta, tol = 1e-5) {
+  estimates &lt;- list()
+  n &lt;- length(x)
+  err &lt;- 1
+  j &lt;- 0L
+  while (err &gt; tol) {
+    E &lt;- sapply(x, moments, r = r, theta = theta)
+    s_E &lt;- rowSums(E, na.rm = T)  
+    mu_j &lt;- 1 / n * s_E[1]
+    sigma2_j &lt;- 1 / n * (s_E[2] - 1 / n * (s_E[1])^2)
+    err &lt;- max(abs(theta[1] - mu_j), abs(theta[2] - sigma2_j))
+    theta &lt;- c(mu_j, sigma2_j)
+    j &lt;- j + 1
+    estimates[[j]] &lt;- c(j, theta)
+  }
+  m &lt;- do.call(rbind, estimates)
+  colnames(m) &lt;- c(&quot;Iteration&quot;, &quot;mu&quot;, &quot;sigma2&quot;)
+  m
+}</code></pre>
+<p>To evaluate the algorithm a simulate example in presented. I simulated
+<span class="math inline">\(Z_i \sim N(4, 2)\)</span> and <span class="math inline">\(r = 4\)</span> then the <code>expectation_maximization</code> is used
+to get the estimates.</p>
+<pre class="r"><code>set.seed(69)
+z &lt;- rnorm(100, mean = 4, sd = 2)
+r &lt;- 4
+x &lt;- ifelse(z &gt; r, 1, 0)
+out &lt;- expectation_maximization(x = x, r = r, theta = c(1, 1), tol = 1e-5)</code></pre>
+<p>The algorithm reach out the convergence with 31 iteration,
+and the final estimates of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are
+3.580 and
+4.318, which are close to
+the true values <span class="math inline">\(\mu = 4\)</span> and <span class="math inline">\(\sigma^2 = 4\)</span>.</p>
+<p>The Figure above shows the estimates obtained in each iteration for the
+parameters. Interesting to note that the EM estimates for <span class="math inline">\(\mu\)</span> is
+underestimate the true value, while for <span class="math inline">\(\sigma^2\)</span> is overestimate.</p>
+<pre class="r"><code>par(mfrow = c(1, 2))
+plot(out[, 2], ylim = c(min(out[, 2]), 4), main = expression(mu),
+     xlab = &quot;Iteration&quot;, ylab = bquote(&quot;Estimate of&quot;~mu))
+abline(h = 4, col = &quot;red&quot;)
+plot(out[, 3], main = expression(sigma^2),
+     xlab = &quot;Iteration&quot;, ylab = bquote(&quot;Estimate of&quot;~sigma^2))
+abline(h = 4, col = &quot;red&quot;)</code></pre>
+<p><img src="http://andrmenezes.github.io/post/2022-11-29-expectation-and-maximization-algorithm-a-toy-example/index_files/figure-html/plotting-1.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/em-algorithm/">EM algorithm</a><a class="category" href="/categories/maximum-likelihood/">maximum likelihood</a><a class="category" href="/categories/latent-variables/">latent variables</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+        integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWS4M8T1XR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWS4M8T1XR');
+</script></body>
+
+</html>
