@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PhD on André Menezes</title>
+    <link>http://andrmenezes.github.io/categories/phd/</link>
+    <description>Recent content in PhD on André Menezes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/phd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>APTS: University of Warwick</title>
+      <link>http://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/</link>
+      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/</guid>
+      
+        <description>My first week of APTS</description>
+      
+    </item>
+    
+  </channel>
+</rss>

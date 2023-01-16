@@ -1,9 +1,9 @@
 ---
 title: 'APTS: University of Warwick'
-summary: The first week of APTS
+summary: My first week of APTS
 author: André Felipe Berdusco Menezes
 date: '2023-01-10'
-draft: true
+draft: false
 categories:
   - statistical computing
   - staistical inference
@@ -18,39 +18,37 @@ output:
 
 ## Introduction
 
-I started my PhD journey in in Data Science at Maynooth University in
-September, 2022. I am funded by the funded by
+I started my PhD journey in Data Science at Maynooth University in
+September 2022. I am being funded by the
 [SFI Centre for Research Training (CRT) in Foundations of Data Science](https://www.data-science.ie/).
 During the first year I have some mandatory modules and assignments concerning
-the CRT program. Besides that, the CRT the program supports the students to 
-attend high-level training related to your specific background across the world. 
+the CRT program. Moreover, the CRT program supports the students to 
+attend high-level training related to their specific background. 
 
 One of the most important training in statistics is the
 [Academy for PhD Training in Statistics (APTS)](https://warwick.ac.uk/fac/sci/statistics/apts/).
 The APTS is a collaboration between major UK statistics research groups to
 organize courses for first-year PhD students in statistics. Each year there 
-are three intensive weeks in different universities. According to their
+are four intensive weeks in different universities. According to their
 description:
 
 > The intention of APTS is to provide courses which will be attractive and
 relevant to the research preparation and background education of all statistics
 and probability PhD students.
 
-
 Besides the high-level courses taught by renowned professors, other advantage
 to attend the APTS modules is the opportunity to meet first-year PhD students
-from different universities across UK.
-This is fantastic!
+from different universities across UK. This is fantastic!
 
 This post aims to describe the first week modules I took in University of Warwick
 during 13-16 December, 2022. I will give an overview of the topics covered and
 in the next post I will provide the solution of one assignment.
 
-## Courses Topics
+## Courses
 
-The first week was organized by the Department of Statistics of
+The first week was organized by the Department of Statistics from
 [University of Warwick](https://warwick.ac.uk/fac/sci/statistics/).
-We had a intensive week with two modules, namely
+We had an intensive week with two modules, namely
 Statistical Computing and Statistical Inference, which were delivered by
 professors [Darren Wilkinson](https://darrenjw.github.io/) from
 Durham University and
@@ -58,18 +56,72 @@ Durham University and
 from University of Bath, respectively.
 
 
-### Statistical Inference
+#### Statistical Inference
 
+One interesting feature of APTS courses is the preliminary notes, which
+help the students prepare for the module. The preliminary notes on Statistical
+Inference course is available
+[here](https://people.bath.ac.uk/masss/APTS/2022-23/IntroductoryNotes/) and
+it covers the following:
 
+- Introduce the idea of statistical models
+- Motivate some principles of statistical inference
+- Review the two statistical inference paradigm (Classical and Bayesian approaches)
 
+The course main topics were: principles of inference,
+decision theory, and confidence sets and hypothesis testing. 
+Various key statistical concepts were discussed during the course and I would say
+that the two books of David Cox, entitled
+[Theoretical Statistics](https://link.springer.com/book/9780412124204) and
+[Principles of Statistical Inference](https://www.cambridge.org/core/books/principles-of-statistical-inference/BCD3734047D403DF5352EA58F41D3181)
+broad most of them in full detail way.
 
-### Statistical Computing
+It was quite attractive for me the second half of the course that compromised
+the inference problem under a decision problem viewpoint.
+Generally speaking, the decision making $d$ acts as an estimate of the
+parameter $\theta$ and the specific problem loss function $L(\theta, d)$ 
+measures the quality of $d$ when $\theta$ is known. 
+We have seen that decision theory provides (i) a link between Bayesian and 
+classical procedures, and (ii)
+Bayesian explanations to inference questions addressed in the Classical approach.
 
+In general, the course was very dense, covered several theoretical
+key concepts, and provided to me an interesting vision about the decision
+theory which I haven't studied yet..
 
+The main notes and course assignment can be found
+[here](https://people.bath.ac.uk/masss/APTS/2022-23/LectureNotes/) and [here](https://warwick.ac.uk/fac/sci/statistics/apts/students/resources/apts-si-assessment.pdf),
+respectively.
 
+#### Statistical Computing
 
+This was my favorite course, I could review and learn many important concepts
+and methods which I will use during my thesis. We mainly use R to perform the
+computational calculations. Although the main emphasis were on the concepts and
+not on R programming.
+The emphasize given in matrix theory was genial and I could realize their
+importance to compactly write and work with statistical models.
 
+The [preliminary notes](https://darrenjw.github.io/work/teaching/apts-sc/pre/index.html)
+was great, with some exercises that helped review statistics and mathematics
+knowledge used during the module.
 
+The three main topics of the course was: (i) Matrix computing, (ii) Optimization
+and (iii) Calculus by computer (differentiation and integration).
+The main notes can be found [here](https://darrenjw.github.io/work/teaching/apts-sc/notes/apts_statistical_com/index.html).
+Darren Wilkinson didactic is unique and surprisingly, he can manage difficult
+concepts in a very understandable and easily manner for the student.
 
+We had two laboratory practical session. The
+[first one](https://darrenjw.github.io/work/teaching/apts-sc/APTS-SC-Labs.pdf)
+covered matrix computing exercises, which one of the exercises we should show
+the equivalence of perform the principal components analysis (PCS) using
+singular value decomposition (SVD) and the Eigendecomposition.
+The [second lab session](https://darrenjw.github.io/work/teaching/apts-sc/APTS-SC-Labs2.pdf)
+was primary about optimization and one interesting exercise we 
+had to implement the maximum likelihood estimators of the linear mixed models.
 
-
+To sum up, in the next post I will provide the solution of the statistical
+computing assignment, which the exercises can be found
+[here](https://warwick.ac.uk/fac/sci/statistics/apts/students/resources/starcomp-assessment2223.pdf). 
+This assignment deal with most of the concepts discussed during the module.
