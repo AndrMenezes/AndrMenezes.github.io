@@ -19,11 +19,11 @@ output:
 
 
 In 2018, the last year of my undergraduate, I and my dear friend
-[Wesley Furriel](https://github.com/WOLFurriell) submitted a article in
+[Wesley Furriel](https://github.com/WOLFurriell) submitted an article in
 [Brazilian Journal of Biometrics](https://biometria.ufla.br/index.php/BBJ/index)
 that was published in [Vol. 37, No. 3 of 2019](https://biometria.ufla.br/index.php/BBJ/article/view/408).
-This work, we conducted a empirical study to investige the relationship between
-the Municipal Human Development Index (MHDI) of 2010 and some socioeconimics and spacial
+This work, we conducted a empirical study to investigate the relationship between
+the Municipal Human Development Index (MHDI) of 2010 and some socioeconomic and spacial
 variables. To avoid potentials redundant relationships, we have selected variables
 that are not used in the construction of MHDI, but can enable explore its
 consonance with other measures that demonstrate aspects of cities social reality,

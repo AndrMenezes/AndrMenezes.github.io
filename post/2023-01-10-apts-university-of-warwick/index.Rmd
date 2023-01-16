@@ -1,0 +1,75 @@
+---
+title: 'APTS: University of Warwick'
+summary: The first week of APTS
+author: André Felipe Berdusco Menezes
+date: '2023-01-10'
+draft: true
+categories:
+  - statistical computing
+  - staistical inference
+  - APTS
+  - PhD
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## Introduction
+
+I started my PhD journey in in Data Science at Maynooth University in
+September, 2022. I am funded by the funded by
+[SFI Centre for Research Training (CRT) in Foundations of Data Science](https://www.data-science.ie/).
+During the first year I have some mandatory modules and assignments concerning
+the CRT program. Besides that, the CRT the program supports the students to 
+attend high-level training related to your specific background across the world. 
+
+One of the most important training in statistics is the
+[Academy for PhD Training in Statistics (APTS)](https://warwick.ac.uk/fac/sci/statistics/apts/).
+The APTS is a collaboration between major UK statistics research groups to
+organize courses for first-year PhD students in statistics. Each year there 
+are three intensive weeks in different universities. According to their
+description:
+
+> The intention of APTS is to provide courses which will be attractive and
+relevant to the research preparation and background education of all statistics
+and probability PhD students.
+
+
+Besides the high-level courses taught by renowned professors, other advantage
+to attend the APTS modules is the opportunity to meet first-year PhD students
+from different universities across UK.
+This is fantastic!
+
+This post aims to describe the first week modules I took in University of Warwick
+during 13-16 December, 2022. I will give an overview of the topics covered and
+in the next post I will provide the solution of one assignment.
+
+## Courses Topics
+
+The first week was organized by the Department of Statistics of
+[University of Warwick](https://warwick.ac.uk/fac/sci/statistics/).
+We had a intensive week with two modules, namely
+Statistical Computing and Statistical Inference, which were delivered by
+professors [Darren Wilkinson](https://darrenjw.github.io/) from
+Durham University and
+[Simon Shaw](https://researchportal.bath.ac.uk/en/persons/simon-shaw/)
+from University of Bath, respectively.
+
+
+### Statistical Inference
+
+
+
+
+### Statistical Computing
+
+
+
+
+
+
+
+
+
