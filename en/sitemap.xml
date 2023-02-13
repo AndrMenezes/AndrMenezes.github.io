@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://andrmenezes.github.io/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -16,13 +16,13 @@
                 />
   </url><url>
     <loc>http://andrmenezes.github.io/categories/apts/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <loc>http://andrmenezes.github.io/post/2023-01-30-apts-statistical-computing-assessment/</loc>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://andrmenezes.github.io/categories/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -35,10 +35,10 @@
                 />
   </url><url>
     <loc>http://andrmenezes.github.io/categories/phd/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://andrmenezes.github.io/post/</loc>
-    <lastmod>2023-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -50,10 +50,13 @@
                 href="http://andrmenezes.github.io/post/"
                 />
   </url><url>
-    <loc>http://andrmenezes.github.io/categories/staistical-inference/</loc>
+    <loc>http://andrmenezes.github.io/categories/statistical-computing/</loc>
+    <lastmod>2023-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://andrmenezes.github.io/categories/statistical-computing/</loc>
+    <loc>http://andrmenezes.github.io/categories/staistical-inference/</loc>
     <lastmod>2023-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://andrmenezes.github.io/categories/em-algorithm/</loc>

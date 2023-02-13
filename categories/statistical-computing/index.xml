@@ -6,7 +6,18 @@
     <description>Recent content in statistical computing on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/statistical-computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/statistical-computing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>APTS: Statistical Computing Assessment</title>
+      <link>http://andrmenezes.github.io/post/2023-01-30-apts-statistical-computing-assessment/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/post/2023-01-30-apts-statistical-computing-assessment/</guid>
+      
+        <description>Go through the solutions for the Statistical Computing assessment</description>
+      
+    </item>
+    
     <item>
       <title>APTS: University of Warwick</title>
       <link>http://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/</link>

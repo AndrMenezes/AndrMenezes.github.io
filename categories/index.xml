@@ -6,11 +6,11 @@
     <description>Recent content in Categories on André Menezes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://andrmenezes.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>APTS</title>
       <link>http://andrmenezes.github.io/categories/apts/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/apts/</guid>
       
@@ -21,9 +21,20 @@
     <item>
       <title>PhD</title>
       <link>http://andrmenezes.github.io/categories/phd/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/phd/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>statistical computing</title>
+      <link>http://andrmenezes.github.io/categories/statistical-computing/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrmenezes.github.io/categories/statistical-computing/</guid>
       
         <description></description>
       
@@ -35,17 +46,6 @@
       <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>http://andrmenezes.github.io/categories/staistical-inference/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>statistical computing</title>
-      <link>http://andrmenezes.github.io/categories/statistical-computing/</link>
-      <pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrmenezes.github.io/categories/statistical-computing/</guid>
       
         <description></description>
       
