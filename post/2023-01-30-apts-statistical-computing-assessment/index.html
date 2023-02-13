@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> André Menezes | APTS: Statistical Computing Assessment </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.107.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="M.Sc. Statistics | Data Scientist">
+    
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.69a557b4fc895e1566037155c2b37c752bb8ccf82803bf8551c60ae44f0f4e23.css"
+        integrity="sha256-aaVXtPyJXhVmA3FVwrN8dSu4zPgoA7&#43;FUcYK5E8PTiM="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="/post/2023-01-30-apts-statistical-computing-assessment/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.df804b63b5bd8474ea0756ea874bc8f1e92552708cc6ea43aa0d76981dc419f9.js"
+            integrity="sha256-34BLY7W9hHTqB1bqh0vI8eklUnCMxupDqg12mB3EGfk="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.ea8ebe268922ef9849261a1312cd65b640595e65251ce4c00534a176afd1ac0c.js"
+                integrity="sha256-6o6&#43;Joki75hJJhoTEs1ltkBZXmUlHOTABTShdq/RrAw="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://andrmenezes.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="APTS: Statistical Computing Assessment"/>
+<meta name="twitter:description" content="Go through the solutions for the Statistical Computing assessment"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="/images/ui.jpg" alt="profile picture">
+            <h3 title=""><a href="/">André Menezes</a></h3>
+            <div class="description">
+                <p>M.Sc. Statistics | Data Scientist</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/AndrMenezes" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/andr%c3%a9-felipe-menezes-174159121/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.researchgate.net/profile/Andre-Menezes-5" rel="me" aria-label="Research Gate">
+                    <i class="fab fa-researchgate fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:andrefelipemaringa@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://orcid.org/0000-0002-3320-9834" rel="me" aria-label="orcid">
+                    <i class="fab fa-orcid fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://open.spotify.com/user/22oh6p72724k3eqr3wl7tekwq?si=7e9495a05a954ada" rel="me" aria-label="spotify">
+                    <i class="fab fa-spotify fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy;  2019-2023 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/post/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/publications/"
+                        
+                   title="">Publications</a></li>
+        
+            
+            <li><a 
+                   href="/pdf/afbm_curriculum.pdf"
+                        
+                   title="">Curriculum</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+            
+                <li><a href="/"
+                       title="EN">EN</a>
+                </li>
+            
+                <li><a href="/pt/"
+                       title="PT">PT</a>
+                </li>
+            
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>APTS: Statistical Computing Assessment</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> 
+                                                30/01/2023
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">6-minute read</span>
+                    </div>
+                
+            </div>
+
+            
+
+
+<div id="the-assessment" class="section level2">
+<h2>The assessment</h2>
+<p>In my previous <a href="https://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/">post</a>, I shared my reflections on the first week of APTS at the
+University of Warwick. Now, I will go through my solution for the
+Statistical Computing assessment.
+The assignment, which can be found <a href="https://warwick.ac.uk/fac/sci/statistics/apts/students/resources/starcomp-assessment2223.pdf">here</a>, involves the implementation of an
+<code>R</code> function for efficiently and stably fitting a generalized linear model (GLM)
+for the one-parameter family distribution.</p>
+<p>The density (or mass function) of a one-parameter exponential family model
+with canonical parameter <span class="math inline">\(\theta\)</span> is of the form
+<span class="math display">\[
+f(y \mid \theta) = \exp\left\{\theta y - b(\theta) + c(y)\right\}
+\]</span>
+where <span class="math inline">\(b(\cdot)\)</span> and <span class="math inline">\(c(\cdot)\)</span> are known scalar functions.</p>
+<p>The linear predictor <span class="math inline">\(\eta = \mathbf{X}\boldsymbol{\beta}\)</span> in a GLM is related
+to the model’s canonical parameter <span class="math inline">\(\theta\)</span> via a suitable link function.
+Moreover, <span class="math inline">\(\mathbf{X}\)</span> is an <span class="math inline">\(n \times p\)</span> design matrix with known values,
+<span class="math inline">\(\boldsymbol{\beta}\)</span> is a <span class="math inline">\(p\)</span>-dimensional set of regression parameters, and
+<span class="math inline">\(\mathbf{y} = (y_1, \ldots, y_n)\)</span> is an <span class="math inline">\(n\)</span>-dimensional vector of observations.</p>
+<p>Below, I will outline the main ideas of the solution and compare the estimated
+coefficients with those from the R’s <code>glm</code> function.
+You can access a file with the detailed solution
+<a href="/pdf/solution_statistical_computing_assessment.pdf">here</a>.</p>
+</div>
+<div id="the-solution" class="section level2">
+<h2>The solution</h2>
+<p>In the first two items, we should write the log-likelihood in vector form and
+derive the first and second derivatives with respect to <span class="math inline">\(\boldsymbol{\beta}\)</span>.
+I will skip the technical details, although they can be found in the detailed
+solution <a href="/pdf/solution_statistical_computing_assessment.pdf">file</a>.
+The log-likelihood, score vector, and hessian matrix are respectively given by</p>
+<p><span class="math display">\[\begin{eqnarray}
+\ell(\boldsymbol{\beta}) &amp;=&amp; \mathbf{y}^\top\,\mathbf{X}\boldsymbol{\beta} - \mathbf{1}^\top\,b(\mathbf{X}\boldsymbol{\beta}) \\
+\Delta \ell(\boldsymbol{\beta}) &amp;=&amp; \mathbf{X}^\top\left[\mathbf{y} - b^\prime(\mathbf{X}\boldsymbol{\beta})\right] \\
+\Delta^2\ell(\boldsymbol{\beta}) &amp;=&amp; -\mathbf{X}^\top\,\mathrm{diag}(\boldsymbol{\omega})\,\mathbf{X}
+\end{eqnarray}\]</span>
+where <span class="math inline">\(b(\cdot)\)</span> and its derivatives are vectorized function and
+<span class="math inline">\(\boldsymbol{\omega} = b^{\prime\prime}(\mathbf{X}\boldsymbol{\beta})\)</span>.</p>
+<p>The score vector and hessian matrix are required in order to apply the
+Newton-Rapshon (NR) algorithm to fit the the GLM model.
+Given a initial guess,
+<span class="math inline">\(\boldsymbol{\beta}^{(0)} = (\beta_0^{(0)}, \beta_1^{(0)}, \ldots, \beta_{p-1}^{(0)})\)</span>,
+the NR update schema for the one-parameter exponential family model can be
+written as follows:</p>
+<p><span class="math display">\[\begin{align*}
+\boldsymbol{\beta}^{(k+1)} &amp;= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\boldsymbol{\omega}_k)\,\mathbf{X}\right]^{-1}\,\mathbf{X}^\top\,\left[\mathbf{y} - b^\prime(\mathbf{X}\,\boldsymbol{\beta}_k)\right] \\
+&amp;= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)\,\mathbf{X}\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k
+\end{align*}\]</span>
+where
+<span class="math inline">\(\mathbf{w}_k = b^{\prime\prime}(\mathbf{X}\,\boldsymbol{\beta}_k)\)</span>
+and
+<span class="math inline">\(\mathbf{z}_k = \mathbf{y} - b^\prime(\mathbf{X}\,\boldsymbol{\beta}_k)\)</span>.</p>
+<p>By defining <span class="math inline">\(\mathbf{X}_k = \textrm{diag}\left\{\mathbf{w}_k\right\}^{1/2}\,\mathbf{X}\)</span>,
+we can rewrite the NR update in a more efficient computational form using the
+QR decomposition of <span class="math inline">\(\mathbf{X}_k = \mathbf{Q}_k\,\mathbf{R}_k\)</span>, where
+<span class="math inline">\(\mathbf{R}_k\)</span> is an upper triangular <span class="math inline">\(n\times p\)</span> matrix and <span class="math inline">\(\mathbf{Q}_k\)</span>
+has the same dimension of <span class="math inline">\(\mathbf{X}_k\)</span> with orthogonal columns such that
+<span class="math inline">\(\mathbf{Q}_k^\top\,\mathbf{Q}_k = \mathbf{I}_{n\times p}\)</span>.
+Also, note that <span class="math inline">\(\textrm{diag}\left\{\mathbf{w}_k\right\} = \textrm{diag}\left\{\mathbf{w}_k\right\}^{1/2}\,\textrm{diag}\left\{\mathbf{w}_k\right\}^{1/2}\)</span>,
+then the NR update can be set up as:
+<span class="math display">\[\begin{align*}
+\boldsymbol{\beta}^{(k+1)}
+&amp;= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathbf{X}\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&amp;= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathbf{X}_k\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&amp;= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathbf{Q}_k\,\mathbf{R}_k\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&amp;= \boldsymbol{\beta}^{(k)} + \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{-1}\,\left[\mathrm{diag}(\mathbf{w}_k)\right]^{-1/2}\left(\mathbf{X}^\top\right)^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&amp;= \boldsymbol{\beta}^{(k)} + \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{\top}\,\left[\mathrm{diag}(\mathbf{w}_k)\right]^{-1/2}\,\mathbf{z}_k.
+\end{align*}\]</span></p>
+<p>The matrix multiplication of <span class="math inline">\(\mathrm{diag}(\mathbf{w}_k)\)</span> and <span class="math inline">\(\mathbf{z}_k\)</span>
+can be expressed as a Hadamard (elementwise) product, which is more
+computationally efficient. It turns out that
+<span class="math display">\[\begin{align*}
+\boldsymbol{\beta}^{(k+1)}
+&amp;= \boldsymbol{\beta}^{(k)} + \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{\top}\,\left[\mathbf{w}_k^{-1/2}\circ \mathbf{z}_k\right] \\
+\boldsymbol{\beta}^{(k+1)} - \boldsymbol{\beta}^{(k)} &amp;= \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{\top}\,\left[\mathbf{w}_k^{-1/2}\circ \mathbf{z}_k\right] \\
+\mathbf{R}_k\,(\boldsymbol{\beta}^{(k+1)} - \boldsymbol{\beta}^{(k)}) &amp;= \mathbf{Q}_k^{\top}\,\left[\mathbf{w}_k^{-1/2}\circ \mathbf{z}_k\right].
+\end{align*}\]</span></p>
+<div id="computational-implementation" class="section level4">
+<h4>Computational implementation</h4>
+<p>We have now implemented a function, <code>glm1</code>, which fits a GLM for the one-parameter
+family distributions, avoiding the need to perform matrix inversion and create
+<span class="math inline">\(n\times n\)</span> matrices of the form <span class="math inline">\(\mathbf{X}^\top \mathbf{X}\)</span>.</p>
+<pre class="r"><code>glm1 &lt;- function(y, X, bp, bpp) {
+  
+  p &lt;- NCOL(X)
+  beta_k &lt;- rep(0, p)
+  list_beta &lt;- list()
+  stop_error &lt;- 1e-6
+  j &lt;- 1L
+  current_error &lt;- 1
+  
+  while (current_error &gt; stop_error) {
+    eta_k &lt;- X %*% beta_k
+    z_k &lt;- y - bp(eta_k)
+    w_k &lt;- bpp(eta_k)
+    X_k &lt;- drop(w_k^(1/2)) * X
+    wz_k &lt;- w_k^(-1/2) * z_k
+    qr_out &lt;- qr(X_k)
+    Q_k &lt;- qr.Q(qr_out)
+    R_k &lt;- qr.R(qr_out)
+    a_k &lt;- backsolve(R_k, crossprod(Q_k, wz_k))
+    
+    # Update the parameter
+    list_beta[[j]] &lt;- a_k + beta_k
+    current_error &lt;- max(abs(beta_k - list_beta[[j]]))
+    beta_k &lt;- list_beta[[j]]
+    j &lt;- j + 1L
+  }
+  
+  do.call(cbind, list_beta)
+}</code></pre>
+<p>Because the left hand side of the NR update is upper triangular due to the
+<span class="math inline">\(\mathbf{R}_k\)</span> matrix, the <code>backsolve</code> function can be used to efficiently
+solve a triangular system of linear equations.</p>
+<p>The termination criterion is defined as
+<span class="math inline">\(\max\left| \boldsymbol{\beta}^{(k)} - \boldsymbol{\beta}^{(k + 1)} \right| &lt; \epsilon\)</span>,
+where <span class="math inline">\(\epsilon = 10^{-6}\)</span> and the function returns a <code>data.frame</code> with the
+estimates parameter for each iteration until this criterion is achieved.</p>
+</div>
+<div id="cross-checks" class="section level4">
+<h4>Cross-checks</h4>
+<p>I will cross-check my implementation with the R’s built <code>glm</code> function for the
+Bernoulli GLM, which the probability mass function is given by
+<span class="math display">\[
+f(y \mid \theta) = \exp\left\{y\,\theta - \log\left(1 + e^\theta \right)\right\}
+\]</span>
+where <span class="math inline">\(\theta = \log \left(\dfrac{p}{1 - p}\right)\)</span> and
+<span class="math inline">\(b(\theta) = \log\left(1 + e^\theta\right)\)</span>. Also,
+<span class="math inline">\(b^\prime(\theta) = \dfrac{1}{1 + e^{-\theta}}\)</span> and
+<span class="math inline">\(b^{\prime\prime}(\theta) =\dfrac{e^{-\theta}}{(1 + e^{-\theta})^2}\)</span>.</p>
+<p>A user friendly function, <code>logReg</code>, which call the <code>glm1</code> is defined
+to fit a logistic regression model in a quite similar way as <code>glm</code> function.</p>
+<pre class="r"><code>logReg &lt;- function(formula, data) {
+  mf &lt;- model.frame(formula, data = data)
+  y &lt;- model.response(mf)
+  if (is.factor(y))
+    y &lt;- as.numeric(y) - 1
+  X &lt;- model.matrix(formula, mf)
+  bp &lt;- function(theta) 1 / (1 + exp(-theta))
+  bpp &lt;- function(theta) {
+    e &lt;- exp(-theta)
+    e / (1 + e)^2
+  }
+  glm1(y, X, bp, bpp)
+}</code></pre>
+<p>The first check concerns a simulated data from <span class="math inline">\(500\)</span> samples of logistic regression model with two
+covariates, where the true values of the coefficients are
+<span class="math inline">\(\boldsymbol{\beta} = (1.0, -0.5, 0.5)\)</span> and the covariates were simulated from
+standard Normal and uniform random variables.</p>
+<pre class="r"><code>set.seed(69)
+n &lt;- 500
+X &lt;- cbind(1, rnorm(n), runif(n))
+betas &lt;- c(1, -0.5, 0.5)
+eta &lt;- drop(X %*% betas)
+p &lt;- 1 / (1 + exp(-eta))
+y &lt;- rbinom(n, size = 1, prob = p)
+sim_data &lt;- data.frame(y = y, x1 = X[, 2], x2 = X[, 3])</code></pre>
+<p>As shown below, the coefficients estimated from <code>logReg</code> and <code>glm</code> are the same
+to seven decimal places.</p>
+<pre class="r"><code>out_logReg &lt;- logReg(formula = y ~ x1 + x2, data = sim_data)
+out_glm &lt;- glm(formula = y ~ x1 + x2, data = sim_data, family = &quot;binomial&quot;)
+cbind(true = betas,
+      logReg = out_logReg[, ncol(out_logReg)],
+      glm = coef(out_glm))</code></pre>
+<pre><code>##             true     logReg        glm
+## (Intercept)  1.0  1.0698941  1.0698941
+## x1          -0.5 -0.5386558 -0.5386558
+## x2           0.5  0.5473424  0.5473424</code></pre>
+<p>After performing a second cross-check using the <code>Pima.tr</code> data from the <code>MASS</code>
+package, it was found that the estimated values were identical up to nine decimal
+places, confirming that the <code>glm1</code> function had been successfully implemented.</p>
+<pre class="r"><code>out_logReg &lt;- logReg(type ~ ., data = MASS::Pima.tr)
+out_glm &lt;- glm(type ~ ., data = MASS::Pima.tr, family = &quot;binomial&quot;)
+
+cbind(logReg = out_logReg[, ncol(out_logReg)],
+      glm = coef(out_glm))</code></pre>
+<pre><code>##                   logReg          glm
+## (Intercept) -9.773061533 -9.773061533
+## npreg        0.103183427  0.103183427
+## glu          0.032116823  0.032116823
+## bp          -0.004767542 -0.004767542
+## skin        -0.001916632 -0.001916632
+## bmi          0.083623912  0.083623912
+## ped          1.820410367  1.820410367
+## age          0.041183529  0.041183529</code></pre>
+</div>
+</div>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                <span class="separator"><a class="category" href="/categories/statistical-computing/">statistical computing</a><a class="category" href="/categories/apts/">APTS</a><a class="category" href="/categories/phd/">PhD</a></span>
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+                    <h2>comments</h2>
+                    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "andrmenezes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.44288fd315b6cda68c1f4743caad56535c0f81a5b5a672f385e82b3896575c1d.js"
+        integrity="sha256-RCiP0xW2zaaMH0dDyq1WU1wPgaW1pnLzhegrOJZXXB0="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JWS4M8T1XR"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JWS4M8T1XR');
+</script></body>
+
+</html>

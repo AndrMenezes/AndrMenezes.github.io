@@ -1,0 +1,224 @@
+---
+title: 'APTS: Statistical Computing Assessment'
+summary: Go through the solutions for the Statistical Computing assessment
+author: André Felipe Berdusco Menezes
+date: '2023-01-30'
+draft: false
+categories:
+  - statistical computing
+  - APTS
+  - PhD
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: false
+    toc_depth: 1
+---
+
+## The assessment
+
+In my previous [post](https://andrmenezes.github.io/post/2023-01-10-apts-university-of-warwick/), I shared my reflections on the first week of APTS at the
+University of Warwick. Now, I will go through my solution for the
+Statistical Computing assessment.
+The assignment, which can be found [here](https://warwick.ac.uk/fac/sci/statistics/apts/students/resources/starcomp-assessment2223.pdf), involves the implementation of an
+`R` function for efficiently and stably fitting a generalized linear model (GLM)
+for the one-parameter family distribution.
+
+The density (or mass function) of a one-parameter exponential family model
+with canonical parameter $\theta$ is of the form
+$$
+f(y \mid \theta) = \exp\left\{\theta y - b(\theta) + c(y)\right\}
+$$
+where $b(\cdot)$ and $c(\cdot)$ are known scalar functions.
+
+
+The linear predictor $\eta = \mathbf{X}\boldsymbol{\beta}$ in a GLM is related
+to the model's canonical parameter $\theta$ via a suitable link function.
+Moreover, $\mathbf{X}$ is an $n \times p$ design matrix with known values,
+$\boldsymbol{\beta}$ is a $p$-dimensional set of regression parameters, and
+$\mathbf{y} = (y_1, \ldots, y_n)$ is an $n$-dimensional vector of observations.
+
+Below, I will outline the main ideas of the solution and compare the estimated
+coefficients with those from the R's `glm` function.
+You can access a file with the detailed solution
+[here](/pdf/solution_statistical_computing_assessment.pdf). 
+
+## The solution
+
+In the first two items, we should write the log-likelihood in vector form and
+derive the first and second derivatives with respect to $\boldsymbol{\beta}$.
+I will skip the technical details, although they can be found in the detailed
+solution [file](/pdf/solution_statistical_computing_assessment.pdf).
+The log-likelihood, score vector, and hessian matrix are respectively given by
+
+\begin{eqnarray}
+\ell(\boldsymbol{\beta}) &=& \mathbf{y}^\top\,\mathbf{X}\boldsymbol{\beta} - \mathbf{1}^\top\,b(\mathbf{X}\boldsymbol{\beta}) \\
+\Delta \ell(\boldsymbol{\beta}) &=& \mathbf{X}^\top\left[\mathbf{y} - b^\prime(\mathbf{X}\boldsymbol{\beta})\right] \\
+\Delta^2\ell(\boldsymbol{\beta}) &=& -\mathbf{X}^\top\,\mathrm{diag}(\boldsymbol{\omega})\,\mathbf{X}
+\end{eqnarray}
+where $b(\cdot)$ and its derivatives are vectorized function and
+$\boldsymbol{\omega} = b^{\prime\prime}(\mathbf{X}\boldsymbol{\beta})$.
+
+The score vector and hessian matrix are required in order to apply the
+Newton-Rapshon (NR) algorithm to fit the the GLM model.
+Given a initial guess,
+$\boldsymbol{\beta}^{(0)} = (\beta_0^{(0)}, \beta_1^{(0)}, \ldots, \beta_{p-1}^{(0)})$,
+the NR update schema for the one-parameter exponential family model can be
+written as follows:
+
+
+\begin{align*}
+\boldsymbol{\beta}^{(k+1)} &= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\boldsymbol{\omega}_k)\,\mathbf{X}\right]^{-1}\,\mathbf{X}^\top\,\left[\mathbf{y} - b^\prime(\mathbf{X}\,\boldsymbol{\beta}_k)\right] \\
+&= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)\,\mathbf{X}\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k
+\end{align*}
+where
+$\mathbf{w}_k = b^{\prime\prime}(\mathbf{X}\,\boldsymbol{\beta}_k)$ 
+and
+$\mathbf{z}_k = \mathbf{y} - b^\prime(\mathbf{X}\,\boldsymbol{\beta}_k)$.
+
+By defining $\mathbf{X}_k = \textrm{diag}\left\{\mathbf{w}_k\right\}^{1/2}\,\mathbf{X}$,
+we can rewrite the NR update in a more efficient computational form using the
+QR decomposition of $\mathbf{X}_k = \mathbf{Q}_k\,\mathbf{R}_k$, where
+$\mathbf{R}_k$ is an upper triangular $n\times p$ matrix and $\mathbf{Q}_k$
+has the same dimension of $\mathbf{X}_k$ with orthogonal columns such that
+$\mathbf{Q}_k^\top\,\mathbf{Q}_k = \mathbf{I}_{n\times p}$.
+Also, note that $\textrm{diag}\left\{\mathbf{w}_k\right\} = \textrm{diag}\left\{\mathbf{w}_k\right\}^{1/2}\,\textrm{diag}\left\{\mathbf{w}_k\right\}^{1/2}$,
+then the NR update can be set up as:
+\begin{align*}
+\boldsymbol{\beta}^{(k+1)}
+&= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathbf{X}\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathbf{X}_k\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&= \boldsymbol{\beta}^{(k)} + \left[\mathbf{X}^\top\,\mathrm{diag}(\mathbf{w}_k)^{1/2}\,\mathbf{Q}_k\,\mathbf{R}_k\right]^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&= \boldsymbol{\beta}^{(k)} + \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{-1}\,\left[\mathrm{diag}(\mathbf{w}_k)\right]^{-1/2}\left(\mathbf{X}^\top\right)^{-1}\,\mathbf{X}^\top\,\mathbf{z}_k \\
+&= \boldsymbol{\beta}^{(k)} + \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{\top}\,\left[\mathrm{diag}(\mathbf{w}_k)\right]^{-1/2}\,\mathbf{z}_k.
+\end{align*}
+
+The matrix multiplication of $\mathrm{diag}(\mathbf{w}_k)$ and $\mathbf{z}_k$
+can be expressed as a Hadamard (elementwise) product, which is more
+computationally efficient. It turns out that
+\begin{align*}
+\boldsymbol{\beta}^{(k+1)}
+&= \boldsymbol{\beta}^{(k)} + \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{\top}\,\left[\mathbf{w}_k^{-1/2}\circ \mathbf{z}_k\right] \\
+\boldsymbol{\beta}^{(k+1)} - \boldsymbol{\beta}^{(k)} &= \mathbf{R}_k^{-1}\,\mathbf{Q}_k^{\top}\,\left[\mathbf{w}_k^{-1/2}\circ \mathbf{z}_k\right] \\
+\mathbf{R}_k\,(\boldsymbol{\beta}^{(k+1)} - \boldsymbol{\beta}^{(k)}) &= \mathbf{Q}_k^{\top}\,\left[\mathbf{w}_k^{-1/2}\circ \mathbf{z}_k\right].
+\end{align*}
+
+#### Computational implementation
+
+We have now implemented a function, `glm1`, which fits a GLM for the one-parameter
+family distributions, avoiding the need to perform matrix inversion and create
+$n\times n$ matrices of the form $\mathbf{X}^\top \mathbf{X}$.
+
+```{r}
+glm1 <- function(y, X, bp, bpp) {
+  
+  p <- NCOL(X)
+  beta_k <- rep(0, p)
+  list_beta <- list()
+  stop_error <- 1e-6
+  j <- 1L
+  current_error <- 1
+  
+  while (current_error > stop_error) {
+    eta_k <- X %*% beta_k
+    z_k <- y - bp(eta_k)
+    w_k <- bpp(eta_k)
+    X_k <- drop(w_k^(1/2)) * X
+    wz_k <- w_k^(-1/2) * z_k
+    qr_out <- qr(X_k)
+    Q_k <- qr.Q(qr_out)
+    R_k <- qr.R(qr_out)
+    a_k <- backsolve(R_k, crossprod(Q_k, wz_k))
+    
+    # Update the parameter
+    list_beta[[j]] <- a_k + beta_k
+    current_error <- max(abs(beta_k - list_beta[[j]]))
+    beta_k <- list_beta[[j]]
+    j <- j + 1L
+  }
+  
+  do.call(cbind, list_beta)
+}
+```
+
+
+Because the left hand side of the NR update is upper triangular due to the
+$\mathbf{R}_k$ matrix, the `backsolve` function can be used to efficiently
+solve a triangular system of linear equations.
+
+The termination criterion is defined as
+$\max\left| \boldsymbol{\beta}^{(k)} - \boldsymbol{\beta}^{(k + 1)} \right| < \epsilon$,
+where $\epsilon = 10^{-6}$ and the function returns a `data.frame` with the
+estimates parameter for each iteration until this criterion is achieved.
+
+#### Cross-checks
+
+I will cross-check my implementation with the R's built `glm` function for the
+Bernoulli GLM, which the probability mass function is given by
+$$
+f(y \mid \theta) = \exp\left\{y\,\theta - \log\left(1 + e^\theta \right)\right\}
+$$
+where $\theta = \log \left(\dfrac{p}{1 - p}\right)$ and
+$b(\theta) = \log\left(1 + e^\theta\right)$. Also,
+$b^\prime(\theta) = \dfrac{1}{1 + e^{-\theta}}$ and
+$b^{\prime\prime}(\theta) =\dfrac{e^{-\theta}}{(1 + e^{-\theta})^2}$.
+
+A user friendly function, `logReg`, which call the `glm1` is defined
+to fit a logistic regression model in a quite similar way as `glm` function. 
+```{r}
+logReg <- function(formula, data) {
+  mf <- model.frame(formula, data = data)
+  y <- model.response(mf)
+  if (is.factor(y))
+    y <- as.numeric(y) - 1
+  X <- model.matrix(formula, mf)
+  bp <- function(theta) 1 / (1 + exp(-theta))
+  bpp <- function(theta) {
+    e <- exp(-theta)
+    e / (1 + e)^2
+  }
+  glm1(y, X, bp, bpp)
+}
+```
+
+
+The first check concerns a simulated data from $500$ samples of logistic regression model with two
+covariates, where the true values of the coefficients are
+$\boldsymbol{\beta} = (1.0, -0.5, 0.5)$ and the covariates were simulated from
+standard Normal and uniform random variables.
+
+```{r sim-data}
+set.seed(69)
+n <- 500
+X <- cbind(1, rnorm(n), runif(n))
+betas <- c(1, -0.5, 0.5)
+eta <- drop(X %*% betas)
+p <- 1 / (1 + exp(-eta))
+y <- rbinom(n, size = 1, prob = p)
+sim_data <- data.frame(y = y, x1 = X[, 2], x2 = X[, 3])
+```
+
+As shown below, the coefficients estimated from `logReg` and `glm` are the same
+to seven decimal places.
+
+
+```{r est-sim-data}
+out_logReg <- logReg(formula = y ~ x1 + x2, data = sim_data)
+out_glm <- glm(formula = y ~ x1 + x2, data = sim_data, family = "binomial")
+cbind(true = betas,
+      logReg = out_logReg[, ncol(out_logReg)],
+      glm = coef(out_glm))
+```
+
+After performing a second cross-check using the `Pima.tr` data from the `MASS`
+package, it was found that the estimated values were identical up to nine decimal
+places, confirming that the `glm1` function had been successfully implemented.
+
+```{r est-pima-data}
+out_logReg <- logReg(type ~ ., data = MASS::Pima.tr)
+out_glm <- glm(type ~ ., data = MASS::Pima.tr, family = "binomial")
+
+cbind(logReg = out_logReg[, ncol(out_logReg)],
+      glm = coef(out_glm))
+```
+
